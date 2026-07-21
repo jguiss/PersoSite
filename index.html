@@ -6,10 +6,9 @@
 <title>Julien Guiss — Marketeur web depuis 2003</title>
 <meta name="description" content="Le parcours de Julien Guiss : d'Avignon à Québec, vingt ans à construire le web et à comprendre comment Google range le monde. Récit, méthode et convictions d'un marketeur SEO.">
 <meta name="author" content="Julien Guiss">
-<meta name="theme-color" content="#0b0a07">
+<meta name="theme-color" content="#050406">
 <link rel="canonical" href="https://www.julienguiss.com/">
 
-<!-- Open Graph -->
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://www.julienguiss.com/">
 <meta property="og:title" content="Julien Guiss — Marketeur web depuis 2003">
@@ -18,47 +17,42 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:creator" content="@jguisswebmaster">
 
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%230b0a07'/%3E%3Ctext x='16' y='23' font-family='monospace' font-size='20' font-weight='bold' text-anchor='middle' fill='%23ffb000'%3EG%3C/text%3E%3C/svg%3E">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%23050406'/%3E%3Ctext x='16' y='24' font-family='Georgia,serif' font-size='22' font-weight='bold' text-anchor='middle' fill='%23ff2b2b'%3EG%3C/text%3E%3C/svg%3E">
 
 <script type="application/ld+json">
 {
-  "@context": "https://schema.org",
-  "@type": "Person",
-  "name": "Julien Guiss",
-  "url": "https://www.julienguiss.com/",
-  "jobTitle": "VP Web Strategy",
-  "description": "Marketeur web et expert SEO depuis 2003.",
-  "birthPlace": "Avignon, France",
-  "homeLocation": "Québec, Canada",
-  "sameAs": [
-    "https://www.linkedin.com/in/jguiss/",
-    "https://x.com/jguisswebmaster",
-    "https://www.youtube.com/c/JulienGuiss"
-  ]
+  "@context":"https://schema.org","@type":"Person","name":"Julien Guiss",
+  "url":"https://www.julienguiss.com/","jobTitle":"VP Web Strategy",
+  "description":"Marketeur web et expert SEO depuis 2003.",
+  "birthPlace":"Avignon, France","homeLocation":"Québec, Canada",
+  "sameAs":["https://www.linkedin.com/in/jguiss/","https://x.com/jguisswebmaster","https://www.youtube.com/c/JulienGuiss"]
 }
 </script>
+
+<!-- progressive enhancement flag: only hide-for-reveal when JS is present -->
+<script>document.documentElement.className += " js";</script>
 </head>
 <body>
 <style>
   :root{
     color-scheme: dark;
-    --bg:#0b0a07;
-    --bg-2:#100e09;
-    --panel:#15120b;
-    --panel-2:#1c1810;
-    --line:#2a2415;
-    --amber:#ffb000;
-    --amber-bright:#ffd479;
-    --amber-dim:#b57e14;
-    --parchment:#e8d9b5;
-    --muted:#9c8a5f;
-    --muted-2:#6d6038;
-    --cyan:#5ad1e6;
-    --danger:#ff6b53;
-    --mono: ui-monospace, "Cascadia Code", "JetBrains Mono", "SFMono-Regular", Menlo, Consolas, "Liberation Mono", monospace;
-    --serif: Georgia, "Iowan Old Style", "Palatino Linotype", "Times New Roman", serif;
+    --bg:#050406;
+    --bg-2:#0a0709;
+    --panel:#100a0d;
+    --panel-2:#170d12;
+    --line:#2c151c;
+    --red:#ff2b2b;
+    --red-bright:#ff6363;
+    --red-deep:#b3161c;
+    --blue:#63b3ff;      /* Upside Down cold accent — rare */
+    --ink:#ece4dc;
+    --muted:#a08f8b;
+    --muted-2:#6f5a5d;
+    --display: "Bookman Old Style","URW Bookman L","URW Bookman","Palatino Linotype","Palatino",Georgia,serif;
+    --body: ui-sans-serif, system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    --mono: ui-monospace, "Cascadia Code","JetBrains Mono","SFMono-Regular", Menlo, Consolas, monospace;
     --maxw: 1080px;
-    --prose: 64ch;
+    --prose: 62ch;
   }
 
   *{box-sizing:border-box}
@@ -67,288 +61,252 @@
 
   body{
     margin:0;
-    background:
-      radial-gradient(120% 80% at 50% -10%, #1a160c 0%, var(--bg) 55%, #060503 100%);
-    color:var(--parchment);
-    font-family:var(--mono);
-    font-size:16px;
-    line-height:1.65;
+    background:var(--bg);
+    color:var(--ink);
+    font-family:var(--body);
+    font-size:16px; line-height:1.65;
     -webkit-font-smoothing:antialiased;
     overflow-x:hidden;
   }
 
-  /* ---------- CRT overlay ---------- */
-  .crt{
-    position:fixed; inset:0; z-index:60; pointer-events:none;
-    mix-blend-mode:screen;
-    transition:opacity .4s ease;
+  /* ---------- Atmosphere: fog + vignette + grain ---------- */
+  .atmos{position:fixed; inset:0; z-index:0; pointer-events:none; overflow:hidden}
+  .atmos .glow{
+    position:absolute; inset:-20% -20% auto -20%; height:80%;
+    background:radial-gradient(60% 60% at 50% 0%, rgba(255,43,43,.18), transparent 70%);
   }
-  .crt::before{ /* scanlines */
-    content:""; position:absolute; inset:0;
-    background:repeating-linear-gradient(
-      to bottom, rgba(0,0,0,0) 0, rgba(0,0,0,0) 2px, rgba(0,0,0,.28) 3px, rgba(0,0,0,0) 4px);
+  .atmos .fog{
+    position:absolute; width:160%; height:160%; left:-30%; top:-30%;
+    background:radial-gradient(38% 38% at 30% 40%, rgba(255,43,43,.06), transparent 60%),
+               radial-gradient(42% 42% at 75% 65%, rgba(99,179,255,.05), transparent 60%),
+               radial-gradient(35% 35% at 55% 85%, rgba(255,43,43,.05), transparent 60%);
+    filter:blur(6px);
   }
-  .crt::after{ /* vignette + glow */
-    content:""; position:absolute; inset:0;
-    background:radial-gradient(115% 90% at 50% 40%, rgba(255,176,0,.04), transparent 60%),
-               radial-gradient(140% 120% at 50% 50%, transparent 62%, rgba(0,0,0,.55) 100%);
-  }
-  body.no-crt .crt{opacity:0}
-  @media (prefers-reduced-motion: no-preference){
-    body:not(.no-crt) .crt{animation:flicker 6s infinite steps(60)}
-  }
-  @keyframes flicker{ 0%,97%,100%{opacity:1} 98%{opacity:.86} 99%{opacity:.94} }
+  @media (prefers-reduced-motion: no-preference){ .atmos .fog{animation:drift 26s ease-in-out infinite alternate} }
+  @keyframes drift{ from{transform:translate3d(-2%, -1%,0) scale(1)} to{transform:translate3d(3%, 2%,0) scale(1.08)} }
+  .atmos .vig{position:absolute; inset:0; background:radial-gradient(120% 100% at 50% 40%, transparent 55%, rgba(0,0,0,.7) 100%)}
+  .atmos .scan{position:absolute; inset:0; mix-blend-mode:overlay; opacity:.5;
+    background:repeating-linear-gradient(to bottom, rgba(0,0,0,0) 0 2px, rgba(0,0,0,.22) 3px, rgba(0,0,0,0) 4px)}
+  body.no-fx .atmos .scan{display:none}
+  body.no-fx .atmos .fog{animation:none}
 
   /* ---------- Menu bar ---------- */
   .menubar{
     position:fixed; top:0; left:0; right:0; z-index:50;
-    display:flex; align-items:center; gap:18px;
-    height:44px; padding:0 clamp(14px,4vw,28px);
-    background:rgba(10,9,6,.82);
-    backdrop-filter:blur(8px);
-    border-bottom:1px solid var(--line);
-    font-size:13px;
+    display:flex; align-items:center; gap:16px;
+    height:46px; padding:0 clamp(14px,4vw,28px);
+    background:rgba(5,4,6,.8); backdrop-filter:blur(9px);
+    border-bottom:1px solid var(--line); font-size:13px; font-family:var(--mono);
   }
-  .menubar .brand{
-    color:var(--amber); font-weight:700; letter-spacing:.02em;
-    display:flex; align-items:center; gap:8px; white-space:nowrap;
-  }
-  .menubar .brand .dot{width:9px;height:9px;border-radius:50%;background:var(--amber);box-shadow:0 0 8px var(--amber)}
-  .menubar nav{display:flex; gap:4px; margin-left:auto; flex-wrap:wrap; justify-content:flex-end}
-  .menubar nav a{
-    color:var(--muted); text-decoration:none; padding:5px 9px; border-radius:5px;
-    transition:color .15s, background .15s;
-  }
-  .menubar nav a:hover,.menubar nav a:focus-visible{color:var(--amber-bright); background:var(--panel-2); outline:none}
-  .crt-toggle{
-    color:var(--muted); background:var(--panel); border:1px solid var(--line);
-    border-radius:5px; padding:5px 9px; font-family:var(--mono); font-size:12px;
-    cursor:pointer; transition:color .15s, border-color .15s; white-space:nowrap;
-  }
-  .crt-toggle:hover,.crt-toggle:focus-visible{color:var(--amber-bright); border-color:var(--amber-dim); outline:none}
+  .menubar .brand{color:var(--red); font-weight:700; letter-spacing:.04em; display:flex; align-items:center; gap:9px; white-space:nowrap;
+    text-shadow:0 0 10px rgba(255,43,43,.6)}
+  .menubar .brand .bulb{width:9px;height:9px;border-radius:50%;background:var(--red);box-shadow:0 0 10px var(--red),0 0 20px var(--red)}
+  .menubar nav{display:flex; gap:2px; margin-left:auto; flex-wrap:wrap; justify-content:flex-end}
+  .menubar nav a{color:var(--muted); text-decoration:none; padding:5px 9px; border-radius:5px; transition:color .15s, background .15s}
+  .menubar nav a:hover,.menubar nav a:focus-visible{color:var(--red-bright); background:var(--panel-2); outline:none}
+  .fx-toggle{color:var(--muted); background:var(--panel); border:1px solid var(--line); border-radius:5px; padding:5px 9px;
+    font-family:var(--mono); font-size:12px; cursor:pointer; transition:color .15s,border-color .15s; white-space:nowrap}
+  .fx-toggle:hover,.fx-toggle:focus-visible{color:var(--red-bright); border-color:var(--red-deep); outline:none}
   @media (max-width:560px){ .menubar nav a.opt{display:none} }
 
   /* ---------- Layout ---------- */
-  .wrap{max-width:var(--maxw); margin:0 auto; padding:0 clamp(16px,5vw,28px)}
-  section{padding:clamp(64px,10vw,120px) 0; position:relative}
+  .wrap{max-width:var(--maxw); margin:0 auto; padding:0 clamp(16px,5vw,28px); position:relative; z-index:1}
+  main{position:relative; z-index:1}
+  section{padding:clamp(60px,10vw,120px) 0; position:relative}
 
-  .eyebrow{
-    font-size:12px; letter-spacing:.22em; text-transform:uppercase;
-    color:var(--amber-dim); margin:0 0 18px;
-  }
-  .eyebrow::before{content:"~/ "; color:var(--muted-2)}
+  .eyebrow{font-size:12px; letter-spacing:.24em; text-transform:uppercase; color:var(--blue); margin:0 0 18px; font-family:var(--mono)}
+  .eyebrow::before{content:"// "; color:var(--muted-2)}
 
-  h2{
-    font-family:var(--mono); font-weight:700;
-    font-size:clamp(1.6rem,4.4vw,2.7rem); line-height:1.1; margin:0 0 8px;
-    color:var(--parchment); text-wrap:balance; letter-spacing:-.01em;
-  }
+  h2{font-family:var(--display); font-weight:700; font-size:clamp(1.8rem,5.2vw,3rem); line-height:1.08; margin:0 0 10px;
+    color:var(--ink); text-wrap:balance; letter-spacing:.01em}
   .lede{color:var(--muted); font-size:clamp(1rem,2vw,1.12rem); max-width:var(--prose); margin:6px 0 0}
 
   /* ---------- Hero ---------- */
-  .hero{
-    min-height:100svh; display:flex; flex-direction:column; justify-content:center;
-    padding-top:64px; padding-bottom:48px;
-  }
-  .terminal{
-    width:100%; max-width:760px;
-    background:linear-gradient(180deg, var(--panel-2), var(--panel));
-    border:1px solid var(--line); border-radius:12px;
-    box-shadow:0 40px 120px -40px rgba(0,0,0,.9), inset 0 1px 0 rgba(255,212,121,.05);
-    overflow:hidden;
-  }
-  .term-bar{
-    display:flex; align-items:center; gap:8px; padding:11px 14px;
-    background:var(--bg-2); border-bottom:1px solid var(--line); font-size:12px; color:var(--muted-2);
-  }
-  .term-bar .lights{display:flex; gap:6px}
-  .term-bar .lights i{width:11px;height:11px;border-radius:50%; display:block}
-  .term-bar .lights i:nth-child(1){background:#ff5f56}
-  .term-bar .lights i:nth-child(2){background:#ffbd2e}
-  .term-bar .lights i:nth-child(3){background:#27c93f}
-  .term-bar .title{margin-left:6px}
-  .term-body{padding:22px clamp(16px,3vw,26px) 26px; font-size:14.5px}
-  .boot-line{white-space:pre-wrap; margin:0 0 3px; min-height:1.2em}
-  .boot-line .ok{color:var(--amber)}
-  .boot-line .cy{color:var(--cyan)}
-  .boot-line .mut{color:var(--muted-2)}
-
+  .hero{min-height:100svh; display:flex; flex-direction:column; justify-content:center; padding-top:70px; padding-bottom:50px}
+  .kicker{font-family:var(--mono); font-size:13px; letter-spacing:.28em; text-transform:uppercase; color:var(--blue); margin:0 0 20px}
   .hero-name{
-    font-family:var(--mono); font-weight:700; letter-spacing:.02em;
-    font-size:clamp(2.5rem,9vw,5.2rem); line-height:.98; margin:20px 0 0;
-    color:var(--amber);
-    text-shadow:0 0 22px rgba(255,176,0,.35), 0 0 3px rgba(255,176,0,.6);
+    font-family:var(--display); font-weight:700; letter-spacing:.02em;
+    font-size:clamp(3rem,15vw,8rem); line-height:.92; margin:0;
+    color:#fff2f2;
+    text-shadow:
+      0 0 4px rgba(255,80,80,.9),
+      0 0 14px rgba(255,43,43,.8),
+      0 0 34px rgba(255,20,20,.6),
+      0 0 70px rgba(255,0,0,.4);
   }
-  .hero-tag{
-    font-family:var(--serif); font-style:italic;
-    font-size:clamp(1.15rem,3vw,1.7rem); color:var(--parchment);
-    margin:14px 0 0; max-width:40ch;
+  .hero-name .l2{display:block; color:var(--red)}
+  @media (prefers-reduced-motion: no-preference){
+    body:not(.no-fx) .hero-name{animation:neon 5.5s infinite}
   }
-  .hero-sub{color:var(--muted); margin:16px 0 0; max-width:56ch}
-  .cursor{display:inline-block; width:.62ch; height:1.05em; background:var(--amber);
-    transform:translateY(.16em); margin-left:2px; box-shadow:0 0 8px var(--amber)}
-  @media (prefers-reduced-motion: no-preference){ .cursor{animation:blink 1.05s steps(1) infinite} }
+  @keyframes neon{
+    0%,19%,21%,55%,57%,100%{opacity:1}
+    20%{opacity:.72} 56%{opacity:.86} 22%{opacity:.9}
+  }
+  .hero-tag{font-family:var(--display); font-style:italic; font-size:clamp(1.2rem,3.2vw,1.9rem); color:var(--ink);
+    margin:22px 0 0; max-width:24ch}
+  .hero-sub{color:var(--muted); margin:16px 0 0; max-width:54ch; font-size:1.02rem}
+
+  .term{margin-top:34px; max-width:620px; background:linear-gradient(180deg,var(--panel-2),var(--panel));
+    border:1px solid var(--line); border-radius:11px; overflow:hidden;
+    box-shadow:0 40px 100px -46px rgba(255,0,0,.35), inset 0 1px 0 rgba(255,99,99,.06)}
+  .term-bar{display:flex; align-items:center; gap:8px; padding:10px 13px; background:var(--bg-2); border-bottom:1px solid var(--line);
+    font-family:var(--mono); font-size:12px; color:var(--muted-2)}
+  .term-bar i{width:11px;height:11px;border-radius:50%;display:block}
+  .term-bar i:nth-child(1){background:#ff5f56}.term-bar i:nth-child(2){background:#ffbd2e}.term-bar i:nth-child(3){background:#27c93f}
+  .term-bar .t{margin-left:6px}
+  .boot-line{white-space:pre-wrap; margin:0; padding:20px clamp(15px,3vw,24px) 22px; font-family:var(--mono); font-size:14px; line-height:1.7; color:var(--ink)}
+  .boot-line .ok{color:var(--red-bright)} .boot-line .cy{color:var(--blue)} .boot-line .mut{color:var(--muted-2)}
+  .cursor{display:inline-block; width:.6ch; height:1.05em; background:var(--red); transform:translateY(.15em); margin-left:1px; box-shadow:0 0 8px var(--red)}
+  @media (prefers-reduced-motion: no-preference){ body:not(.no-fx) .cursor{animation:blink 1.05s steps(1) infinite} }
   @keyframes blink{50%{opacity:0}}
 
-  .scroll-hint{margin-top:40px; color:var(--muted-2); font-size:12.5px; letter-spacing:.14em; text-transform:uppercase;
-    display:inline-flex; align-items:center; gap:10px}
-  .scroll-hint .arw{display:inline-block}
-  @media (prefers-reduced-motion: no-preference){ .scroll-hint .arw{animation:bob 1.8s ease-in-out infinite} }
+  .scroll-hint{margin-top:38px; color:var(--muted-2); font-size:12.5px; letter-spacing:.14em; text-transform:uppercase;
+    font-family:var(--mono); display:inline-flex; align-items:center; gap:10px; text-decoration:none}
+  .scroll-hint:hover{color:var(--red-bright)}
+  @media (prefers-reduced-motion: no-preference){ body:not(.no-fx) .scroll-hint .arw{animation:bob 1.8s ease-in-out infinite; display:inline-block} }
   @keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(5px)}}
 
-  /* ---------- Reveal ---------- */
-  .reveal{opacity:0; transform:translateY(22px); transition:opacity .7s ease, transform .7s ease}
-  .reveal.in{opacity:1; transform:none}
-  @media (prefers-reduced-motion: reduce){ .reveal{opacity:1; transform:none; transition:none} }
+  /* ---------- Reveal (only active when JS present) ---------- */
+  html.js .reveal{opacity:0; transform:translateY(22px); transition:opacity .7s ease, transform .7s ease}
+  html.js .reveal.in{opacity:1; transform:none}
+  @media (prefers-reduced-motion: reduce){ html.js .reveal{opacity:1; transform:none; transition:none} }
 
-  /* ---------- Prose / story ---------- */
-  .story{max-width:var(--prose); font-family:var(--serif); font-size:1.14rem; line-height:1.8; color:#efe4c8}
+  /* ---------- Story ---------- */
+  .story{max-width:var(--prose); font-size:1.13rem; line-height:1.85; color:#efe7df}
   .story p{margin:0 0 1.25em}
-  .story p .drop{color:var(--amber-bright)}
-  .story .sig{font-family:var(--mono); font-size:.85rem; color:var(--muted); font-style:normal}
-  .flag{display:inline-block; padding:0 .35em; color:var(--cyan); font-family:var(--mono); font-size:.8em;
-    border:1px solid var(--line); border-radius:4px; white-space:nowrap}
+  .story .drop{color:var(--red-bright); font-weight:600}
+  .story em{color:#fff}
+  .story .sig{font-family:var(--mono); font-size:.85rem; color:var(--muted)}
+  .flag{display:inline-block; padding:0 .4em; color:var(--blue); font-family:var(--mono); font-size:.82em; border:1px solid var(--line); border-radius:4px; white-space:nowrap}
 
   /* ---------- Timeline ---------- */
-  .timeline{margin-top:56px; position:relative; padding-left:34px}
-  .timeline::before{content:""; position:absolute; left:8px; top:6px; bottom:6px; width:2px;
-    background:linear-gradient(var(--amber-dim), var(--line));}
-  .tl{position:relative; padding:0 0 40px}
-  .tl:last-child{padding-bottom:0}
-  .tl::before{content:""; position:absolute; left:-34px; top:4px; width:16px; height:16px; border-radius:50%;
-    background:var(--bg); border:2px solid var(--amber); box-shadow:0 0 0 4px var(--bg), 0 0 14px rgba(255,176,0,.5)}
-  .tl .yr{font-family:var(--mono); color:var(--amber); font-size:.92rem; letter-spacing:.04em}
-  .tl h3{font-family:var(--mono); font-size:1.15rem; margin:2px 0 6px; color:var(--parchment)}
+  .timeline{margin-top:52px; position:relative; padding-left:34px}
+  .timeline::before{content:""; position:absolute; left:8px; top:6px; bottom:6px; width:2px; background:linear-gradient(var(--red), var(--line))}
+  .tl{position:relative; padding:0 0 38px} .tl:last-child{padding-bottom:0}
+  .tl::before{content:""; position:absolute; left:-34px; top:4px; width:15px; height:15px; border-radius:50%;
+    background:var(--bg); border:2px solid var(--red); box-shadow:0 0 0 4px var(--bg), 0 0 16px rgba(255,43,43,.7)}
+  .tl .yr{font-family:var(--mono); color:var(--red-bright); font-size:.92rem; letter-spacing:.04em}
+  .tl h3{font-family:var(--display); font-size:1.25rem; margin:2px 0 6px; color:var(--ink)}
   .tl p{margin:0; color:var(--muted); max-width:58ch}
-  .tl .todo{color:var(--muted-2); font-size:.82em}
+  .tl .todo{color:var(--muted-2); font-size:.82em; font-family:var(--mono)}
 
-  /* ---------- Cards / méthode ---------- */
+  /* ---------- Cards ---------- */
   .grid{display:grid; grid-template-columns:repeat(auto-fit,minmax(238px,1fr)); gap:16px; margin-top:44px}
-  .card{
-    background:linear-gradient(180deg,var(--panel-2),var(--panel));
-    border:1px solid var(--line); border-radius:10px; padding:22px 20px;
-    transition:transform .2s ease, border-color .2s ease, box-shadow .2s ease;
-  }
-  .card:hover{transform:translateY(-4px); border-color:var(--amber-dim);
-    box-shadow:0 24px 60px -30px rgba(255,176,0,.35)}
-  .card .n{font-family:var(--mono); color:var(--amber-dim); font-size:.8rem; letter-spacing:.12em}
-  .card h3{font-family:var(--mono); font-size:1.1rem; margin:10px 0 8px; color:var(--amber-bright)}
+  .card{background:linear-gradient(180deg,var(--panel-2),var(--panel)); border:1px solid var(--line); border-radius:10px; padding:22px 20px;
+    transition:transform .2s ease, border-color .2s ease, box-shadow .2s ease}
+  .card:hover{transform:translateY(-4px); border-color:var(--red-deep); box-shadow:0 24px 60px -30px rgba(255,43,43,.45)}
+  .card .n{font-family:var(--mono); color:var(--red-deep); font-size:.8rem; letter-spacing:.12em}
+  .card h3{font-family:var(--display); font-size:1.2rem; margin:10px 0 8px; color:var(--red-bright)}
   .card p{margin:0; color:var(--muted); font-size:.96rem; line-height:1.6}
 
   /* ---------- Perso teaser ---------- */
-  .teaser{
-    border:1px dashed var(--muted-2); border-radius:12px; padding:clamp(26px,5vw,44px);
-    background:repeating-linear-gradient(135deg, transparent, transparent 12px, rgba(255,176,0,.02) 12px, rgba(255,176,0,.02) 24px);
-    margin-top:40px;
-  }
+  .teaser{border:1px dashed var(--muted-2); border-radius:12px; padding:clamp(26px,5vw,44px); margin-top:40px;
+    background:repeating-linear-gradient(135deg, transparent 0 12px, rgba(255,43,43,.03) 12px 24px)}
   .teaser .badge{display:inline-block; font-family:var(--mono); font-size:.72rem; letter-spacing:.18em; text-transform:uppercase;
-    color:var(--bg); background:var(--amber); padding:3px 9px; border-radius:20px; margin-bottom:16px}
-  .teaser p{color:var(--parchment); max-width:60ch; margin:.4em 0}
-  .teaser .route{font-family:var(--mono); color:var(--cyan); margin-top:14px; font-size:.95rem}
+    color:#fff; background:var(--red-deep); padding:3px 10px; border-radius:20px; margin-bottom:16px; box-shadow:0 0 16px rgba(255,43,43,.4)}
+  .teaser p{color:var(--ink); max-width:60ch; margin:.4em 0}
+  .teaser .route{font-family:var(--mono); color:var(--blue); margin-top:14px; font-size:.95rem}
 
   /* ---------- Contact ---------- */
   .contact-links{display:flex; flex-wrap:wrap; gap:12px; margin-top:36px}
-  .contact-links a{
-    display:inline-flex; align-items:center; gap:10px; text-decoration:none;
-    font-family:var(--mono); font-size:.95rem; color:var(--parchment);
-    background:var(--panel); border:1px solid var(--line); border-radius:8px; padding:12px 16px;
-    transition:color .15s, border-color .15s, transform .15s;
-  }
-  .contact-links a:hover,.contact-links a:focus-visible{color:var(--amber-bright); border-color:var(--amber-dim); transform:translateY(-2px); outline:none}
+  .contact-links a{display:inline-flex; align-items:center; gap:10px; text-decoration:none; font-family:var(--mono); font-size:.95rem;
+    color:var(--ink); background:var(--panel); border:1px solid var(--line); border-radius:8px; padding:12px 16px;
+    transition:color .15s, border-color .15s, transform .15s, box-shadow .15s}
+  .contact-links a:hover,.contact-links a:focus-visible{color:var(--red-bright); border-color:var(--red-deep); transform:translateY(-2px);
+    box-shadow:0 0 22px rgba(255,43,43,.25); outline:none}
   .contact-links a .k{color:var(--muted-2)}
 
-  footer{border-top:1px solid var(--line); padding:34px 0 60px; color:var(--muted-2); font-size:12.5px}
+  footer{border-top:1px solid var(--line); padding:34px 0 60px; color:var(--muted-2); font-size:12.5px; font-family:var(--mono); position:relative; z-index:1}
   footer .wrap{display:flex; flex-wrap:wrap; gap:8px 20px; align-items:center; justify-content:space-between}
-  footer a{color:var(--muted); text-decoration:none}
-  footer a:hover{color:var(--amber)}
+  footer a{color:var(--muted); text-decoration:none} footer a:hover{color:var(--red)}
 
-  a:focus-visible{outline:2px solid var(--amber); outline-offset:2px; border-radius:3px}
+  a:focus-visible{outline:2px solid var(--red); outline-offset:2px; border-radius:3px}
 
-  /* draft note */
-  .draftnote{
-    position:relative; z-index:2; margin:0 auto; max-width:var(--maxw);
-    padding:10px clamp(16px,5vw,28px);
-  }
-  .draftnote span{display:inline-block; font-size:12px; color:var(--muted-2);
-    border:1px solid var(--line); border-radius:6px; padding:6px 12px; background:var(--bg-2)}
-  .draftnote b{color:var(--amber-dim); font-weight:700}
+  .draftnote{position:relative; z-index:1; margin:0 auto; max-width:var(--maxw); padding:10px clamp(16px,5vw,28px)}
+  .draftnote span{display:inline-block; font-size:12px; color:var(--muted-2); border:1px solid var(--line); border-radius:6px; padding:6px 12px; background:var(--bg-2); font-family:var(--mono)}
+  .draftnote b{color:var(--red-deep)}
 </style>
 
-<div class="crt" aria-hidden="true"></div>
+<div class="atmos" aria-hidden="true">
+  <div class="glow"></div><div class="fog"></div><div class="scan"></div><div class="vig"></div>
+</div>
 
 <header class="menubar">
-  <span class="brand"><span class="dot"></span>guiss.exe</span>
+  <span class="brand"><span class="bulb"></span>guiss.exe</span>
   <nav>
     <a href="#parcours">parcours</a>
     <a href="#methode" class="opt">méthode</a>
     <a href="#perso">perso</a>
     <a href="#contact">contact</a>
   </nav>
-  <button class="crt-toggle" id="crtToggle" aria-pressed="true" title="Activer / désactiver l'effet écran cathodique">CRT: ON</button>
+  <button class="fx-toggle" id="fxToggle" aria-pressed="true" title="Activer / désactiver les effets">FX: ON</button>
 </header>
 
 <main>
-  <!-- HERO -->
   <section class="hero" id="top">
     <div class="wrap">
-      <div class="terminal" role="img" aria-label="Terminal affichant la séquence de démarrage de Julien Guiss, marketeur web depuis 2003.">
-        <div class="term-bar">
-          <span class="lights"><i></i><i></i><i></i></span>
-          <span class="title">— julien@guiss: ~ — boot</span>
-        </div>
-        <div class="term-body" id="bootlog" aria-hidden="true"></div>
+      <p class="kicker">Avignon → Québec · marketeur web depuis 2003</p>
+      <h1 class="hero-name">JULIEN<span class="l2">GUISS</span></h1>
+      <p class="hero-tag">« Le web, je l'ai appris en cassant des trucs. »</p>
+      <p class="hero-sub">Vingt ans à construire des sites — et à comprendre, ligne après ligne, comment Google range le monde.</p>
+
+      <div class="term" role="img" aria-label="Terminal listant le profil de Julien Guiss : Avignon, Québec, marketeur web SEO depuis 2003, plus de 300 sites livrés.">
+        <div class="term-bar"><i></i><i></i><i></i><span class="t">— julien@guiss: ~ — boot</span></div>
+        <div class="boot-line" id="bootlog"><span class="mut">$ </span><span class="cy">whoami</span>
+<span class="ok">julien_guiss</span>
+<span class="mut">$ </span><span class="cy">cat ./profil.txt</span>
+origine ......... <span class="cy">Avignon, France</span>
+base ............ <span class="cy">Québec, Canada</span>
+métier .......... <span class="ok">marketeur web · SEO</span>
+depuis .......... <span class="ok">2003</span>
+sites livrés .... <span class="ok">300+</span>
+<span class="mut">$ </span><span class="cy">./raconte_moi.sh</span>
+<span class="mut">[ ok ] chargement de vingt ans d’histoire…</span></div>
       </div>
 
-      <h1 class="hero-name" id="heroName">JULIEN GUISS<span class="cursor" aria-hidden="true"></span></h1>
-      <p class="hero-tag">« Le web, je l'ai appris en cassant des trucs. »</p>
-      <p class="hero-sub">Marketeur web depuis 2003. D'Avignon à Québec, vingt ans à construire des sites — et à comprendre, ligne après ligne, comment Google range le monde.</p>
       <a class="scroll-hint" href="#parcours"><span class="arw">▼</span> Dérouler l'histoire</a>
     </div>
   </section>
 
-  <div class="draftnote"><span><b>NOTE — premier jet.</b> Textes, dates et anecdotes ci-dessous sont écrits par moi à partir de tes infos publiques. À corriger ensemble : tout ce qui est marqué <b>[à confirmer]</b>.</span></div>
+  <div class="draftnote"><span><b>NOTE — premier jet.</b> Textes, dates et anecdotes écrits par moi à partir de tes infos publiques. À valider ensemble : tout ce qui est marqué <b>[à confirmer]</b>.</span></div>
 
-  <!-- PARCOURS -->
   <section id="parcours">
     <div class="wrap">
       <p class="eyebrow reveal">parcours</p>
       <h2 class="reveal">Comment on devient « expert », sans jamais l'avoir décidé</h2>
       <div class="story reveal">
-        <p><span class="drop">Je n'ai pas appris le web à l'école.</span> En 2003, on n'apprenait pas ça à l'école — on l'apprenait la nuit, en regardant le code source des pages des autres, en cassant des trucs, en recommençant. Mon premier site, je ne me souviens même plus de quoi il parlait. Je me souviens juste de la sensation : taper une adresse, et voir <em>ma</em> page apparaître quelque part sur cette immense chose branchée au monde entier.</p>
-        <p>Très vite, une question m'a obsédé, et elle ne m'a plus lâché : <em>pourquoi ce site-là arrive avant le mien&nbsp;?</em> C'est comme ça que je suis tombé dans le SEO — avant même de savoir que ça portait un nom. Comprendre la machine qui décide qui est vu et qui reste invisible. Il n'y avait pas de formation, pas de gourou&nbsp;: juste des forums, des tests, et beaucoup d'erreurs assumées.</p>
+        <p><span class="drop">Je n'ai pas appris le web à l'école.</span> En 2003, on n'apprenait pas ça à l'école — on l'apprenait la nuit, en regardant le code source des pages des autres, en cassant des trucs, en recommençant. Mon premier site, je ne me souviens plus de quoi il parlait. Je me souviens de la sensation&nbsp;: taper une adresse, et voir <em>ma</em> page apparaître quelque part sur cette immense chose branchée au monde entier.</p>
+        <p>Très vite, une question m'a obsédé, et elle ne m'a plus lâché&nbsp;: <em>pourquoi ce site-là arrive avant le mien&nbsp;?</em> C'est comme ça que je suis tombé dans le SEO — avant même de savoir que ça portait un nom. Comprendre la machine qui décide qui est vu, et qui reste invisible. Pas de formation, pas de gourou&nbsp;: des forums, des tests, et beaucoup d'erreurs assumées.</p>
         <p>Pendant vingt ans, j'ai fait la même chose, en plus grand&nbsp;: <strong>plus de 300 sites</strong> [à confirmer], des projets d'affiliation, des refontes, des audits, des équipes. J'ai vu le web changer d'ère au moins quatre fois — et à chaque fois, la même discipline&nbsp;: observer, mesurer, tester, recommencer. Le SEO n'est pas une recette. C'est une manière de penser.</p>
-        <p>Et puis un jour, j'ai fait mes valises. D'<span class="flag">Avignon, FR</span> je suis parti pour <span class="flag">Québec, CA</span> [à confirmer] — un aller sans vraiment de retour prévu. J'y dirige aujourd'hui une stratégie web [à confirmer : intitulé exact du poste]. Mais dans ma tête, je suis resté le gamin de 2003 qui regarde le code source des autres pour comprendre comment ça marche.</p>
+        <p>Et un jour, j'ai fait mes valises. D'<span class="flag">Avignon, FR</span> je suis parti pour <span class="flag">Québec, CA</span> [à confirmer] — un aller sans vraiment de retour prévu. J'y dirige aujourd'hui une stratégie web [à confirmer : intitulé exact]. Mais dans ma tête, je suis resté le gamin de 2003 qui regarde le code source des autres pour comprendre comment ça marche.</p>
         <p class="sig">— Julien &nbsp;·&nbsp; <span style="color:var(--muted-2)">premier jet, à retravailler avec toi</span></p>
       </div>
 
-      <!-- TIMELINE -->
       <div class="timeline">
-        <div class="tl reveal"><div class="yr">2003</div><h3>Le premier site</h3><p>Premières lignes de HTML, premier hébergement, premier « ça marche &nbsp;! ». Le déclic. <span class="todo">[à confirmer — ton vrai tout premier projet]</span></p></div>
-        <div class="tl reveal"><div class="yr">~2005</div><h3>La question qui obsède</h3><p>« Pourquoi ce site-là passe avant le mien&nbsp;? » — l'entrée dans le SEO, par les forums et les tests. <span class="todo">[à confirmer — date &amp; contexte]</span></p></div>
+        <div class="tl reveal"><div class="yr">2003</div><h3>Le premier site</h3><p>Premières lignes de HTML, premier hébergement, premier « ça marche&nbsp;! ». Le déclic. <span class="todo">[à confirmer — ton tout premier projet]</span></p></div>
+        <div class="tl reveal"><div class="yr">~2005</div><h3>La question qui obsède</h3><p>« Pourquoi ce site-là passe avant le mien&nbsp;? » — l'entrée dans le SEO, par les forums et les tests. <span class="todo">[à confirmer]</span></p></div>
         <div class="tl reveal"><div class="yr">~2008</div><h3>L'affiliation</h3><p>Le web devient un métier, puis un modèle économique. Trafic, conversion, performance. <span class="todo">[à confirmer]</span></p></div>
-        <div class="tl reveal"><div class="yr">2010s</div><h3>300+ sites</h3><p>Des dizaines de projets, des refontes, des audits techniques, des équipes. L'artisanat passe à l'échelle. <span class="todo">[à confirmer — chiffres &amp; jalons marquants]</span></p></div>
-        <div class="tl reveal"><div class="yr">Québec</div><h3>Avignon → Québec</h3><p>Le grand saut&nbsp;: quitter le Sud pour l'hiver québécois. Nouvelle vie, même passion. <span class="todo">[à confirmer — année du départ]</span></p></div>
-        <div class="tl reveal"><div class="yr">Aujourd'hui</div><h3>Stratégie &amp; direction web</h3><p>Piloter l'acquisition et la stratégie web à l'échelle. <span class="todo">[à confirmer — intitulé exact &amp; entreprise, si tu veux la citer]</span></p></div>
+        <div class="tl reveal"><div class="yr">2010s</div><h3>300+ sites</h3><p>Des dizaines de projets, refontes, audits techniques, équipes. L'artisanat passe à l'échelle. <span class="todo">[à confirmer — chiffres &amp; jalons]</span></p></div>
+        <div class="tl reveal"><div class="yr">Québec</div><h3>Avignon → Québec</h3><p>Le grand saut&nbsp;: quitter le Sud pour l'hiver québécois. Nouvelle vie, même passion. <span class="todo">[à confirmer — année]</span></p></div>
+        <div class="tl reveal"><div class="yr">Aujourd'hui</div><h3>Stratégie &amp; direction web</h3><p>Piloter l'acquisition et la stratégie web à l'échelle. <span class="todo">[à confirmer — intitulé &amp; entreprise]</span></p></div>
       </div>
     </div>
   </section>
 
-  <!-- MÉTHODE -->
   <section id="methode">
     <div class="wrap">
       <p class="eyebrow reveal">méthode</p>
       <h2 class="reveal">Ce que vingt ans m'ont appris</h2>
-      <p class="lede reveal">Pas des « techniques secrètes ». Quatre convictions, plutôt, qui ont survécu à tous les changements d'algorithme.</p>
+      <p class="lede reveal">Pas des « techniques secrètes ». Quatre convictions qui ont survécu à tous les changements d'algorithme.</p>
       <div class="grid">
-        <div class="card reveal"><div class="n">01</div><h3>Le SEO, c'est de l'empathie</h3><p>Avant d'optimiser pour un moteur, on optimise pour la personne derrière la requête. Google finit toujours par récompenser ceux qui répondent vraiment à la question.</p></div>
-        <div class="card reveal"><div class="n">02</div><h3>Mesurer, sinon rien</h3><p>Une intuition qui n'est pas mesurée reste une intuition. Analytics, Search Console, crawls&nbsp;: la donnée n'a pas d'ego, elle tranche les débats.</p></div>
+        <div class="card reveal"><div class="n">01</div><h3>Le SEO, c'est de l'empathie</h3><p>Avant d'optimiser pour un moteur, on optimise pour la personne derrière la requête. Google finit toujours par récompenser ceux qui répondent vraiment.</p></div>
+        <div class="card reveal"><div class="n">02</div><h3>Mesurer, sinon rien</h3><p>Une intuition non mesurée reste une intuition. Analytics, Search Console, crawls&nbsp;: la donnée n'a pas d'ego, elle tranche les débats.</p></div>
         <div class="card reveal"><div class="n">03</div><h3>Construire pour durer</h3><p>Les raccourcis marchent six mois. Les fondations propres — technique, contenu, liens — tiennent dix ans. J'ai toujours préféré la deuxième option.</p></div>
         <div class="card reveal"><div class="n">04</div><h3>Rester le gamin de 2003</h3><p>Tester, casser, recommencer. Le jour où on croit avoir tout compris au web, le web change. La curiosité est la seule compétence non-périssable.</p></div>
       </div>
     </div>
   </section>
 
-  <!-- PERSO -->
   <section id="perso">
     <div class="wrap">
       <p class="eyebrow reveal">perso</p>
@@ -357,17 +315,16 @@
         <span class="badge">Chapitre à venir</span>
         <p>Ici viendra le reste de l'histoire&nbsp;: Avignon, le Sud, ce qui m'a amené jusqu'au Québec. La famille, les détours, ce que je fais quand je ne suis pas devant un écran.</p>
         <p>C'est la partie que tu me raconteras — je ne peux pas l'inventer, et je ne veux pas.</p>
-        <p class="route">itinéraire&nbsp;: <span style="color:var(--parchment)">Avignon, France</span> &nbsp;──▶&nbsp; <span style="color:var(--parchment)">Québec, Canada</span></p>
+        <p class="route">itinéraire&nbsp;: <span style="color:var(--ink)">Avignon, France</span> &nbsp;──▶&nbsp; <span style="color:var(--ink)">Québec, Canada</span></p>
       </div>
     </div>
   </section>
 
-  <!-- CONTACT -->
   <section id="contact">
     <div class="wrap">
       <p class="eyebrow reveal">contact</p>
       <h2 class="reveal">On se dit bonjour&nbsp;?</h2>
-      <p class="lede reveal">Ce site n'est pas là pour vendre quoi que ce soit — juste pour se rencontrer. Le reste est là où on parle vraiment.</p>
+      <p class="lede reveal">Ce site n'est pas là pour vendre quoi que ce soit — juste pour se rencontrer.</p>
       <div class="contact-links reveal">
         <a href="https://www.linkedin.com/in/jguiss/" target="_blank" rel="noopener"><span class="k">01 —</span> LinkedIn</a>
         <a href="https://x.com/jguisswebmaster" target="_blank" rel="noopener"><span class="k">02 —</span> X / @jguisswebmaster</a>
@@ -389,103 +346,56 @@
   "use strict";
   var reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-  /* year */
   var y = document.getElementById("year"); if(y){ y.textContent = new Date().getFullYear(); }
 
-  /* CRT toggle (persisted) */
-  var toggle = document.getElementById("crtToggle");
-  try{ if(localStorage.getItem("crt")==="off"){ document.body.classList.add("no-crt"); } }catch(e){}
-  function syncToggle(){
-    var off = document.body.classList.contains("no-crt");
-    toggle.textContent = "CRT: " + (off ? "OFF" : "ON");
-    toggle.setAttribute("aria-pressed", String(!off));
-  }
-  syncToggle();
+  /* FX toggle (persisted) */
+  var toggle = document.getElementById("fxToggle");
+  try{ if(localStorage.getItem("fx")==="off"){ document.body.classList.add("no-fx"); } }catch(e){}
+  function sync(){ var off=document.body.classList.contains("no-fx"); toggle.textContent="FX: "+(off?"OFF":"ON"); toggle.setAttribute("aria-pressed",String(!off)); }
+  sync();
   toggle.addEventListener("click", function(){
-    document.body.classList.toggle("no-crt");
-    try{ localStorage.setItem("crt", document.body.classList.contains("no-crt") ? "off" : "on"); }catch(e){}
-    syncToggle();
+    document.body.classList.toggle("no-fx");
+    try{ localStorage.setItem("fx", document.body.classList.contains("no-fx")?"off":"on"); }catch(e){}
+    sync();
   });
 
   /* Reveal on scroll */
-  var revs = [].slice.call(document.querySelectorAll(".reveal"));
+  var revs=[].slice.call(document.querySelectorAll(".reveal"));
   if("IntersectionObserver" in window && !reduce){
-    var io = new IntersectionObserver(function(entries){
-      entries.forEach(function(en){
-        if(en.isIntersecting){ en.target.classList.add("in"); io.unobserve(en.target); }
-      });
-    }, {threshold:0.12, rootMargin:"0px 0px -8% 0px"});
-    revs.forEach(function(el){ io.observe(el); });
-  } else {
-    revs.forEach(function(el){ el.classList.add("in"); });
-  }
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add("in");io.unobserve(e.target);}});},{threshold:0.12, rootMargin:"0px 0px -8% 0px"});
+    revs.forEach(function(el){io.observe(el);});
+  } else { revs.forEach(function(el){el.classList.add("in");}); }
 
-  /* Boot sequence typing */
-  var log = document.getElementById("bootlog");
-  var lines = [
-    ['mut','$ '],['type','whoami'],['nl',''],
-    ['ok','julien_guiss'],['nl',''],
-    ['mut','$ '],['type','cat ./profil.txt'],['nl',''],
-    ['plain','origine ......... '],['cy','Avignon, France'],['nl',''],
-    ['plain','base .......... . '],['cy','Québec, Canada'],['nl',''],
-    ['plain','métier ......... '],['ok','marketeur web · SEO'],['nl',''],
-    ['plain','depuis ......... '],['ok','2003'],['nl',''],
-    ['plain','sites livrés ... '],['ok','300+'],['nl',''],
-    ['mut','$ '],['type','./raconte_moi.sh'],['nl',''],
-    ['mut','[ ok ] chargement de vingt ans d’histoire…'],['nl','']
+  /* Boot typing — enhances the already-visible static log. Skipped if reduced motion. */
+  var log=document.getElementById("bootlog");
+  if(reduce || !log) return;
+  var lines=[
+    ['mut','$ '],['type','whoami'],['nl'],
+    ['ok','julien_guiss'],['nl'],
+    ['mut','$ '],['type','cat ./profil.txt'],['nl'],
+    ['plain','origine ......... '],['cy','Avignon, France'],['nl'],
+    ['plain','base ............ '],['cy','Québec, Canada'],['nl'],
+    ['plain','métier .......... '],['ok','marketeur web · SEO'],['nl'],
+    ['plain','depuis .......... '],['ok','2003'],['nl'],
+    ['plain','sites livrés .... '],['ok','300+'],['nl'],
+    ['mut','$ '],['type','./raconte_moi.sh'],['nl'],
+    ['mut','[ ok ] chargement de vingt ans d’histoire…'],['nl']
   ];
+  function cls(k){ return (k==="type"||k==="cy")?"cy":(k==="ok")?"ok":(k==="mut")?"mut":""; }
 
-  function esc(s){ return s.replace(/&/g,"&amp;").replace(/</g,"&lt;"); }
-
-  if(reduce){
-    /* Render final state instantly */
-    var html = "";
-    lines.forEach(function(t){
-      if(t[0]==="nl"){ html += "\n"; }
-      else if(t[0]==="type"){ html += '<span class="cy">'+esc(t[1])+'</span>'; }
-      else if(t[0]==="ok"){ html += '<span class="ok">'+esc(t[1])+'</span>'; }
-      else if(t[0]==="cy"){ html += '<span class="cy">'+esc(t[1])+'</span>'; }
-      else if(t[0]==="mut"){ html += '<span class="mut">'+esc(t[1])+'</span>'; }
-      else { html += esc(t[1]); }
-    });
-    log.innerHTML = '<div class="boot-line">'+html+'</div>';
-    return;
-  }
-
-  var container = document.createElement("div");
-  container.className = "boot-line";
-  log.appendChild(container);
-  var caret = document.createElement("span");
-  caret.className = "cursor";
-
-  var li = 0, ci = 0, cur = null;
-  function cls(kind){ return kind==="type"||kind==="cy" ? "cy" : kind==="ok" ? "ok" : kind==="mut" ? "mut" : ""; }
-
+  log.textContent="";
+  var caret=document.createElement("span"); caret.className="cursor";
+  var li=0, ci=0, cur=null;
   function step(){
-    if(li >= lines.length){ if(caret.parentNode) caret.parentNode.removeChild(caret); return; }
-    var t = lines[li];
-    if(t[0]==="nl"){
-      container.appendChild(document.createTextNode("\n"));
-      li++; ci=0; cur=null; return step();
-    }
-    if(cur===null){
-      cur = document.createElement("span");
-      var c = cls(t[0]); if(c) cur.className = c;
-      container.appendChild(cur);
-      container.appendChild(caret);
-    }
-    if(ci < t[1].length){
-      cur.appendChild(document.createTextNode(t[1][ci]));
-      ci++;
-      var isCmd = (t[0]==="type");
-      setTimeout(step, isCmd ? 42 : 14);
-    } else {
-      li++; ci=0; cur=null;
-      setTimeout(step, t[0]==="type" ? 260 : 40);
-    }
+    if(li>=lines.length){ if(caret.parentNode)caret.parentNode.removeChild(caret); return; }
+    var t=lines[li];
+    if(t[0]==="nl"){ log.insertBefore(document.createTextNode("\n"), caret); li++; ci=0; cur=null; return step(); }
+    if(cur===null){ cur=document.createElement("span"); var c=cls(t[0]); if(c)cur.className=c; log.insertBefore(cur, caret); log.appendChild(caret); }
+    if(ci<t[1].length){ cur.appendChild(document.createTextNode(t[1][ci])); ci++; setTimeout(step, t[0]==="type"?42:13); }
+    else { li++; ci=0; cur=null; setTimeout(step, t[0]==="type"?240:36); }
   }
-  /* start shortly after load */
-  setTimeout(step, 380);
+  log.appendChild(caret);
+  setTimeout(step, 350);
 })();
 </script>
 </body>
