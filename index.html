@@ -6,7 +6,7 @@
 <title>Julien Guiss — Marketeur web depuis 2003</title>
 <meta name="description" content="Le parcours de Julien Guiss : d'Avignon à Québec, vingt ans à construire le web et à comprendre comment Google range le monde. Récit, méthode et convictions d'un marketeur SEO.">
 <meta name="author" content="Julien Guiss">
-<meta name="theme-color" content="#050406">
+<meta name="theme-color" content="#f4f3ef">
 <link rel="canonical" href="https://www.julienguiss.com/">
 
 <meta property="og:type" content="website">
@@ -17,7 +17,7 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:creator" content="@jguisswebmaster">
 
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%23050406'/%3E%3Ctext x='16' y='24' font-family='Georgia,serif' font-size='22' font-weight='bold' text-anchor='middle' fill='%23ff2b2b'%3EG%3C/text%3E%3C/svg%3E">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23f4f3ef'/%3E%3Ctext x='16' y='25' font-family='Arial,sans-serif' font-size='26' font-weight='900' text-anchor='middle' fill='%23101013'%3EG%3C/text%3E%3C/svg%3E">
 
 <script type="application/ld+json">
 {
@@ -28,316 +28,319 @@
   "sameAs":["https://www.linkedin.com/in/jguiss/","https://x.com/jguisswebmaster","https://www.youtube.com/c/JulienGuiss"]
 }
 </script>
-
-<!-- progressive enhancement flag: only hide-for-reveal when JS is present -->
 <script>document.documentElement.className += " js";</script>
 </head>
 <body>
 <style>
   :root{
-    color-scheme: dark;
-    --bg:#050406;
-    --bg-2:#0a0709;
-    --panel:#100a0d;
-    --panel-2:#170d12;
-    --line:#2c151c;
-    --red:#ff2b2b;
-    --red-bright:#ff6363;
-    --red-deep:#b3161c;
-    --blue:#63b3ff;      /* Upside Down cold accent — rare */
-    --ink:#ece4dc;
-    --muted:#a08f8b;
-    --muted-2:#6f5a5d;
-    --display: "Bookman Old Style","URW Bookman L","URW Bookman","Palatino Linotype","Palatino",Georgia,serif;
-    --body: ui-sans-serif, system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-    --mono: ui-monospace, "Cascadia Code","JetBrains Mono","SFMono-Regular", Menlo, Consolas, monospace;
-    --maxw: 1080px;
-    --prose: 62ch;
+    color-scheme:light;
+    --paper:#f4f3ef; --paper-2:#eae7df; --card:#fbfaf7;
+    --ink:#101013; --ink-soft:#55555d; --ink-faint:#8a8a90;
+    --accent:#2b2bff; --accent-2:#ff3b1f; --line:#d9d7ce; --line-strong:#101013;
+    --grotesk:"Helvetica Neue",Helvetica,Arial,"Liberation Sans",ui-sans-serif,system-ui,sans-serif;
+    --mono:ui-monospace,"JetBrains Mono","Cascadia Code",Menlo,Consolas,monospace;
+    --maxw:1240px;
   }
-
   *{box-sizing:border-box}
   html{scroll-behavior:smooth}
-  @media (prefers-reduced-motion: reduce){ html{scroll-behavior:auto} }
+  @media (prefers-reduced-motion:reduce){ html{scroll-behavior:auto} }
+  body{margin:0; background:var(--paper); color:var(--ink); font-family:var(--grotesk); line-height:1.55; overflow-x:hidden; -webkit-font-smoothing:antialiased}
+  ::selection{background:var(--accent); color:#fff}
 
-  body{
-    margin:0;
-    background:var(--bg);
-    color:var(--ink);
-    font-family:var(--body);
-    font-size:16px; line-height:1.65;
-    -webkit-font-smoothing:antialiased;
-    overflow-x:hidden;
+  /* custom cursor (desktop, fine pointer only) */
+  .cursor-dot{position:fixed; top:0; left:0; width:12px; height:12px; border-radius:50%; background:var(--accent);
+    pointer-events:none; z-index:9999; transform:translate(-50%,-50%); mix-blend-mode:difference; transition:width .18s, height .18s, background .18s; will-change:transform; opacity:0}
+  body.cursor-on .cursor-dot{opacity:1}
+  body.cursor-on{cursor:none}
+  body.cursor-on a, body.cursor-on button{cursor:none}
+  .cursor-dot.big{width:56px; height:56px; background:var(--accent-2)}
+
+  /* nav */
+  .nav{position:fixed; top:0; left:0; right:0; z-index:100; display:flex; align-items:center; justify-content:space-between;
+    padding:16px clamp(16px,4vw,40px); font-family:var(--mono); font-size:12px; letter-spacing:.06em; text-transform:uppercase;
+    mix-blend-mode:normal}
+  .nav .brand{font-weight:700; color:var(--ink); text-decoration:none; display:flex; gap:9px; align-items:center}
+  .nav .brand .sq{width:11px; height:11px; background:var(--accent); display:inline-block}
+  .nav .links{display:flex; gap:4px}
+  .nav .links a{color:var(--ink-soft); text-decoration:none; padding:5px 9px; border-radius:4px; transition:color .15s, background .15s}
+  .nav .links a:hover{color:var(--accent); background:var(--paper-2)}
+  @media (max-width:640px){ .nav .links a.opt{display:none} }
+
+  .wrap{max-width:var(--maxw); margin:0 auto; padding:0 clamp(16px,4vw,40px)}
+  section{position:relative}
+
+  /* ---------- HERO ---------- */
+  .hero{min-height:100svh; display:flex; flex-direction:column; justify-content:center; padding:96px 0 40px; position:relative; overflow:hidden}
+  .hero .ring{position:absolute; right:-14vw; top:50%; width:52vw; height:52vw; border:1.5px solid var(--line); border-radius:50%; transform:translateY(-50%); z-index:0; pointer-events:none}
+  .hero .ring::after{content:""; position:absolute; inset:16% ; border:1.5px solid var(--line); border-radius:50%}
+  @media (prefers-reduced-motion:no-preference){ .hero .ring{animation:spin 60s linear infinite} .hero .ring::after{animation:spin 40s linear infinite reverse} }
+  @keyframes spin{to{transform:translateY(-50%) rotate(360deg)}}
+
+  .hero .inner{position:relative; z-index:2}
+  .idxrow{display:flex; justify-content:space-between; gap:10px; flex-wrap:wrap; font-family:var(--mono); font-size:12px; letter-spacing:.1em; text-transform:uppercase; color:var(--ink-soft); border-bottom:1px solid var(--line); padding-bottom:12px}
+  .idxrow b{color:var(--accent)}
+
+  .title{font-weight:800; text-transform:uppercase; letter-spacing:-.035em; line-height:.82; margin:clamp(14px,2.5vw,26px) 0 0;
+    font-size:clamp(3.6rem,18vw,15rem)}
+  .title .line{display:block; overflow:hidden}
+  .title .line span{display:inline-block; will-change:transform}
+  .title .l{display:inline-block}
+  html.js .title .l{transform:translateY(110%)}
+  @media (prefers-reduced-motion:no-preference){
+    html.js .title .l{animation:rise .9s cubic-bezier(.16,1,.3,1) forwards; animation-delay:calc(var(--i,0)*.045s + .15s)}
   }
+  @media (prefers-reduced-motion:reduce){ html.js .title .l{transform:none} }
+  @keyframes rise{to{transform:translateY(0)}}
+  .title .dot{color:var(--accent)}
+  .title.mag-target{cursor:default}
 
-  /* ---------- Atmosphere: fog + vignette + grain ---------- */
-  .atmos{position:fixed; inset:0; z-index:0; pointer-events:none; overflow:hidden}
-  .atmos .glow{
-    position:absolute; inset:-20% -20% auto -20%; height:80%;
-    background:radial-gradient(60% 60% at 50% 0%, rgba(255,43,43,.18), transparent 70%);
-  }
-  .atmos .fog{
-    position:absolute; width:160%; height:160%; left:-30%; top:-30%;
-    background:radial-gradient(38% 38% at 30% 40%, rgba(255,43,43,.06), transparent 60%),
-               radial-gradient(42% 42% at 75% 65%, rgba(99,179,255,.05), transparent 60%),
-               radial-gradient(35% 35% at 55% 85%, rgba(255,43,43,.05), transparent 60%);
-    filter:blur(6px);
-  }
-  @media (prefers-reduced-motion: no-preference){ .atmos .fog{animation:drift 26s ease-in-out infinite alternate} }
-  @keyframes drift{ from{transform:translate3d(-2%, -1%,0) scale(1)} to{transform:translate3d(3%, 2%,0) scale(1.08)} }
-  .atmos .vig{position:absolute; inset:0; background:radial-gradient(120% 100% at 50% 40%, transparent 55%, rgba(0,0,0,.7) 100%)}
-  .atmos .scan{position:absolute; inset:0; mix-blend-mode:overlay; opacity:.5;
-    background:repeating-linear-gradient(to bottom, rgba(0,0,0,0) 0 2px, rgba(0,0,0,.22) 3px, rgba(0,0,0,0) 4px)}
-  body.no-fx .atmos .scan{display:none}
-  body.no-fx .atmos .fog{animation:none}
+  .metarow{display:flex; flex-wrap:wrap; justify-content:space-between; gap:14px 24px; margin-top:clamp(20px,3vw,40px); padding-top:16px; border-top:2px solid var(--line-strong)}
+  .metarow div{font-family:var(--mono); font-size:13px; text-transform:uppercase; letter-spacing:.03em; color:var(--ink-soft)}
+  .metarow b{color:var(--ink)}
+  .scrollcue{margin-top:30px; font-family:var(--mono); font-size:12px; letter-spacing:.16em; text-transform:uppercase; color:var(--ink-faint); display:inline-flex; gap:9px; align-items:center; text-decoration:none}
+  .scrollcue:hover{color:var(--accent)}
+  @media (prefers-reduced-motion:no-preference){ .scrollcue .a{display:inline-block; animation:bob 1.7s ease-in-out infinite} }
+  @keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(4px)}}
 
-  /* ---------- Menu bar ---------- */
-  .menubar{
-    position:fixed; top:0; left:0; right:0; z-index:50;
-    display:flex; align-items:center; gap:16px;
-    height:46px; padding:0 clamp(14px,4vw,28px);
-    background:rgba(5,4,6,.8); backdrop-filter:blur(9px);
-    border-bottom:1px solid var(--line); font-size:13px; font-family:var(--mono);
-  }
-  .menubar .brand{color:var(--red); font-weight:700; letter-spacing:.04em; display:flex; align-items:center; gap:9px; white-space:nowrap;
-    text-shadow:0 0 10px rgba(255,43,43,.6)}
-  .menubar .brand .bulb{width:9px;height:9px;border-radius:50%;background:var(--red);box-shadow:0 0 10px var(--red),0 0 20px var(--red)}
-  .menubar nav{display:flex; gap:2px; margin-left:auto; flex-wrap:wrap; justify-content:flex-end}
-  .menubar nav a{color:var(--muted); text-decoration:none; padding:5px 9px; border-radius:5px; transition:color .15s, background .15s}
-  .menubar nav a:hover,.menubar nav a:focus-visible{color:var(--red-bright); background:var(--panel-2); outline:none}
-  .fx-toggle{color:var(--muted); background:var(--panel); border:1px solid var(--line); border-radius:5px; padding:5px 9px;
-    font-family:var(--mono); font-size:12px; cursor:pointer; transition:color .15s,border-color .15s; white-space:nowrap}
-  .fx-toggle:hover,.fx-toggle:focus-visible{color:var(--red-bright); border-color:var(--red-deep); outline:none}
-  @media (max-width:560px){ .menubar nav a.opt{display:none} }
+  /* ---------- Marquee ---------- */
+  .marquee{overflow:hidden; white-space:nowrap; border-top:2px solid var(--line-strong); border-bottom:2px solid var(--line-strong); background:var(--ink); color:var(--paper)}
+  .marquee.alt{background:var(--paper); color:var(--ink); border-top:none}
+  .marquee .track{display:inline-flex; will-change:transform}
+  .marquee .track > span{display:inline-flex; align-items:center; padding:14px 0; font-weight:800; text-transform:uppercase; letter-spacing:-.01em; font-size:clamp(1.3rem,4.2vw,2.7rem)}
+  .marquee .track > span > i{font-style:normal; padding:0 .55em}
+  .marquee .track .d{color:var(--accent)}
+  .marquee.alt .track .d{color:var(--accent-2)}
 
-  /* ---------- Layout ---------- */
-  .wrap{max-width:var(--maxw); margin:0 auto; padding:0 clamp(16px,5vw,28px); position:relative; z-index:1}
-  main{position:relative; z-index:1}
-  section{padding:clamp(60px,10vw,120px) 0; position:relative}
-
-  .eyebrow{font-size:12px; letter-spacing:.24em; text-transform:uppercase; color:var(--blue); margin:0 0 18px; font-family:var(--mono)}
-  .eyebrow::before{content:"// "; color:var(--muted-2)}
-
-  h2{font-family:var(--display); font-weight:700; font-size:clamp(1.8rem,5.2vw,3rem); line-height:1.08; margin:0 0 10px;
-    color:var(--ink); text-wrap:balance; letter-spacing:.01em}
-  .lede{color:var(--muted); font-size:clamp(1rem,2vw,1.12rem); max-width:var(--prose); margin:6px 0 0}
-
-  /* ---------- Hero ---------- */
-  .hero{min-height:100svh; display:flex; flex-direction:column; justify-content:center; padding-top:70px; padding-bottom:50px}
-  .kicker{font-family:var(--mono); font-size:13px; letter-spacing:.28em; text-transform:uppercase; color:var(--blue); margin:0 0 20px}
-  .hero-name{
-    font-family:var(--display); font-weight:700; letter-spacing:.02em;
-    font-size:clamp(3rem,15vw,8rem); line-height:.92; margin:0;
-    color:#fff2f2;
-    text-shadow:
-      0 0 4px rgba(255,80,80,.9),
-      0 0 14px rgba(255,43,43,.8),
-      0 0 34px rgba(255,20,20,.6),
-      0 0 70px rgba(255,0,0,.4);
-  }
-  .hero-name .l2{display:block; color:var(--red)}
-  @media (prefers-reduced-motion: no-preference){
-    body:not(.no-fx) .hero-name{animation:neon 5.5s infinite}
-  }
-  @keyframes neon{
-    0%,19%,21%,55%,57%,100%{opacity:1}
-    20%{opacity:.72} 56%{opacity:.86} 22%{opacity:.9}
-  }
-  .hero-tag{font-family:var(--display); font-style:italic; font-size:clamp(1.2rem,3.2vw,1.9rem); color:var(--ink);
-    margin:22px 0 0; max-width:24ch}
-  .hero-sub{color:var(--muted); margin:16px 0 0; max-width:54ch; font-size:1.02rem}
-
-  .term{margin-top:34px; max-width:620px; background:linear-gradient(180deg,var(--panel-2),var(--panel));
-    border:1px solid var(--line); border-radius:11px; overflow:hidden;
-    box-shadow:0 40px 100px -46px rgba(255,0,0,.35), inset 0 1px 0 rgba(255,99,99,.06)}
-  .term-bar{display:flex; align-items:center; gap:8px; padding:10px 13px; background:var(--bg-2); border-bottom:1px solid var(--line);
-    font-family:var(--mono); font-size:12px; color:var(--muted-2)}
-  .term-bar i{width:11px;height:11px;border-radius:50%;display:block}
-  .term-bar i:nth-child(1){background:#ff5f56}.term-bar i:nth-child(2){background:#ffbd2e}.term-bar i:nth-child(3){background:#27c93f}
-  .term-bar .t{margin-left:6px}
-  .boot-line{white-space:pre-wrap; margin:0; padding:20px clamp(15px,3vw,24px) 22px; font-family:var(--mono); font-size:14px; line-height:1.7; color:var(--ink)}
-  .boot-line .ok{color:var(--red-bright)} .boot-line .cy{color:var(--blue)} .boot-line .mut{color:var(--muted-2)}
-  .cursor{display:inline-block; width:.6ch; height:1.05em; background:var(--red); transform:translateY(.15em); margin-left:1px; box-shadow:0 0 8px var(--red)}
-  @media (prefers-reduced-motion: no-preference){ body:not(.no-fx) .cursor{animation:blink 1.05s steps(1) infinite} }
-  @keyframes blink{50%{opacity:0}}
-
-  .scroll-hint{margin-top:38px; color:var(--muted-2); font-size:12.5px; letter-spacing:.14em; text-transform:uppercase;
-    font-family:var(--mono); display:inline-flex; align-items:center; gap:10px; text-decoration:none}
-  .scroll-hint:hover{color:var(--red-bright)}
-  @media (prefers-reduced-motion: no-preference){ body:not(.no-fx) .scroll-hint .arw{animation:bob 1.8s ease-in-out infinite; display:inline-block} }
-  @keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(5px)}}
-
-  /* ---------- Reveal (only active when JS present) ---------- */
-  html.js .reveal{opacity:0; transform:translateY(22px); transition:opacity .7s ease, transform .7s ease}
+  /* ---------- generic reveal ---------- */
+  html.js .reveal{opacity:0; transform:translateY(26px); transition:opacity .8s cubic-bezier(.16,1,.3,1), transform .8s cubic-bezier(.16,1,.3,1)}
   html.js .reveal.in{opacity:1; transform:none}
-  @media (prefers-reduced-motion: reduce){ html.js .reveal{opacity:1; transform:none; transition:none} }
+  @media (prefers-reduced-motion:reduce){ html.js .reveal{opacity:1; transform:none; transition:none} }
+  .eyebrow{font-family:var(--mono); font-size:12px; letter-spacing:.22em; text-transform:uppercase; color:var(--accent); margin:0 0 18px}
+  .eyebrow::before{content:"("; color:var(--ink-faint)} .eyebrow::after{content:")"; color:var(--ink-faint)}
 
-  /* ---------- Story ---------- */
-  .story{max-width:var(--prose); font-size:1.13rem; line-height:1.85; color:#efe7df}
-  .story p{margin:0 0 1.25em}
-  .story .drop{color:var(--red-bright); font-weight:600}
-  .story em{color:#fff}
-  .story .sig{font-family:var(--mono); font-size:.85rem; color:var(--muted)}
-  .flag{display:inline-block; padding:0 .4em; color:var(--blue); font-family:var(--mono); font-size:.82em; border:1px solid var(--line); border-radius:4px; white-space:nowrap}
+  h2{font-weight:800; text-transform:uppercase; letter-spacing:-.02em; line-height:.95; font-size:clamp(2rem,6.5vw,4.4rem); margin:0}
 
-  /* ---------- Timeline ---------- */
-  .timeline{margin-top:52px; position:relative; padding-left:34px}
-  .timeline::before{content:""; position:absolute; left:8px; top:6px; bottom:6px; width:2px; background:linear-gradient(var(--red), var(--line))}
-  .tl{position:relative; padding:0 0 38px} .tl:last-child{padding-bottom:0}
-  .tl::before{content:""; position:absolute; left:-34px; top:4px; width:15px; height:15px; border-radius:50%;
-    background:var(--bg); border:2px solid var(--red); box-shadow:0 0 0 4px var(--bg), 0 0 16px rgba(255,43,43,.7)}
-  .tl .yr{font-family:var(--mono); color:var(--red-bright); font-size:.92rem; letter-spacing:.04em}
-  .tl h3{font-family:var(--display); font-size:1.25rem; margin:2px 0 6px; color:var(--ink)}
-  .tl p{margin:0; color:var(--muted); max-width:58ch}
-  .tl .todo{color:var(--muted-2); font-size:.82em; font-family:var(--mono)}
+  /* ---------- Parcours ---------- */
+  .parcours{padding:clamp(70px,10vw,130px) 0}
+  .lead{display:grid; grid-template-columns:auto 1fr; gap:clamp(16px,4vw,50px); align-items:start; margin-top:40px}
+  @media (max-width:760px){ .lead{grid-template-columns:1fr} }
+  .lead .big{font-weight:800; font-size:clamp(4rem,11vw,9rem); line-height:.85; color:var(--accent); letter-spacing:-.04em}
+  .story{max-width:58ch; font-size:clamp(1.05rem,2.1vw,1.35rem); line-height:1.7; color:var(--ink)}
+  .story p{margin:0 0 1.1em}
+  .story strong{background:linear-gradient(transparent 62%, rgba(43,43,255,.18) 0)}
+  .story .flag{font-family:var(--mono); font-size:.72em; text-transform:uppercase; letter-spacing:.06em; border:1px solid var(--line-strong); padding:1px 6px; border-radius:3px; white-space:nowrap}
+  .todo{font-family:var(--mono); font-size:.62em; color:var(--accent-2); letter-spacing:.02em; text-transform:uppercase; vertical-align:2px}
 
-  /* ---------- Cards ---------- */
-  .grid{display:grid; grid-template-columns:repeat(auto-fit,minmax(238px,1fr)); gap:16px; margin-top:44px}
-  .card{background:linear-gradient(180deg,var(--panel-2),var(--panel)); border:1px solid var(--line); border-radius:10px; padding:22px 20px;
-    transition:transform .2s ease, border-color .2s ease, box-shadow .2s ease}
-  .card:hover{transform:translateY(-4px); border-color:var(--red-deep); box-shadow:0 24px 60px -30px rgba(255,43,43,.45)}
-  .card .n{font-family:var(--mono); color:var(--red-deep); font-size:.8rem; letter-spacing:.12em}
-  .card h3{font-family:var(--display); font-size:1.2rem; margin:10px 0 8px; color:var(--red-bright)}
-  .card p{margin:0; color:var(--muted); font-size:.96rem; line-height:1.6}
+  /* timeline as index list */
+  .tlist{margin-top:clamp(40px,6vw,80px); border-top:1px solid var(--line)}
+  .tl{display:grid; grid-template-columns:120px 1fr auto; gap:16px; align-items:baseline; padding:22px 0; border-bottom:1px solid var(--line); transition:padding-left .25s ease, background .25s ease}
+  .tl:hover{padding-left:14px; background:linear-gradient(90deg, rgba(43,43,255,.05), transparent)}
+  .tl .yr{font-family:var(--mono); color:var(--accent); font-size:.95rem}
+  .tl h3{margin:0; font-size:clamp(1.1rem,2.6vw,1.6rem); font-weight:700; text-transform:uppercase; letter-spacing:-.01em}
+  .tl p{margin:6px 0 0; grid-column:2; color:var(--ink-soft); font-size:.96rem; max-width:60ch}
+  .tl .plus{font-family:var(--mono); color:var(--ink-faint); font-size:1.2rem}
+  @media (max-width:620px){ .tl{grid-template-columns:70px 1fr} .tl .plus{display:none} }
 
-  /* ---------- Perso teaser ---------- */
-  .teaser{border:1px dashed var(--muted-2); border-radius:12px; padding:clamp(26px,5vw,44px); margin-top:40px;
-    background:repeating-linear-gradient(135deg, transparent 0 12px, rgba(255,43,43,.03) 12px 24px)}
-  .teaser .badge{display:inline-block; font-family:var(--mono); font-size:.72rem; letter-spacing:.18em; text-transform:uppercase;
-    color:#fff; background:var(--red-deep); padding:3px 10px; border-radius:20px; margin-bottom:16px; box-shadow:0 0 16px rgba(255,43,43,.4)}
-  .teaser p{color:var(--ink); max-width:60ch; margin:.4em 0}
-  .teaser .route{font-family:var(--mono); color:var(--blue); margin-top:14px; font-size:.95rem}
+  /* ---------- Kinetic statement ---------- */
+  .kinetic{padding:clamp(80px,14vw,180px) 0; border-top:2px solid var(--line-strong); border-bottom:2px solid var(--line-strong); overflow:hidden}
+  .kstmt{font-weight:800; text-transform:uppercase; letter-spacing:-.03em; line-height:.9; font-size:clamp(2.2rem,9vw,7rem)}
+  .rot{display:inline-block; position:relative; color:var(--accent); min-height:1em}
+  .rot .w{display:inline-block}
+  html.js .rot .w{position:absolute; left:0; top:0; opacity:0; transform:translateY(40%)}
+  html.js .rot .w.on{position:relative; opacity:1; transform:none; transition:opacity .5s, transform .5s}
+  html.js .rot .w.out{opacity:0; transform:translateY(-40%); transition:opacity .5s, transform .5s}
+
+  /* ---------- Méthode ---------- */
+  .methode{padding:clamp(70px,10vw,130px) 0}
+  .grid{display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); margin-top:clamp(40px,6vw,70px); border-top:1px solid var(--line); border-left:1px solid var(--line)}
+  .card{border-right:1px solid var(--line); border-bottom:1px solid var(--line); padding:clamp(24px,3vw,38px); transition:background .25s ease, transform .25s ease}
+  .card:hover{background:var(--card)}
+  .card .n{font-family:var(--mono); color:var(--accent); font-size:.85rem; letter-spacing:.1em}
+  .card h3{margin:16px 0 10px; font-size:1.35rem; font-weight:700; text-transform:uppercase; letter-spacing:-.01em; max-width:16ch}
+  .card p{margin:0; color:var(--ink-soft); font-size:.98rem; line-height:1.6}
+
+  /* ---------- Chiffres ---------- */
+  .stats{padding:clamp(60px,8vw,110px) 0; border-top:2px solid var(--line-strong)}
+  .statgrid{display:grid; grid-template-columns:repeat(auto-fit,minmax(180px,1fr)); gap:clamp(20px,4vw,50px); margin-top:44px}
+  .stat .k{font-weight:800; font-size:clamp(3rem,9vw,6.5rem); line-height:.9; letter-spacing:-.04em; font-variant-numeric:tabular-nums}
+  .stat:nth-child(2) .k{color:var(--accent)} .stat:nth-child(4) .k{color:var(--accent-2)}
+  .stat .l{font-family:var(--mono); font-size:12px; text-transform:uppercase; letter-spacing:.12em; color:var(--ink-soft); margin-top:10px; padding-top:10px; border-top:1px solid var(--line)}
+
+  /* ---------- Perso ---------- */
+  .perso{padding:clamp(70px,10vw,130px) 0}
+  .teaser{margin-top:40px; border:1.5px dashed var(--ink-faint); border-radius:4px; padding:clamp(28px,5vw,54px); position:relative; overflow:hidden}
+  .teaser .badge{display:inline-block; font-family:var(--mono); font-size:11px; letter-spacing:.16em; text-transform:uppercase; color:#fff; background:var(--accent); padding:4px 11px; margin-bottom:18px}
+  .teaser p{max-width:60ch; font-size:1.08rem; color:var(--ink); margin:.4em 0}
+  .teaser .route{font-family:var(--mono); color:var(--accent-2); margin-top:16px; font-size:.95rem; letter-spacing:.04em}
 
   /* ---------- Contact ---------- */
-  .contact-links{display:flex; flex-wrap:wrap; gap:12px; margin-top:36px}
-  .contact-links a{display:inline-flex; align-items:center; gap:10px; text-decoration:none; font-family:var(--mono); font-size:.95rem;
-    color:var(--ink); background:var(--panel); border:1px solid var(--line); border-radius:8px; padding:12px 16px;
-    transition:color .15s, border-color .15s, transform .15s, box-shadow .15s}
-  .contact-links a:hover,.contact-links a:focus-visible{color:var(--red-bright); border-color:var(--red-deep); transform:translateY(-2px);
-    box-shadow:0 0 22px rgba(255,43,43,.25); outline:none}
-  .contact-links a .k{color:var(--muted-2)}
+  .contact{padding:clamp(70px,10vw,140px) 0}
+  .biglinks{margin-top:clamp(30px,5vw,60px); border-top:1px solid var(--line)}
+  .biglink{display:flex; align-items:center; justify-content:space-between; gap:20px; padding:clamp(20px,3vw,34px) 0; border-bottom:1px solid var(--line); text-decoration:none; color:var(--ink); transition:padding-left .3s ease, color .2s ease}
+  .biglink:hover{padding-left:16px; color:var(--accent)}
+  .biglink .n{font-weight:800; font-size:clamp(1.6rem,5vw,3rem); text-transform:uppercase; letter-spacing:-.02em}
+  .biglink .h{font-family:var(--mono); font-size:.9rem; color:var(--ink-faint); text-transform:uppercase; letter-spacing:.08em; white-space:nowrap}
+  .biglink:hover .h{color:var(--accent-2)}
 
-  footer{border-top:1px solid var(--line); padding:34px 0 60px; color:var(--muted-2); font-size:12.5px; font-family:var(--mono); position:relative; z-index:1}
-  footer .wrap{display:flex; flex-wrap:wrap; gap:8px 20px; align-items:center; justify-content:space-between}
-  footer a{color:var(--muted); text-decoration:none} footer a:hover{color:var(--red)}
+  footer{border-top:2px solid var(--line-strong); padding:30px 0 60px; font-family:var(--mono); font-size:12px; letter-spacing:.06em; text-transform:uppercase; color:var(--ink-soft)}
+  footer .wrap{display:flex; flex-wrap:wrap; gap:8px 20px; justify-content:space-between}
+  footer a{color:var(--ink); text-decoration:none} footer a:hover{color:var(--accent)}
 
-  a:focus-visible{outline:2px solid var(--red); outline-offset:2px; border-radius:3px}
+  .draftnote{padding:12px clamp(16px,4vw,40px); background:var(--paper-2); border-bottom:1px solid var(--line)}
+  .draftnote span{font-family:var(--mono); font-size:12px; color:var(--ink-soft)}
+  .draftnote b{color:var(--accent-2)}
 
-  .draftnote{position:relative; z-index:1; margin:0 auto; max-width:var(--maxw); padding:10px clamp(16px,5vw,28px)}
-  .draftnote span{display:inline-block; font-size:12px; color:var(--muted-2); border:1px solid var(--line); border-radius:6px; padding:6px 12px; background:var(--bg-2); font-family:var(--mono)}
-  .draftnote b{color:var(--red-deep)}
+  a:focus-visible,button:focus-visible{outline:2px solid var(--accent); outline-offset:3px}
+  .mag{will-change:transform}
 </style>
 
-<div class="atmos" aria-hidden="true">
-  <div class="glow"></div><div class="fog"></div><div class="scan"></div><div class="vig"></div>
-</div>
+<div class="cursor-dot" id="cursorDot" aria-hidden="true"></div>
 
-<header class="menubar">
-  <span class="brand"><span class="bulb"></span>guiss.exe</span>
-  <nav>
-    <a href="#parcours">parcours</a>
-    <a href="#methode" class="opt">méthode</a>
-    <a href="#perso">perso</a>
-    <a href="#contact">contact</a>
-  </nav>
-  <button class="fx-toggle" id="fxToggle" aria-pressed="true" title="Activer / désactiver les effets">FX: ON</button>
+<header class="nav">
+  <a class="brand" href="#top"><span class="sq"></span>JULIEN GUISS</a>
+  <div class="links">
+    <a href="#parcours">Parcours</a>
+    <a href="#methode" class="opt">Méthode</a>
+    <a href="#perso">Perso</a>
+    <a href="#contact">Contact</a>
+  </div>
 </header>
 
-<main>
-  <section class="hero" id="top">
-    <div class="wrap">
-      <p class="kicker">Avignon → Québec · marketeur web depuis 2003</p>
-      <h1 class="hero-name">JULIEN<span class="l2">GUISS</span></h1>
-      <p class="hero-tag">« Le web, je l'ai appris en cassant des trucs. »</p>
-      <p class="hero-sub">Vingt ans à construire des sites — et à comprendre, ligne après ligne, comment Google range le monde.</p>
-
-      <div class="term" role="img" aria-label="Terminal listant le profil de Julien Guiss : Avignon, Québec, marketeur web SEO depuis 2003, plus de 300 sites livrés.">
-        <div class="term-bar"><i></i><i></i><i></i><span class="t">— julien@guiss: ~ — boot</span></div>
-        <div class="boot-line" id="bootlog"><span class="mut">$ </span><span class="cy">whoami</span>
-<span class="ok">julien_guiss</span>
-<span class="mut">$ </span><span class="cy">cat ./profil.txt</span>
-origine ......... <span class="cy">Avignon, France</span>
-base ............ <span class="cy">Québec, Canada</span>
-métier .......... <span class="ok">marketeur web · SEO</span>
-depuis .......... <span class="ok">2003</span>
-sites livrés .... <span class="ok">300+</span>
-<span class="mut">$ </span><span class="cy">./raconte_moi.sh</span>
-<span class="mut">[ ok ] chargement de vingt ans d’histoire…</span></div>
+<main id="top">
+  <!-- HERO -->
+  <section class="hero">
+    <div class="ring" aria-hidden="true"></div>
+    <div class="wrap inner">
+      <div class="idxrow">
+        <span>Marketeur web — <b>SEO</b></span>
+        <span>Avignon → Québec</span>
+        <span>Depuis <b>2003</b></span>
       </div>
-
-      <a class="scroll-hint" href="#parcours"><span class="arw">▼</span> Dérouler l'histoire</a>
+      <h1 class="title mag-target" id="title" aria-label="Julien Guiss">
+        <span class="line" aria-hidden="true"><span class="l" style="--i:0">J</span><span class="l" style="--i:1">U</span><span class="l" style="--i:2">L</span><span class="l" style="--i:3">I</span><span class="l" style="--i:4">E</span><span class="l" style="--i:5">N</span></span>
+        <span class="line" aria-hidden="true"><span class="l" style="--i:6">G</span><span class="l" style="--i:7">U</span><span class="l" style="--i:8">I</span><span class="l" style="--i:9">S</span><span class="l" style="--i:10">S</span><span class="l dot" style="--i:11">.</span></span>
+      </h1>
+      <div class="metarow">
+        <div><b>20</b> ans de web</div>
+        <div><b>300+</b> sites livrés</div>
+        <div><b>SEO</b> · affiliation · stratégie</div>
+        <div><b>QC</b> ← FR</div>
+      </div>
+      <a class="scrollcue" href="#parcours"><span class="a">↓</span> Dérouler</a>
     </div>
   </section>
+
+  <!-- MARQUEE -->
+  <div class="marquee" data-marquee data-speed="60" data-dir="-1" aria-hidden="true">
+    <div class="track">
+      <span>SEO<i class="d">✳</i>Analytics<i class="d">✳</i>Affiliation<i class="d">✳</i>Stratégie web<i class="d">✳</i>Search Console<i class="d">✳</i>Performance<i class="d">✳</i></span>
+      <span>SEO<i class="d">✳</i>Analytics<i class="d">✳</i>Affiliation<i class="d">✳</i>Stratégie web<i class="d">✳</i>Search Console<i class="d">✳</i>Performance<i class="d">✳</i></span>
+    </div>
+  </div>
 
   <div class="draftnote"><span><b>NOTE — premier jet.</b> Textes, dates et anecdotes écrits par moi à partir de tes infos publiques. À valider ensemble : tout ce qui est marqué <b>[à confirmer]</b>.</span></div>
 
-  <section id="parcours">
+  <!-- PARCOURS -->
+  <section class="parcours" id="parcours">
     <div class="wrap">
-      <p class="eyebrow reveal">parcours</p>
-      <h2 class="reveal">Comment on devient « expert », sans jamais l'avoir décidé</h2>
-      <div class="story reveal">
-        <p><span class="drop">Je n'ai pas appris le web à l'école.</span> En 2003, on n'apprenait pas ça à l'école — on l'apprenait la nuit, en regardant le code source des pages des autres, en cassant des trucs, en recommençant. Mon premier site, je ne me souviens plus de quoi il parlait. Je me souviens de la sensation&nbsp;: taper une adresse, et voir <em>ma</em> page apparaître quelque part sur cette immense chose branchée au monde entier.</p>
-        <p>Très vite, une question m'a obsédé, et elle ne m'a plus lâché&nbsp;: <em>pourquoi ce site-là arrive avant le mien&nbsp;?</em> C'est comme ça que je suis tombé dans le SEO — avant même de savoir que ça portait un nom. Comprendre la machine qui décide qui est vu, et qui reste invisible. Pas de formation, pas de gourou&nbsp;: des forums, des tests, et beaucoup d'erreurs assumées.</p>
-        <p>Pendant vingt ans, j'ai fait la même chose, en plus grand&nbsp;: <strong>plus de 300 sites</strong> [à confirmer], des projets d'affiliation, des refontes, des audits, des équipes. J'ai vu le web changer d'ère au moins quatre fois — et à chaque fois, la même discipline&nbsp;: observer, mesurer, tester, recommencer. Le SEO n'est pas une recette. C'est une manière de penser.</p>
-        <p>Et un jour, j'ai fait mes valises. D'<span class="flag">Avignon, FR</span> je suis parti pour <span class="flag">Québec, CA</span> [à confirmer] — un aller sans vraiment de retour prévu. J'y dirige aujourd'hui une stratégie web [à confirmer : intitulé exact]. Mais dans ma tête, je suis resté le gamin de 2003 qui regarde le code source des autres pour comprendre comment ça marche.</p>
-        <p class="sig">— Julien &nbsp;·&nbsp; <span style="color:var(--muted-2)">premier jet, à retravailler avec toi</span></p>
+      <p class="eyebrow reveal">Parcours</p>
+      <h2 class="reveal">On devient « expert »<br>sans jamais l'avoir décidé</h2>
+      <div class="lead">
+        <div class="big reveal">03</div>
+        <div class="story reveal">
+          <p>Je n'ai pas appris le web à l'école. En 2003, on l'apprenait la nuit — en regardant le code source des autres, en cassant des trucs, en recommençant.</p>
+          <p>Très vite, une question m'a obsédé&nbsp;: <em>pourquoi ce site-là arrive avant le mien&nbsp;?</em> C'est comme ça que je suis tombé dans le SEO, avant même de savoir que ça portait un nom.</p>
+          <p>Pendant vingt ans, la même chose en plus grand&nbsp;: <strong>plus de 300 sites</strong> <span class="todo">[à confirmer]</span>, de l'affiliation, des refontes, des audits, des équipes. Et un jour, mes valises&nbsp;: d'<span class="flag">Avignon</span> à <span class="flag">Québec</span> <span class="todo">[à confirmer]</span>. Mais dans ma tête, je suis resté le gamin de 2003.</p>
+        </div>
       </div>
 
-      <div class="timeline">
-        <div class="tl reveal"><div class="yr">2003</div><h3>Le premier site</h3><p>Premières lignes de HTML, premier hébergement, premier « ça marche&nbsp;! ». Le déclic. <span class="todo">[à confirmer — ton tout premier projet]</span></p></div>
-        <div class="tl reveal"><div class="yr">~2005</div><h3>La question qui obsède</h3><p>« Pourquoi ce site-là passe avant le mien&nbsp;? » — l'entrée dans le SEO, par les forums et les tests. <span class="todo">[à confirmer]</span></p></div>
-        <div class="tl reveal"><div class="yr">~2008</div><h3>L'affiliation</h3><p>Le web devient un métier, puis un modèle économique. Trafic, conversion, performance. <span class="todo">[à confirmer]</span></p></div>
-        <div class="tl reveal"><div class="yr">2010s</div><h3>300+ sites</h3><p>Des dizaines de projets, refontes, audits techniques, équipes. L'artisanat passe à l'échelle. <span class="todo">[à confirmer — chiffres &amp; jalons]</span></p></div>
-        <div class="tl reveal"><div class="yr">Québec</div><h3>Avignon → Québec</h3><p>Le grand saut&nbsp;: quitter le Sud pour l'hiver québécois. Nouvelle vie, même passion. <span class="todo">[à confirmer — année]</span></p></div>
-        <div class="tl reveal"><div class="yr">Aujourd'hui</div><h3>Stratégie &amp; direction web</h3><p>Piloter l'acquisition et la stratégie web à l'échelle. <span class="todo">[à confirmer — intitulé &amp; entreprise]</span></p></div>
+      <div class="tlist">
+        <div class="tl reveal"><span class="yr">2003</span><h3>Le premier site</h3><span class="plus">+</span><p>Premières lignes de HTML, premier « ça marche&nbsp;! ». Le déclic. <span class="todo">[à confirmer]</span></p></div>
+        <div class="tl reveal"><span class="yr">~2005</span><h3>Le déclic SEO</h3><span class="plus">+</span><p>« Pourquoi lui passe avant moi&nbsp;? » L'obsession du classement. <span class="todo">[à confirmer]</span></p></div>
+        <div class="tl reveal"><span class="yr">~2008</span><h3>L'affiliation</h3><span class="plus">+</span><p>Le web devient un métier, puis un modèle. <span class="todo">[à confirmer]</span></p></div>
+        <div class="tl reveal"><span class="yr">2010s</span><h3>300+ sites</h3><span class="plus">+</span><p>L'artisanat passe à l'échelle. <span class="todo">[à confirmer]</span></p></div>
+        <div class="tl reveal"><span class="yr">Québec</span><h3>Avignon → Québec</h3><span class="plus">+</span><p>Le grand saut vers l'hiver québécois. <span class="todo">[à confirmer]</span></p></div>
+        <div class="tl reveal"><span class="yr">Auj.</span><h3>Stratégie web</h3><span class="plus">+</span><p>Piloter l'acquisition à l'échelle. <span class="todo">[à confirmer]</span></p></div>
       </div>
     </div>
   </section>
 
-  <section id="methode">
+  <!-- KINETIC STATEMENT -->
+  <section class="kinetic">
     <div class="wrap">
-      <p class="eyebrow reveal">méthode</p>
-      <h2 class="reveal">Ce que vingt ans m'ont appris</h2>
-      <p class="lede reveal">Pas des « techniques secrètes ». Quatre convictions qui ont survécu à tous les changements d'algorithme.</p>
+      <p class="kstmt">Depuis 2003,<br>je construis
+        <span class="rot" id="rot" aria-label="le web, du trafic, de la visibilité, des histoires">le web.</span>
+      </p>
+    </div>
+  </section>
+
+  <!-- MÉTHODE -->
+  <section class="methode" id="methode">
+    <div class="wrap">
+      <p class="eyebrow reveal">Méthode</p>
+      <h2 class="reveal">Ce que vingt ans<br>m'ont appris</h2>
       <div class="grid">
-        <div class="card reveal"><div class="n">01</div><h3>Le SEO, c'est de l'empathie</h3><p>Avant d'optimiser pour un moteur, on optimise pour la personne derrière la requête. Google finit toujours par récompenser ceux qui répondent vraiment.</p></div>
-        <div class="card reveal"><div class="n">02</div><h3>Mesurer, sinon rien</h3><p>Une intuition non mesurée reste une intuition. Analytics, Search Console, crawls&nbsp;: la donnée n'a pas d'ego, elle tranche les débats.</p></div>
-        <div class="card reveal"><div class="n">03</div><h3>Construire pour durer</h3><p>Les raccourcis marchent six mois. Les fondations propres — technique, contenu, liens — tiennent dix ans. J'ai toujours préféré la deuxième option.</p></div>
-        <div class="card reveal"><div class="n">04</div><h3>Rester le gamin de 2003</h3><p>Tester, casser, recommencer. Le jour où on croit avoir tout compris au web, le web change. La curiosité est la seule compétence non-périssable.</p></div>
+        <div class="card reveal"><div class="n">01</div><h3>Le SEO, c'est de l'empathie</h3><p>On optimise d'abord pour la personne derrière la requête. Google récompense ceux qui répondent vraiment.</p></div>
+        <div class="card reveal"><div class="n">02</div><h3>Mesurer, sinon rien</h3><p>Une intuition non mesurée reste une intuition. La donnée n'a pas d'ego, elle tranche.</p></div>
+        <div class="card reveal"><div class="n">03</div><h3>Construire pour durer</h3><p>Les raccourcis marchent six mois. Les fondations propres tiennent dix ans.</p></div>
+        <div class="card reveal"><div class="n">04</div><h3>Rester le gamin de 2003</h3><p>Tester, casser, recommencer. La curiosité est la seule compétence non-périssable.</p></div>
       </div>
     </div>
   </section>
 
-  <section id="perso">
+  <!-- CHIFFRES -->
+  <section class="stats">
     <div class="wrap">
-      <p class="eyebrow reveal">perso</p>
-      <h2 class="reveal">D'où je viens, en vrai</h2>
+      <p class="eyebrow reveal">En chiffres</p>
+      <div class="statgrid">
+        <div class="stat reveal"><div class="k" data-count="2003" data-plain="1">2003</div><div class="l">depuis</div></div>
+        <div class="stat reveal"><div class="k" data-count="300" data-suffix="+">300+</div><div class="l">sites livrés</div></div>
+        <div class="stat reveal"><div class="k" data-count="20">20</div><div class="l">ans de web</div></div>
+        <div class="stat reveal"><div class="k" data-count="1">1</div><div class="l">aller simple FR → QC</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PERSO -->
+  <section class="perso" id="perso">
+    <div class="wrap">
+      <p class="eyebrow reveal">Perso</p>
+      <h2 class="reveal">D'où je viens,<br>en vrai</h2>
       <div class="teaser reveal">
         <span class="badge">Chapitre à venir</span>
-        <p>Ici viendra le reste de l'histoire&nbsp;: Avignon, le Sud, ce qui m'a amené jusqu'au Québec. La famille, les détours, ce que je fais quand je ne suis pas devant un écran.</p>
+        <p>Ici viendra le reste de l'histoire&nbsp;: Avignon, le Sud, ce qui m'a amené jusqu'au Québec. La famille, les détours, ce que je fais loin des écrans.</p>
         <p>C'est la partie que tu me raconteras — je ne peux pas l'inventer, et je ne veux pas.</p>
-        <p class="route">itinéraire&nbsp;: <span style="color:var(--ink)">Avignon, France</span> &nbsp;──▶&nbsp; <span style="color:var(--ink)">Québec, Canada</span></p>
+        <p class="route">itinéraire : Avignon, France ──▶ Québec, Canada</p>
       </div>
     </div>
   </section>
 
-  <section id="contact">
+  <!-- CONTACT -->
+  <section class="contact" id="contact">
     <div class="wrap">
-      <p class="eyebrow reveal">contact</p>
-      <h2 class="reveal">On se dit bonjour&nbsp;?</h2>
-      <p class="lede reveal">Ce site n'est pas là pour vendre quoi que ce soit — juste pour se rencontrer.</p>
-      <div class="contact-links reveal">
-        <a href="https://www.linkedin.com/in/jguiss/" target="_blank" rel="noopener"><span class="k">01 —</span> LinkedIn</a>
-        <a href="https://x.com/jguisswebmaster" target="_blank" rel="noopener"><span class="k">02 —</span> X / @jguisswebmaster</a>
-        <a href="https://www.youtube.com/c/JulienGuiss" target="_blank" rel="noopener"><span class="k">03 —</span> YouTube</a>
+      <p class="eyebrow reveal">Contact</p>
+      <h2 class="reveal">On se dit bonjour ?</h2>
+      <div class="biglinks reveal">
+        <a class="biglink mag" href="https://www.linkedin.com/in/jguiss/" target="_blank" rel="noopener"><span class="n">LinkedIn</span><span class="h">/in/jguiss ↗</span></a>
+        <a class="biglink mag" href="https://x.com/jguisswebmaster" target="_blank" rel="noopener"><span class="n">X / Twitter</span><span class="h">@jguisswebmaster ↗</span></a>
+        <a class="biglink mag" href="https://www.youtube.com/c/JulienGuiss" target="_blank" rel="noopener"><span class="n">YouTube</span><span class="h">/c/JulienGuiss ↗</span></a>
       </div>
     </div>
   </section>
 </main>
 
+<div class="marquee alt" data-marquee data-speed="45" data-dir="1" aria-hidden="true">
+  <div class="track">
+    <span>Avignon<i class="d">→</i>Québec<i class="d">✳</i>Marketeur web depuis 2003<i class="d">✳</i></span>
+    <span>Avignon<i class="d">→</i>Québec<i class="d">✳</i>Marketeur web depuis 2003<i class="d">✳</i></span>
+  </div>
+</div>
+
 <footer>
   <div class="wrap">
-    <span>© <span id="year">2026</span> Julien Guiss — Avignon ↔ Québec</span>
-    <span><a href="#top">retour en haut ▲</a></span>
+    <span>© <span id="year">2026</span> Julien Guiss</span>
+    <span>Avignon ↔ Québec</span>
+    <span><a href="#top">Retour en haut ↑</a></span>
   </div>
 </footer>
 
@@ -345,57 +348,107 @@ sites livrés .... <span class="ok">300+</span>
 (function(){
   "use strict";
   var reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  var fine = window.matchMedia && window.matchMedia("(pointer: fine)").matches;
 
-  var y = document.getElementById("year"); if(y){ y.textContent = new Date().getFullYear(); }
+  var y=document.getElementById("year"); if(y) y.textContent=new Date().getFullYear();
 
-  /* FX toggle (persisted) */
-  var toggle = document.getElementById("fxToggle");
-  try{ if(localStorage.getItem("fx")==="off"){ document.body.classList.add("no-fx"); } }catch(e){}
-  function sync(){ var off=document.body.classList.contains("no-fx"); toggle.textContent="FX: "+(off?"OFF":"ON"); toggle.setAttribute("aria-pressed",String(!off)); }
-  sync();
-  toggle.addEventListener("click", function(){
-    document.body.classList.toggle("no-fx");
-    try{ localStorage.setItem("fx", document.body.classList.contains("no-fx")?"off":"on"); }catch(e){}
-    sync();
-  });
-
-  /* Reveal on scroll */
+  /* ---- Reveal on scroll ---- */
   var revs=[].slice.call(document.querySelectorAll(".reveal"));
   if("IntersectionObserver" in window && !reduce){
-    var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add("in");io.unobserve(e.target);}});},{threshold:0.12, rootMargin:"0px 0px -8% 0px"});
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add("in");io.unobserve(e.target);}});},{threshold:0.14, rootMargin:"0px 0px -8% 0px"});
     revs.forEach(function(el){io.observe(el);});
   } else { revs.forEach(function(el){el.classList.add("in");}); }
 
-  /* Boot typing — enhances the already-visible static log. Skipped if reduced motion. */
-  var log=document.getElementById("bootlog");
-  if(reduce || !log) return;
-  var lines=[
-    ['mut','$ '],['type','whoami'],['nl'],
-    ['ok','julien_guiss'],['nl'],
-    ['mut','$ '],['type','cat ./profil.txt'],['nl'],
-    ['plain','origine ......... '],['cy','Avignon, France'],['nl'],
-    ['plain','base ............ '],['cy','Québec, Canada'],['nl'],
-    ['plain','métier .......... '],['ok','marketeur web · SEO'],['nl'],
-    ['plain','depuis .......... '],['ok','2003'],['nl'],
-    ['plain','sites livrés .... '],['ok','300+'],['nl'],
-    ['mut','$ '],['type','./raconte_moi.sh'],['nl'],
-    ['mut','[ ok ] chargement de vingt ans d’histoire…'],['nl']
-  ];
-  function cls(k){ return (k==="type"||k==="cy")?"cy":(k==="ok")?"ok":(k==="mut")?"mut":""; }
-
-  log.textContent="";
-  var caret=document.createElement("span"); caret.className="cursor";
-  var li=0, ci=0, cur=null;
-  function step(){
-    if(li>=lines.length){ if(caret.parentNode)caret.parentNode.removeChild(caret); return; }
-    var t=lines[li];
-    if(t[0]==="nl"){ log.insertBefore(document.createTextNode("\n"), caret); li++; ci=0; cur=null; return step(); }
-    if(cur===null){ cur=document.createElement("span"); var c=cls(t[0]); if(c)cur.className=c; log.insertBefore(cur, caret); log.appendChild(caret); }
-    if(ci<t[1].length){ cur.appendChild(document.createTextNode(t[1][ci])); ci++; setTimeout(step, t[0]==="type"?42:13); }
-    else { li++; ci=0; cur=null; setTimeout(step, t[0]==="type"?240:36); }
+  /* ---- Custom cursor + magnetic (desktop only) ---- */
+  if(fine && !reduce){
+    document.body.classList.add("cursor-on");
+    var dot=document.getElementById("cursorDot");
+    var mx=innerWidth/2, my=innerHeight/2, dx=mx, dy=my;
+    addEventListener("mousemove",function(e){mx=e.clientX; my=e.clientY;});
+    (function loop(){ dx+=(mx-dx)*0.2; dy+=(my-dy)*0.2; dot.style.transform="translate("+dx+"px,"+dy+"px) translate(-50%,-50%)"; requestAnimationFrame(loop); })();
+    document.querySelectorAll("a,button,.biglink,.tl,.card").forEach(function(el){
+      el.addEventListener("mouseenter",function(){dot.classList.add("big");});
+      el.addEventListener("mouseleave",function(){dot.classList.remove("big");});
+    });
+    // magnetic
+    document.querySelectorAll(".mag").forEach(function(el){
+      el.addEventListener("mousemove",function(e){
+        var r=el.getBoundingClientRect();
+        var relx=(e.clientX-(r.left+r.width/2))/r.width;
+        var rely=(e.clientY-(r.top+r.height/2))/r.height;
+        el.style.transform="translate("+(relx*16)+"px,"+(rely*10)+"px)";
+      });
+      el.addEventListener("mouseleave",function(){el.style.transform="";});
+    });
+    // subtle title parallax
+    var title=document.getElementById("title");
+    if(title){
+      addEventListener("mousemove",function(e){
+        var rx=(e.clientY/innerHeight-0.5), ry=(e.clientX/innerWidth-0.5);
+        title.style.transform="perspective(900px) rotateX("+(-rx*4)+"deg) rotateY("+(ry*5)+"deg)";
+      });
+    }
   }
-  log.appendChild(caret);
-  setTimeout(step, 350);
+
+  /* ---- Marquees (auto + scroll velocity) ---- */
+  var marquees=[].slice.call(document.querySelectorAll("[data-marquee]")).map(function(m){
+    var track=m.querySelector(".track");
+    return {track:track, pos:0, base:parseFloat(m.getAttribute("data-speed"))||50, dir:parseFloat(m.getAttribute("data-dir"))||-1, w:0};
+  });
+  function measure(){ marquees.forEach(function(o){ o.w=o.track.scrollWidth/2 || 0; }); }
+  measure(); addEventListener("resize", measure);
+
+  var lastScroll=scrollY, vel=0, last=performance.now();
+  addEventListener("scroll", function(){ vel += Math.abs(scrollY-lastScroll); lastScroll=scrollY; }, {passive:true});
+
+  if(!reduce){
+    (function tick(now){
+      var dt=Math.min((now-last)/1000, 0.05); last=now;
+      var boost=Math.min(vel*6, 600); vel*=0.9;
+      marquees.forEach(function(o){
+        if(!o.w){ o.w=o.track.scrollWidth/2; }
+        o.pos += o.dir*(o.base+boost)*dt;
+        if(o.w){ if(o.pos<=-o.w) o.pos+=o.w; if(o.pos>=0) o.pos-=o.w; }
+        o.track.style.transform="translateX("+o.pos+"px)";
+      });
+      requestAnimationFrame(tick);
+    })(last);
+  }
+
+  /* ---- Word rotator ---- */
+  var rot=document.getElementById("rot");
+  if(rot && !reduce){
+    var words=["le web.","du trafic.","de la visibilité.","des histoires.","des ponts."];
+    rot.textContent="";
+    var spans=words.map(function(w,i){
+      var s=document.createElement("span"); s.className="w"+(i===0?" on":""); s.textContent=w; rot.appendChild(s); return s;
+    });
+    var cur=0;
+    setInterval(function(){
+      var prev=spans[cur]; cur=(cur+1)%spans.length; var next=spans[cur];
+      prev.className="w out"; next.className="w on";
+      setTimeout(function(){ prev.className="w"; }, 550);
+    }, 2200);
+  }
+
+  /* ---- Number counters ---- */
+  function animateCount(el){
+    var target=parseFloat(el.getAttribute("data-count"));
+    var suffix=el.getAttribute("data-suffix")||"";
+    var dur=1100, t0=performance.now();
+    function frame(now){
+      var p=Math.min((now-t0)/dur,1);
+      var e=1-Math.pow(1-p,3); // easeOutCubic
+      el.textContent=Math.round(target*e)+suffix;
+      if(p<1) requestAnimationFrame(frame); else el.textContent=target+suffix;
+    }
+    requestAnimationFrame(frame);
+  }
+  var counts=[].slice.call(document.querySelectorAll("[data-count]"));
+  if("IntersectionObserver" in window && !reduce){
+    var cio=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){animateCount(e.target); cio.unobserve(e.target);}});},{threshold:0.6});
+    counts.forEach(function(el){ cio.observe(el); });
+  }
 })();
 </script>
 </body>

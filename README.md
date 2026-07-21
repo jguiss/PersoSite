@@ -6,16 +6,26 @@ Refonte complète : on abandonne l'ancien positionnement « services SEO » (Jul
 freelance) et le SEO-bait qui ne rankait pas, au profit d'un **site narratif** qui raconte
 son histoire et rend la découverte agréable.
 
-## Direction
+## Direction retenue — « Kinetic »
 
-- **Concept** : `guiss.exe` — le récit d'un parcours web présenté comme le *boot* d'un vieil
-  ordinateur à écran ambre. Clin d'œil aux débuts du web (2003), revisité moderne : fluide,
-  rapide, responsive.
-- **Deux voix typographiques** : monospace pour la machine (UI, timeline, boot log), serif
-  (Georgia) pour le récit humain.
-- **Palette** : monde CRT ambre assumé (mono-thème), une seule touche froide cyan.
+Identité éditoriale façon studio de design : fond papier clair, typographie grotesque
+géante, accent bleu électrique (+ vermillon), labels en monospace, grille et marquees.
+Objectif « effet waouh », animations poussées mais au service du contenu.
+
+- **Animations** (tout en code, zéro service externe) :
+  - lettres du titre qui montent à l'ouverture ;
+  - titre en parallaxe qui réagit à la souris ;
+  - marquees qui accélèrent selon la vitesse de scroll ;
+  - phrase géante avec un mot qui tourne en boucle ;
+  - compteurs animés (2003 · 300+ · 20…) ;
+  - curseur personnalisé + liens magnétiques (desktop).
+- **Robuste** : contenu visible même sans JavaScript ; `prefers-reduced-motion` respecté ;
+  effets souris désactivés sur tactile.
 - **Zéro dépendance, zéro webfont** : un seul fichier `index.html` autonome → chargement
   instantané, déployable partout.
+
+Les pistes écartées (Aurora, Blueprint) et l'ancienne V (Stranger Things) restent
+consultables dans l'historique git et le dossier `concepts/`.
 
 ## Structure
 
