@@ -4,11 +4,10 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Julien Guiss — Marketeur web depuis 2003</title>
-<meta name="description" content="Le parcours de Julien Guiss : d'Avignon à Québec, vingt ans à construire le web et à comprendre comment Google range le monde. Récit, méthode et convictions d'un marketeur SEO.">
+<meta name="description" content="Le parcours de Julien Guiss : d'Avignon à Québec, vingt ans à construire le web et à comprendre comment Google range le monde. Expertise SEO, méthode, histoire.">
 <meta name="author" content="Julien Guiss">
 <meta name="theme-color" content="#f4f3ef">
 <link rel="canonical" href="https://www.julienguiss.com/">
-
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://www.julienguiss.com/">
 <meta property="og:title" content="Julien Guiss — Marketeur web depuis 2003">
@@ -16,17 +15,9 @@
 <meta property="og:locale" content="fr_FR">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:creator" content="@jguisswebmaster">
-
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23f4f3ef'/%3E%3Ctext x='16' y='25' font-family='Arial,sans-serif' font-size='26' font-weight='900' text-anchor='middle' fill='%23101013'%3EG%3C/text%3E%3C/svg%3E">
-
 <script type="application/ld+json">
-{
-  "@context":"https://schema.org","@type":"Person","name":"Julien Guiss",
-  "url":"https://www.julienguiss.com/","jobTitle":"VP Web Strategy",
-  "description":"Marketeur web et expert SEO depuis 2003.",
-  "birthPlace":"Avignon, France","homeLocation":"Québec, Canada",
-  "sameAs":["https://www.linkedin.com/in/jguiss/","https://x.com/jguisswebmaster","https://www.youtube.com/c/JulienGuiss"]
-}
+{"@context":"https://schema.org","@type":"Person","name":"Julien Guiss","url":"https://www.julienguiss.com/","jobTitle":"VP Web Strategy","description":"Marketeur web et expert SEO depuis 2003.","birthPlace":"Avignon, France","homeLocation":"Québec, Canada","sameAs":["https://www.linkedin.com/in/jguiss/","https://x.com/jguisswebmaster","https://www.youtube.com/c/JulienGuiss"]}
 </script>
 <script>document.documentElement.className += " js";</script>
 </head>
@@ -34,66 +25,77 @@
 <style>
   :root{
     color-scheme:light;
-    --paper:#f4f3ef; --paper-2:#eae7df; --card:#fbfaf7;
+    /* ZONE PRO (défaut) */
+    --bg:#f4f3ef; --bg-2:#eae7df; --card:#fbfaf7;
     --ink:#101013; --ink-soft:#55555d; --ink-faint:#8a8a90;
     --accent:#2b2bff; --accent-2:#ff3b1f; --line:#d9d7ce; --line-strong:#101013;
     --grotesk:"Helvetica Neue",Helvetica,Arial,"Liberation Sans",ui-sans-serif,system-ui,sans-serif;
     --mono:ui-monospace,"JetBrains Mono","Cascadia Code",Menlo,Consolas,monospace;
     --maxw:1240px;
   }
+  body.zone-perso{
+    color-scheme:dark;
+    --bg:#190e15; --bg-2:#23111b; --card:#28141e;
+    --ink:#f5e8df; --ink-soft:#caa99b; --ink-faint:#8f7168;
+    --accent:#ff9e5e; --accent-2:#ff5d73; --line:#3b2230; --line-strong:#f5e8df;
+  }
+  body.zone-histoire{
+    color-scheme:dark;
+    --bg:#0a1020; --bg-2:#0e1730; --card:#111d3a;
+    --ink:#e6ecff; --ink-soft:#9fb0d6; --ink-faint:#6c7ba0;
+    --accent:#63e0c6; --accent-2:#9b8bff; --line:#1e2b4d; --line-strong:#e6ecff;
+  }
+
   *{box-sizing:border-box}
   html{scroll-behavior:smooth}
   @media (prefers-reduced-motion:reduce){ html{scroll-behavior:auto} }
-  body{margin:0; background:var(--paper); color:var(--ink); font-family:var(--grotesk); line-height:1.55; overflow-x:hidden; -webkit-font-smoothing:antialiased}
+  body{margin:0; background:var(--bg); color:var(--ink); font-family:var(--grotesk); line-height:1.55; overflow-x:hidden; -webkit-font-smoothing:antialiased;
+    transition:background-color .7s ease, color .7s ease}
   ::selection{background:var(--accent); color:#fff}
 
-  /* custom cursor (desktop, fine pointer only) */
-  .cursor-dot{position:fixed; top:0; left:0; width:12px; height:12px; border-radius:50%; background:var(--accent);
-    pointer-events:none; z-index:9999; transform:translate(-50%,-50%); mix-blend-mode:difference; transition:width .18s, height .18s, background .18s; will-change:transform; opacity:0}
-  body.cursor-on .cursor-dot{opacity:1}
-  body.cursor-on{cursor:none}
-  body.cursor-on a, body.cursor-on button{cursor:none}
-  .cursor-dot.big{width:56px; height:56px; background:var(--accent-2)}
+  /* progress + cursor */
+  .progress{position:fixed; top:0; left:0; height:3px; width:0; background:var(--accent); z-index:200; transition:background-color .7s ease}
+  .cursor-dot{position:fixed; top:0; left:0; width:12px; height:12px; border-radius:50%; background:var(--accent); pointer-events:none; z-index:9999; transform:translate(-50%,-50%); mix-blend-mode:difference; transition:width .18s,height .18s; will-change:transform; opacity:0}
+  body.cursor-on .cursor-dot{opacity:1} body.cursor-on{cursor:none} body.cursor-on a,body.cursor-on button{cursor:none}
+  .cursor-dot.big{width:54px; height:54px}
+
+  /* canvas field */
+  #field{position:fixed; inset:0; z-index:0; pointer-events:none; opacity:.55}
 
   /* nav */
-  .nav{position:fixed; top:0; left:0; right:0; z-index:100; display:flex; align-items:center; justify-content:space-between;
-    padding:16px clamp(16px,4vw,40px); font-family:var(--mono); font-size:12px; letter-spacing:.06em; text-transform:uppercase;
-    mix-blend-mode:normal}
+  .nav{position:fixed; top:0; left:0; right:0; z-index:150; display:flex; align-items:center; justify-content:space-between; padding:14px clamp(16px,4vw,40px); font-family:var(--mono); font-size:12px; letter-spacing:.06em; text-transform:uppercase}
   .nav .brand{font-weight:700; color:var(--ink); text-decoration:none; display:flex; gap:9px; align-items:center}
-  .nav .brand .sq{width:11px; height:11px; background:var(--accent); display:inline-block}
-  .nav .links{display:flex; gap:4px}
-  .nav .links a{color:var(--ink-soft); text-decoration:none; padding:5px 9px; border-radius:4px; transition:color .15s, background .15s}
-  .nav .links a:hover{color:var(--accent); background:var(--paper-2)}
+  .nav .brand .sq{width:11px; height:11px; background:var(--accent); display:inline-block; transition:background-color .7s ease}
+  .nav .links{display:flex; gap:2px}
+  .nav .links a{color:var(--ink-soft); text-decoration:none; padding:5px 9px; border-radius:4px; transition:color .15s}
+  .nav .links a:hover{color:var(--accent)}
   @media (max-width:640px){ .nav .links a.opt{display:none} }
 
-  .wrap{max-width:var(--maxw); margin:0 auto; padding:0 clamp(16px,4vw,40px)}
-  section{position:relative}
+  .wrap{max-width:var(--maxw); margin:0 auto; padding:0 clamp(16px,4vw,40px); position:relative; z-index:2}
+  section{position:relative; z-index:2}
 
   /* ---------- HERO ---------- */
   .hero{min-height:100svh; display:flex; flex-direction:column; justify-content:center; padding:96px 0 40px; position:relative; overflow:hidden}
-  .hero .ring{position:absolute; right:-14vw; top:50%; width:52vw; height:52vw; border:1.5px solid var(--line); border-radius:50%; transform:translateY(-50%); z-index:0; pointer-events:none}
-  .hero .ring::after{content:""; position:absolute; inset:16% ; border:1.5px solid var(--line); border-radius:50%}
-  @media (prefers-reduced-motion:no-preference){ .hero .ring{animation:spin 60s linear infinite} .hero .ring::after{animation:spin 40s linear infinite reverse} }
+  .hero .ring{position:absolute; right:-16vw; top:46%; width:56vw; height:56vw; border:1.5px solid var(--line); border-radius:50%; transform:translateY(-50%); z-index:1; pointer-events:none}
+  .hero .ring::after{content:""; position:absolute; inset:15%; border:1.5px solid var(--line); border-radius:50%}
+  .hero .ring::before{content:""; position:absolute; inset:34%; border:1.5px dashed var(--line); border-radius:50%}
+  @media (prefers-reduced-motion:no-preference){ .hero .ring{animation:spin 70s linear infinite} .hero .ring::before{animation:spin 30s linear infinite reverse} }
   @keyframes spin{to{transform:translateY(-50%) rotate(360deg)}}
-
-  .hero .inner{position:relative; z-index:2}
+  .hero .inner{position:relative; z-index:3}
+  .chip{display:inline-flex; align-items:center; gap:8px; font-family:var(--mono); font-size:12px; letter-spacing:.08em; text-transform:uppercase; color:var(--ink-soft); border:1px solid var(--line); border-radius:20px; padding:5px 12px; margin-bottom:20px}
+  .chip .live{width:8px; height:8px; border-radius:50%; background:var(--accent-2)}
+  @media (prefers-reduced-motion:no-preference){ .chip .live{animation:pulse 1.8s ease-in-out infinite} }
+  @keyframes pulse{0%,100%{opacity:1; box-shadow:0 0 0 0 rgba(255,59,31,.5)}50%{opacity:.7; box-shadow:0 0 0 6px rgba(255,59,31,0)}}
   .idxrow{display:flex; justify-content:space-between; gap:10px; flex-wrap:wrap; font-family:var(--mono); font-size:12px; letter-spacing:.1em; text-transform:uppercase; color:var(--ink-soft); border-bottom:1px solid var(--line); padding-bottom:12px}
   .idxrow b{color:var(--accent)}
-
-  .title{font-weight:800; text-transform:uppercase; letter-spacing:-.035em; line-height:.82; margin:clamp(14px,2.5vw,26px) 0 0;
-    font-size:clamp(3.6rem,18vw,15rem)}
+  .title{font-weight:800; text-transform:uppercase; letter-spacing:-.035em; line-height:.82; margin:clamp(14px,2.5vw,26px) 0 0; font-size:clamp(3.6rem,18vw,15rem)}
   .title .line{display:block; overflow:hidden}
-  .title .line span{display:inline-block; will-change:transform}
   .title .l{display:inline-block}
   html.js .title .l{transform:translateY(110%)}
-  @media (prefers-reduced-motion:no-preference){
-    html.js .title .l{animation:rise .9s cubic-bezier(.16,1,.3,1) forwards; animation-delay:calc(var(--i,0)*.045s + .15s)}
-  }
+  @media (prefers-reduced-motion:no-preference){ html.js .title .l{animation:rise .9s cubic-bezier(.16,1,.3,1) forwards; animation-delay:calc(var(--i,0)*.045s + .15s)} }
   @media (prefers-reduced-motion:reduce){ html.js .title .l{transform:none} }
   @keyframes rise{to{transform:translateY(0)}}
   .title .dot{color:var(--accent)}
-  .title.mag-target{cursor:default}
-
   .metarow{display:flex; flex-wrap:wrap; justify-content:space-between; gap:14px 24px; margin-top:clamp(20px,3vw,40px); padding-top:16px; border-top:2px solid var(--line-strong)}
   .metarow div{font-family:var(--mono); font-size:13px; text-transform:uppercase; letter-spacing:.03em; color:var(--ink-soft)}
   .metarow b{color:var(--ink)}
@@ -103,78 +105,94 @@
   @keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(4px)}}
 
   /* ---------- Marquee ---------- */
-  .marquee{overflow:hidden; white-space:nowrap; border-top:2px solid var(--line-strong); border-bottom:2px solid var(--line-strong); background:var(--ink); color:var(--paper)}
-  .marquee.alt{background:var(--paper); color:var(--ink); border-top:none}
+  .marquee{overflow:hidden; white-space:nowrap; border-top:2px solid var(--line-strong); border-bottom:2px solid var(--line-strong); background:var(--ink); color:var(--bg); transition:background-color .7s ease,color .7s ease}
+  .marquee.alt{background:transparent; color:var(--ink); border-top:none}
   .marquee .track{display:inline-flex; will-change:transform}
-  .marquee .track > span{display:inline-flex; align-items:center; padding:14px 0; font-weight:800; text-transform:uppercase; letter-spacing:-.01em; font-size:clamp(1.3rem,4.2vw,2.7rem)}
-  .marquee .track > span > i{font-style:normal; padding:0 .55em}
-  .marquee .track .d{color:var(--accent)}
-  .marquee.alt .track .d{color:var(--accent-2)}
+  .marquee .track > span{display:inline-flex; align-items:center; padding:13px 0; font-weight:800; text-transform:uppercase; letter-spacing:-.01em; font-size:clamp(1.3rem,4.2vw,2.7rem)}
+  .marquee .track > span > i{font-style:normal; padding:0 .55em; color:var(--accent)}
 
-  /* ---------- generic reveal ---------- */
-  html.js .reveal{opacity:0; transform:translateY(26px); transition:opacity .8s cubic-bezier(.16,1,.3,1), transform .8s cubic-bezier(.16,1,.3,1)}
+  /* ---------- reveal + eyebrow + h2 ---------- */
+  html.js .reveal{opacity:0; transform:translateY(30px); transition:opacity .8s cubic-bezier(.16,1,.3,1), transform .8s cubic-bezier(.16,1,.3,1)}
   html.js .reveal.in{opacity:1; transform:none}
-  @media (prefers-reduced-motion:reduce){ html.js .reveal{opacity:1; transform:none; transition:none} }
+  html.js .reveal.from-left{transform:translateX(-40px)} html.js .reveal.from-left.in{transform:none}
+  @media (prefers-reduced-motion:reduce){ html.js .reveal{opacity:1 !important; transform:none !important} }
   .eyebrow{font-family:var(--mono); font-size:12px; letter-spacing:.22em; text-transform:uppercase; color:var(--accent); margin:0 0 18px}
   .eyebrow::before{content:"("; color:var(--ink-faint)} .eyebrow::after{content:")"; color:var(--ink-faint)}
+  h2{font-weight:800; text-transform:uppercase; letter-spacing:-.02em; line-height:.95; font-size:clamp(2rem,6.5vw,4.4rem); margin:0; max-width:16ch}
 
-  h2{font-weight:800; text-transform:uppercase; letter-spacing:-.02em; line-height:.95; font-size:clamp(2rem,6.5vw,4.4rem); margin:0}
+  .sec{padding:clamp(70px,10vw,130px) 0}
 
-  /* ---------- Parcours ---------- */
-  .parcours{padding:clamp(70px,10vw,130px) 0}
-  .lead{display:grid; grid-template-columns:auto 1fr; gap:clamp(16px,4vw,50px); align-items:start; margin-top:40px}
+  /* Expertise grid */
+  .xgrid{display:grid; grid-template-columns:repeat(auto-fit,minmax(255px,1fr)); margin-top:clamp(40px,6vw,70px); border-top:1px solid var(--line); border-left:1px solid var(--line)}
+  .x{border-right:1px solid var(--line); border-bottom:1px solid var(--line); padding:clamp(24px,3vw,36px); transition:background .3s ease}
+  .x:hover{background:var(--card)}
+  .x .n{font-family:var(--mono); color:var(--accent); font-size:.85rem; letter-spacing:.1em}
+  .x h3{margin:16px 0 10px; font-size:1.3rem; font-weight:700; text-transform:uppercase; letter-spacing:-.01em}
+  .x p{margin:0; color:var(--ink-soft); font-size:.97rem; line-height:1.6}
+
+  /* Parcours */
+  .lead{display:grid; grid-template-columns:auto 1fr; gap:clamp(16px,4vw,50px); align-items:start; margin-top:44px}
   @media (max-width:760px){ .lead{grid-template-columns:1fr} }
   .lead .big{font-weight:800; font-size:clamp(4rem,11vw,9rem); line-height:.85; color:var(--accent); letter-spacing:-.04em}
   .story{max-width:58ch; font-size:clamp(1.05rem,2.1vw,1.35rem); line-height:1.7; color:var(--ink)}
   .story p{margin:0 0 1.1em}
-  .story strong{background:linear-gradient(transparent 62%, rgba(43,43,255,.18) 0)}
-  .story .flag{font-family:var(--mono); font-size:.72em; text-transform:uppercase; letter-spacing:.06em; border:1px solid var(--line-strong); padding:1px 6px; border-radius:3px; white-space:nowrap}
+  .story strong{background:linear-gradient(transparent 62%, color-mix(in srgb, var(--accent) 28%, transparent) 0)}
+  .flag{font-family:var(--mono); font-size:.72em; text-transform:uppercase; letter-spacing:.06em; border:1px solid var(--line-strong); padding:1px 6px; border-radius:3px; white-space:nowrap}
   .todo{font-family:var(--mono); font-size:.62em; color:var(--accent-2); letter-spacing:.02em; text-transform:uppercase; vertical-align:2px}
 
-  /* timeline as index list */
   .tlist{margin-top:clamp(40px,6vw,80px); border-top:1px solid var(--line)}
   .tl{display:grid; grid-template-columns:120px 1fr auto; gap:16px; align-items:baseline; padding:22px 0; border-bottom:1px solid var(--line); transition:padding-left .25s ease, background .25s ease}
-  .tl:hover{padding-left:14px; background:linear-gradient(90deg, rgba(43,43,255,.05), transparent)}
+  .tl:hover{padding-left:14px; background:linear-gradient(90deg, color-mix(in srgb, var(--accent) 8%, transparent), transparent)}
   .tl .yr{font-family:var(--mono); color:var(--accent); font-size:.95rem}
   .tl h3{margin:0; font-size:clamp(1.1rem,2.6vw,1.6rem); font-weight:700; text-transform:uppercase; letter-spacing:-.01em}
   .tl p{margin:6px 0 0; grid-column:2; color:var(--ink-soft); font-size:.96rem; max-width:60ch}
   .tl .plus{font-family:var(--mono); color:var(--ink-faint); font-size:1.2rem}
   @media (max-width:620px){ .tl{grid-template-columns:70px 1fr} .tl .plus{display:none} }
 
-  /* ---------- Kinetic statement ---------- */
+  /* pull quote */
+  .pull{padding:clamp(60px,9vw,120px) 0; text-align:left}
+  .pull q{font-weight:800; text-transform:uppercase; letter-spacing:-.02em; line-height:.98; font-size:clamp(1.8rem,6vw,4rem); quotes:none}
+  .pull q b{color:var(--accent)}
+  .pull .by{font-family:var(--mono); font-size:12px; letter-spacing:.14em; text-transform:uppercase; color:var(--ink-faint); margin-top:20px}
+
+  /* kinetic statement */
   .kinetic{padding:clamp(80px,14vw,180px) 0; border-top:2px solid var(--line-strong); border-bottom:2px solid var(--line-strong); overflow:hidden}
   .kstmt{font-weight:800; text-transform:uppercase; letter-spacing:-.03em; line-height:.9; font-size:clamp(2.2rem,9vw,7rem)}
   .rot{display:inline-block; position:relative; color:var(--accent); min-height:1em}
-  .rot .w{display:inline-block}
-  html.js .rot .w{position:absolute; left:0; top:0; opacity:0; transform:translateY(40%)}
+  html.js .rot .w{position:absolute; left:0; top:0; opacity:0; transform:translateY(45%)}
   html.js .rot .w.on{position:relative; opacity:1; transform:none; transition:opacity .5s, transform .5s}
-  html.js .rot .w.out{opacity:0; transform:translateY(-40%); transition:opacity .5s, transform .5s}
+  html.js .rot .w.out{opacity:0; transform:translateY(-45%); transition:opacity .5s, transform .5s}
 
-  /* ---------- Méthode ---------- */
-  .methode{padding:clamp(70px,10vw,130px) 0}
-  .grid{display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); margin-top:clamp(40px,6vw,70px); border-top:1px solid var(--line); border-left:1px solid var(--line)}
-  .card{border-right:1px solid var(--line); border-bottom:1px solid var(--line); padding:clamp(24px,3vw,38px); transition:background .25s ease, transform .25s ease}
-  .card:hover{background:var(--card)}
-  .card .n{font-family:var(--mono); color:var(--accent); font-size:.85rem; letter-spacing:.1em}
-  .card h3{margin:16px 0 10px; font-size:1.35rem; font-weight:700; text-transform:uppercase; letter-spacing:-.01em; max-width:16ch}
-  .card p{margin:0; color:var(--ink-soft); font-size:.98rem; line-height:1.6}
-
-  /* ---------- Chiffres ---------- */
-  .stats{padding:clamp(60px,8vw,110px) 0; border-top:2px solid var(--line-strong)}
+  /* stats */
   .statgrid{display:grid; grid-template-columns:repeat(auto-fit,minmax(180px,1fr)); gap:clamp(20px,4vw,50px); margin-top:44px}
   .stat .k{font-weight:800; font-size:clamp(3rem,9vw,6.5rem); line-height:.9; letter-spacing:-.04em; font-variant-numeric:tabular-nums}
   .stat:nth-child(2) .k{color:var(--accent)} .stat:nth-child(4) .k{color:var(--accent-2)}
   .stat .l{font-family:var(--mono); font-size:12px; text-transform:uppercase; letter-spacing:.12em; color:var(--ink-soft); margin-top:10px; padding-top:10px; border-top:1px solid var(--line)}
 
-  /* ---------- Perso ---------- */
-  .perso{padding:clamp(70px,10vw,130px) 0}
-  .teaser{margin-top:40px; border:1.5px dashed var(--ink-faint); border-radius:4px; padding:clamp(28px,5vw,54px); position:relative; overflow:hidden}
-  .teaser .badge{display:inline-block; font-family:var(--mono); font-size:11px; letter-spacing:.16em; text-transform:uppercase; color:#fff; background:var(--accent); padding:4px 11px; margin-bottom:18px}
+  /* perso grid (warm) */
+  .lifegrid{display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:14px; margin-top:clamp(40px,6vw,70px)}
+  .life{background:var(--card); border:1px solid var(--line); border-radius:16px; padding:26px 22px; transition:transform .3s ease}
+  @media (prefers-reduced-motion:no-preference){ .life{animation:float 6s ease-in-out infinite} .life:nth-child(2n){animation-delay:-2s} .life:nth-child(3n){animation-delay:-4s} }
+  @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+  .life .emoji{font-size:1.8rem}
+  .life h3{margin:14px 0 6px; font-size:1.2rem; font-weight:700}
+  .life p{margin:0; color:var(--ink-soft); font-size:.94rem}
+
+  /* histoire journey */
+  .journey{margin-top:clamp(44px,6vw,80px); display:flex; align-items:center; gap:0; flex-wrap:wrap}
+  .stop{flex:1 1 120px; text-align:center; position:relative; padding:10px 6px}
+  .stop .d{width:16px; height:16px; border-radius:50%; background:var(--accent); margin:0 auto 12px; box-shadow:0 0 0 5px var(--bg), 0 0 20px var(--accent)}
+  .stop .city{font-weight:800; text-transform:uppercase; letter-spacing:-.01em; font-size:1.05rem}
+  .stop .yr{font-family:var(--mono); font-size:11px; color:var(--ink-faint); letter-spacing:.1em; margin-top:4px}
+  .seg{flex:0 0 40px; height:2px; background:linear-gradient(90deg,var(--accent),var(--accent-2)); align-self:center; opacity:.5}
+  @media (max-width:640px){ .journey{flex-direction:column; align-items:stretch} .seg{width:2px; height:26px; flex-basis:26px; margin:0 auto; background:linear-gradient(180deg,var(--accent),var(--accent-2))} }
+
+  .teaser{margin-top:40px; border:1.5px dashed var(--ink-faint); border-radius:6px; padding:clamp(28px,5vw,54px)}
+  .teaser .badge{display:inline-block; font-family:var(--mono); font-size:11px; letter-spacing:.16em; text-transform:uppercase; color:var(--bg); background:var(--accent); padding:4px 11px; margin-bottom:18px}
   .teaser p{max-width:60ch; font-size:1.08rem; color:var(--ink); margin:.4em 0}
   .teaser .route{font-family:var(--mono); color:var(--accent-2); margin-top:16px; font-size:.95rem; letter-spacing:.04em}
 
-  /* ---------- Contact ---------- */
-  .contact{padding:clamp(70px,10vw,140px) 0}
+  /* contact */
   .biglinks{margin-top:clamp(30px,5vw,60px); border-top:1px solid var(--line)}
   .biglink{display:flex; align-items:center; justify-content:space-between; gap:20px; padding:clamp(20px,3vw,34px) 0; border-bottom:1px solid var(--line); text-decoration:none; color:var(--ink); transition:padding-left .3s ease, color .2s ease}
   .biglink:hover{padding-left:16px; color:var(--accent)}
@@ -186,37 +204,41 @@
   footer .wrap{display:flex; flex-wrap:wrap; gap:8px 20px; justify-content:space-between}
   footer a{color:var(--ink); text-decoration:none} footer a:hover{color:var(--accent)}
 
-  .draftnote{padding:12px clamp(16px,4vw,40px); background:var(--paper-2); border-bottom:1px solid var(--line)}
+  .draftnote{padding:12px clamp(16px,4vw,40px); background:var(--bg-2); border-bottom:1px solid var(--line); position:relative; z-index:2}
   .draftnote span{font-family:var(--mono); font-size:12px; color:var(--ink-soft)}
   .draftnote b{color:var(--accent-2)}
-
   a:focus-visible,button:focus-visible{outline:2px solid var(--accent); outline-offset:3px}
   .mag{will-change:transform}
 </style>
 
+<canvas id="field" aria-hidden="true"></canvas>
+<div class="progress" id="progress" aria-hidden="true"></div>
 <div class="cursor-dot" id="cursorDot" aria-hidden="true"></div>
 
 <header class="nav">
   <a class="brand" href="#top"><span class="sq"></span>JULIEN GUISS</a>
   <div class="links">
+    <a href="#expertise" class="opt">Expertise</a>
     <a href="#parcours">Parcours</a>
-    <a href="#methode" class="opt">Méthode</a>
     <a href="#perso">Perso</a>
+    <a href="#histoire" class="opt">Histoire</a>
     <a href="#contact">Contact</a>
   </div>
 </header>
 
+<!-- ===================== ZONE PRO ===================== -->
+<div data-zone="pro">
 <main id="top">
-  <!-- HERO -->
   <section class="hero">
     <div class="ring" aria-hidden="true"></div>
     <div class="wrap inner">
+      <span class="chip"><span class="live"></span> Basé à Québec · dispo pour échanger</span>
       <div class="idxrow">
         <span>Marketeur web — <b>SEO</b></span>
         <span>Avignon → Québec</span>
         <span>Depuis <b>2003</b></span>
       </div>
-      <h1 class="title mag-target" id="title" aria-label="Julien Guiss">
+      <h1 class="title" id="title" aria-label="Julien Guiss">
         <span class="line" aria-hidden="true"><span class="l" style="--i:0">J</span><span class="l" style="--i:1">U</span><span class="l" style="--i:2">L</span><span class="l" style="--i:3">I</span><span class="l" style="--i:4">E</span><span class="l" style="--i:5">N</span></span>
         <span class="line" aria-hidden="true"><span class="l" style="--i:6">G</span><span class="l" style="--i:7">U</span><span class="l" style="--i:8">I</span><span class="l" style="--i:9">S</span><span class="l" style="--i:10">S</span><span class="l dot" style="--i:11">.</span></span>
       </h1>
@@ -226,34 +248,48 @@
         <div><b>SEO</b> · affiliation · stratégie</div>
         <div><b>QC</b> ← FR</div>
       </div>
-      <a class="scrollcue" href="#parcours"><span class="a">↓</span> Dérouler</a>
+      <a class="scrollcue" href="#expertise"><span class="a">↓</span> Dérouler</a>
     </div>
   </section>
 
-  <!-- MARQUEE -->
   <div class="marquee" data-marquee data-speed="60" data-dir="-1" aria-hidden="true">
     <div class="track">
-      <span>SEO<i class="d">✳</i>Analytics<i class="d">✳</i>Affiliation<i class="d">✳</i>Stratégie web<i class="d">✳</i>Search Console<i class="d">✳</i>Performance<i class="d">✳</i></span>
-      <span>SEO<i class="d">✳</i>Analytics<i class="d">✳</i>Affiliation<i class="d">✳</i>Stratégie web<i class="d">✳</i>Search Console<i class="d">✳</i>Performance<i class="d">✳</i></span>
+      <span>SEO<i>✳</i>Analytics<i>✳</i>Affiliation<i>✳</i>Stratégie web<i>✳</i>Search Console<i>✳</i>Performance<i>✳</i></span>
+      <span>SEO<i>✳</i>Analytics<i>✳</i>Affiliation<i>✳</i>Stratégie web<i>✳</i>Search Console<i>✳</i>Performance<i>✳</i></span>
     </div>
   </div>
 
   <div class="draftnote"><span><b>NOTE — premier jet.</b> Textes, dates et anecdotes écrits par moi à partir de tes infos publiques. À valider ensemble : tout ce qui est marqué <b>[à confirmer]</b>.</span></div>
 
+  <!-- EXPERTISE -->
+  <section class="sec" id="expertise">
+    <div class="wrap">
+      <p class="eyebrow reveal">Expertise</p>
+      <h2 class="reveal" data-scramble>Ce que je sais faire</h2>
+      <div class="xgrid">
+        <div class="x reveal"><div class="n">01</div><h3>SEO technique</h3><p>Crawl, indexation, vitesse, structure. Rendre un site limpide pour Google avant tout le reste.</p></div>
+        <div class="x reveal"><div class="n">02</div><h3>Contenu &amp; sémantique</h3><p>Répondre vraiment à l'intention derrière la requête. L'empathie avant les mots-clés.</p></div>
+        <div class="x reveal"><div class="n">03</div><h3>Netlinking</h3><p>Construire l'autorité d'un domaine, proprement, pour que ça tienne dans le temps.</p></div>
+        <div class="x reveal"><div class="n">04</div><h3>Analytics &amp; data</h3><p>Analytics, Search Console, tableaux de bord. Décider avec des chiffres, pas des intuitions.</p></div>
+        <div class="x reveal"><div class="n">05</div><h3>Affiliation</h3><p>Transformer le trafic en modèle économique. Vingt ans à en vivre. <span class="todo">[à confirmer]</span></p></div>
+        <div class="x reveal"><div class="n">06</div><h3>Stratégie &amp; équipe</h3><p>Piloter l'acquisition à l'échelle, aligner les équipes sur un cap. <span class="todo">[à confirmer]</span></p></div>
+      </div>
+    </div>
+  </section>
+
   <!-- PARCOURS -->
-  <section class="parcours" id="parcours">
+  <section class="sec" id="parcours">
     <div class="wrap">
       <p class="eyebrow reveal">Parcours</p>
-      <h2 class="reveal">On devient « expert »<br>sans jamais l'avoir décidé</h2>
+      <h2 class="reveal" data-scramble>On devient expert sans l'avoir décidé</h2>
       <div class="lead">
-        <div class="big reveal">03</div>
+        <div class="big reveal" data-parallax="0.06">03</div>
         <div class="story reveal">
           <p>Je n'ai pas appris le web à l'école. En 2003, on l'apprenait la nuit — en regardant le code source des autres, en cassant des trucs, en recommençant.</p>
           <p>Très vite, une question m'a obsédé&nbsp;: <em>pourquoi ce site-là arrive avant le mien&nbsp;?</em> C'est comme ça que je suis tombé dans le SEO, avant même de savoir que ça portait un nom.</p>
           <p>Pendant vingt ans, la même chose en plus grand&nbsp;: <strong>plus de 300 sites</strong> <span class="todo">[à confirmer]</span>, de l'affiliation, des refontes, des audits, des équipes. Et un jour, mes valises&nbsp;: d'<span class="flag">Avignon</span> à <span class="flag">Québec</span> <span class="todo">[à confirmer]</span>. Mais dans ma tête, je suis resté le gamin de 2003.</p>
         </div>
       </div>
-
       <div class="tlist">
         <div class="tl reveal"><span class="yr">2003</span><h3>Le premier site</h3><span class="plus">+</span><p>Premières lignes de HTML, premier « ça marche&nbsp;! ». Le déclic. <span class="todo">[à confirmer]</span></p></div>
         <div class="tl reveal"><span class="yr">~2005</span><h3>Le déclic SEO</h3><span class="plus">+</span><p>« Pourquoi lui passe avant moi&nbsp;? » L'obsession du classement. <span class="todo">[à confirmer]</span></p></div>
@@ -265,7 +301,23 @@
     </div>
   </section>
 
-  <!-- KINETIC STATEMENT -->
+  <!-- PULL QUOTE -->
+  <section class="pull">
+    <div class="wrap">
+      <q class="reveal">« Le SEO n'est pas une recette. <b>C'est une manière de penser.</b> »</q>
+      <div class="by reveal">— Julien Guiss</div>
+    </div>
+  </section>
+
+  <!-- OUTILS marquee -->
+  <div class="marquee alt" data-marquee data-speed="40" data-dir="1" aria-hidden="true">
+    <div class="track">
+      <span>Analytics<i>·</i>Search Console<i>·</i>Ahrefs<i>·</i>Semrush<i>·</i>Screaming Frog<i>·</i>WordPress<i>·</i>Looker<i>·</i></span>
+      <span>Analytics<i>·</i>Search Console<i>·</i>Ahrefs<i>·</i>Semrush<i>·</i>Screaming Frog<i>·</i>WordPress<i>·</i>Looker<i>·</i></span>
+    </div>
+  </div>
+
+  <!-- KINETIC -->
   <section class="kinetic">
     <div class="wrap">
       <p class="kstmt">Depuis 2003,<br>je construis
@@ -274,52 +326,73 @@
     </div>
   </section>
 
-  <!-- MÉTHODE -->
-  <section class="methode" id="methode">
-    <div class="wrap">
-      <p class="eyebrow reveal">Méthode</p>
-      <h2 class="reveal">Ce que vingt ans<br>m'ont appris</h2>
-      <div class="grid">
-        <div class="card reveal"><div class="n">01</div><h3>Le SEO, c'est de l'empathie</h3><p>On optimise d'abord pour la personne derrière la requête. Google récompense ceux qui répondent vraiment.</p></div>
-        <div class="card reveal"><div class="n">02</div><h3>Mesurer, sinon rien</h3><p>Une intuition non mesurée reste une intuition. La donnée n'a pas d'ego, elle tranche.</p></div>
-        <div class="card reveal"><div class="n">03</div><h3>Construire pour durer</h3><p>Les raccourcis marchent six mois. Les fondations propres tiennent dix ans.</p></div>
-        <div class="card reveal"><div class="n">04</div><h3>Rester le gamin de 2003</h3><p>Tester, casser, recommencer. La curiosité est la seule compétence non-périssable.</p></div>
-      </div>
-    </div>
-  </section>
-
   <!-- CHIFFRES -->
-  <section class="stats">
+  <section class="sec" style="border-top:2px solid var(--line-strong)">
     <div class="wrap">
       <p class="eyebrow reveal">En chiffres</p>
       <div class="statgrid">
-        <div class="stat reveal"><div class="k" data-count="2003" data-plain="1">2003</div><div class="l">depuis</div></div>
+        <div class="stat reveal"><div class="k" data-count="2003">2003</div><div class="l">depuis</div></div>
         <div class="stat reveal"><div class="k" data-count="300" data-suffix="+">300+</div><div class="l">sites livrés</div></div>
         <div class="stat reveal"><div class="k" data-count="20">20</div><div class="l">ans de web</div></div>
         <div class="stat reveal"><div class="k" data-count="1">1</div><div class="l">aller simple FR → QC</div></div>
       </div>
     </div>
   </section>
+</main>
+</div>
 
-  <!-- PERSO -->
-  <section class="perso" id="perso">
+<!-- ===================== ZONE PERSO ===================== -->
+<div data-zone="perso">
+  <section class="sec" id="perso">
     <div class="wrap">
       <p class="eyebrow reveal">Perso</p>
-      <h2 class="reveal">D'où je viens,<br>en vrai</h2>
+      <h2 class="reveal" data-scramble>Loin des écrans</h2>
+      <p class="story reveal" style="margin-top:22px">On ne se résume pas à son métier. Voici l'autre moitié — celle qui n'a rien à voir avec Google. <span class="todo">[à compléter avec toi]</span></p>
+      <div class="lifegrid">
+        <div class="life reveal"><div class="emoji">🌞</div><h3>Le Sud dans le sang</h3><p>Avignon, la lumière, l'accent, les étés interminables. <span class="todo">[à confirmer]</span></p></div>
+        <div class="life reveal"><div class="emoji">❄️</div><h3>L'hiver québécois</h3><p>Le grand froid, la neige, une autre façon de vivre. <span class="todo">[à confirmer]</span></p></div>
+        <div class="life reveal"><div class="emoji">👨‍👩‍👧</div><h3>La famille</h3><p>Ce qui compte quand l'ordinateur est éteint. <span class="todo">[à confirmer]</span></p></div>
+        <div class="life reveal"><div class="emoji">🎬</div><h3>Passions</h3><p>Ce que tu me raconteras : ce que tu aimes, ce qui t'anime. <span class="todo">[à confirmer]</span></p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="pull">
+    <div class="wrap">
+      <q class="reveal">« On peut quitter le Sud, <b>le Sud ne vous quitte pas.</b> »</q>
+      <div class="by reveal">— note perso · à retravailler</div>
+    </div>
+  </section>
+</div>
+
+<!-- ===================== ZONE HISTOIRE ===================== -->
+<div data-zone="histoire">
+  <section class="sec" id="histoire">
+    <div class="wrap">
+      <p class="eyebrow reveal">Mon histoire</p>
+      <h2 class="reveal" data-scramble>D'Avignon à Québec</h2>
+      <p class="story reveal" style="margin-top:22px">Une trajectoire qui traverse un océan. Le récit complet viendra ici — pour l'instant, la carte du voyage. <span class="todo">[à écrire ensemble]</span></p>
+      <div class="journey reveal">
+        <div class="stop"><div class="d"></div><div class="city">Avignon</div><div class="yr">France · origine</div></div>
+        <div class="seg"></div>
+        <div class="stop"><div class="d"></div><div class="city">Le web</div><div class="yr">2003 →</div></div>
+        <div class="seg"></div>
+        <div class="stop"><div class="d"></div><div class="city">La traversée</div><div class="yr">[année ?]</div></div>
+        <div class="seg"></div>
+        <div class="stop"><div class="d"></div><div class="city">Québec</div><div class="yr">Canada · aujourd'hui</div></div>
+      </div>
       <div class="teaser reveal">
         <span class="badge">Chapitre à venir</span>
-        <p>Ici viendra le reste de l'histoire&nbsp;: Avignon, le Sud, ce qui m'a amené jusqu'au Québec. La famille, les détours, ce que je fais loin des écrans.</p>
-        <p>C'est la partie que tu me raconteras — je ne peux pas l'inventer, et je ne veux pas.</p>
+        <p>Ici viendra le reste de l'histoire&nbsp;: pourquoi le départ, comment le Québec, ce qui a changé, ce qui est resté. La vraie histoire, avec tes mots.</p>
         <p class="route">itinéraire : Avignon, France ──▶ Québec, Canada</p>
       </div>
     </div>
   </section>
 
-  <!-- CONTACT -->
-  <section class="contact" id="contact">
+  <section class="sec" id="contact" style="border-top:1px solid var(--line)">
     <div class="wrap">
       <p class="eyebrow reveal">Contact</p>
-      <h2 class="reveal">On se dit bonjour ?</h2>
+      <h2 class="reveal" data-scramble>On se dit bonjour ?</h2>
       <div class="biglinks reveal">
         <a class="biglink mag" href="https://www.linkedin.com/in/jguiss/" target="_blank" rel="noopener"><span class="n">LinkedIn</span><span class="h">/in/jguiss ↗</span></a>
         <a class="biglink mag" href="https://x.com/jguisswebmaster" target="_blank" rel="noopener"><span class="n">X / Twitter</span><span class="h">@jguisswebmaster ↗</span></a>
@@ -327,90 +400,131 @@
       </div>
     </div>
   </section>
-</main>
 
-<div class="marquee alt" data-marquee data-speed="45" data-dir="1" aria-hidden="true">
-  <div class="track">
-    <span>Avignon<i class="d">→</i>Québec<i class="d">✳</i>Marketeur web depuis 2003<i class="d">✳</i></span>
-    <span>Avignon<i class="d">→</i>Québec<i class="d">✳</i>Marketeur web depuis 2003<i class="d">✳</i></span>
+  <div class="marquee" data-marquee data-speed="45" data-dir="-1" aria-hidden="true">
+    <div class="track">
+      <span>Avignon<i>→</i>Québec<i>✳</i>Marketeur web depuis 2003<i>✳</i></span>
+      <span>Avignon<i>→</i>Québec<i>✳</i>Marketeur web depuis 2003<i>✳</i></span>
+    </div>
   </div>
+
+  <footer>
+    <div class="wrap">
+      <span>© <span id="year">2026</span> Julien Guiss</span>
+      <span>Avignon ↔ Québec</span>
+      <span><a href="#top">Retour en haut ↑</a></span>
+    </div>
+  </footer>
 </div>
-
-<footer>
-  <div class="wrap">
-    <span>© <span id="year">2026</span> Julien Guiss</span>
-    <span>Avignon ↔ Québec</span>
-    <span><a href="#top">Retour en haut ↑</a></span>
-  </div>
-</footer>
 
 <script>
 (function(){
   "use strict";
   var reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   var fine = window.matchMedia && window.matchMedia("(pointer: fine)").matches;
-
   var y=document.getElementById("year"); if(y) y.textContent=new Date().getFullYear();
 
-  /* ---- Reveal on scroll ---- */
+  /* ---- Scroll progress ---- */
+  var prog=document.getElementById("progress");
+  function onScrollProg(){
+    var h=document.documentElement; var m=h.scrollHeight-h.clientHeight;
+    prog.style.width=(m>0? (h.scrollTop/m*100):0)+"%";
+  }
+  addEventListener("scroll",onScrollProg,{passive:true}); onScrollProg();
+
+  /* ---- Zone theming ---- */
+  var zones=[].slice.call(document.querySelectorAll("[data-zone]"));
+  var currentAccent="#2b2bff";
+  function setZone(z){
+    document.body.classList.remove("zone-pro","zone-perso","zone-histoire");
+    document.body.classList.add("zone-"+z);
+    var tc={pro:"#f4f3ef",perso:"#190e15",histoire:"#0a1020"}[z];
+    var mt=document.querySelector('meta[name=theme-color]'); if(mt) mt.setAttribute("content",tc);
+    // refresh accent for canvas after transition
+    setTimeout(function(){ currentAccent=getComputedStyle(document.body).getPropertyValue("--accent").trim()||currentAccent; },80);
+  }
+  if("IntersectionObserver" in window){
+    var zio=new IntersectionObserver(function(es){
+      es.forEach(function(e){ if(e.isIntersecting){ setZone(e.target.getAttribute("data-zone")); } });
+    },{rootMargin:"-45% 0px -45% 0px", threshold:0});
+    zones.forEach(function(z){ zio.observe(z); });
+  }
+
+  /* ---- Reveal ---- */
   var revs=[].slice.call(document.querySelectorAll(".reveal"));
   if("IntersectionObserver" in window && !reduce){
-    var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add("in");io.unobserve(e.target);}});},{threshold:0.14, rootMargin:"0px 0px -8% 0px"});
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add("in"); if(e.target.hasAttribute("data-scramble")) scramble(e.target); io.unobserve(e.target);}});},{threshold:0.14, rootMargin:"0px 0px -8% 0px"});
     revs.forEach(function(el){io.observe(el);});
   } else { revs.forEach(function(el){el.classList.add("in");}); }
 
-  /* ---- Custom cursor + magnetic (desktop only) ---- */
+  /* ---- Heading scramble (mobile-friendly) ---- */
+  var GL="ABCDEFGHIJKLMNOPQRSTUVWXYZ#%&/{}[]<>0123456789";
+  document.querySelectorAll("[data-scramble]").forEach(function(el){ el.setAttribute("data-text", el.textContent); });
+  function scramble(el){
+    if(reduce) return;
+    var full=el.getAttribute("data-text")||el.textContent; var len=full.length;
+    var start=performance.now(), dur=780;
+    function frame(now){
+      var p=(now-start)/dur, out="";
+      for(var i=0;i<len;i++){
+        var c=full[i];
+        if(c===" "||c===" "||c==="«"||c==="»"){ out+=c; continue; }
+        var r=i/len;
+        if(p>r+0.18){ out+=c; }
+        else if(p>r-0.12){ out+=GL[(Math.random()*GL.length)|0]; }
+        else { out+= (Math.random()<0.55? GL[(Math.random()*GL.length)|0] : " "); }
+      }
+      el.textContent=out;
+      if(p<1.25) requestAnimationFrame(frame); else el.textContent=full;
+    }
+    requestAnimationFrame(frame);
+  }
+
+  /* ---- Parallax on scroll (works on touch) ---- */
+  var plx=[].slice.call(document.querySelectorAll("[data-parallax]"));
+  function onScrollPlx(){
+    var vh=innerHeight;
+    plx.forEach(function(el){
+      var r=el.getBoundingClientRect(); var off=(r.top+r.height/2 - vh/2);
+      var sp=parseFloat(el.getAttribute("data-parallax"))||0.1;
+      el.style.transform="translateY("+(-off*sp)+"px)";
+    });
+  }
+  if(!reduce){ addEventListener("scroll",onScrollPlx,{passive:true}); onScrollPlx(); }
+
+  /* ---- Cursor + magnetic + title parallax (desktop) ---- */
   if(fine && !reduce){
     document.body.classList.add("cursor-on");
     var dot=document.getElementById("cursorDot");
-    var mx=innerWidth/2, my=innerHeight/2, dx=mx, dy=my;
-    addEventListener("mousemove",function(e){mx=e.clientX; my=e.clientY;});
-    (function loop(){ dx+=(mx-dx)*0.2; dy+=(my-dy)*0.2; dot.style.transform="translate("+dx+"px,"+dy+"px) translate(-50%,-50%)"; requestAnimationFrame(loop); })();
-    document.querySelectorAll("a,button,.biglink,.tl,.card").forEach(function(el){
+    var mx=innerWidth/2,my=innerHeight/2,dx=mx,dy=my;
+    addEventListener("mousemove",function(e){mx=e.clientX;my=e.clientY;});
+    (function loop(){ dx+=(mx-dx)*.2; dy+=(my-dy)*.2; dot.style.transform="translate("+dx+"px,"+dy+"px) translate(-50%,-50%)"; requestAnimationFrame(loop); })();
+    document.querySelectorAll("a,button,.x,.tl,.life,.biglink").forEach(function(el){
       el.addEventListener("mouseenter",function(){dot.classList.add("big");});
       el.addEventListener("mouseleave",function(){dot.classList.remove("big");});
     });
-    // magnetic
     document.querySelectorAll(".mag").forEach(function(el){
-      el.addEventListener("mousemove",function(e){
-        var r=el.getBoundingClientRect();
-        var relx=(e.clientX-(r.left+r.width/2))/r.width;
-        var rely=(e.clientY-(r.top+r.height/2))/r.height;
-        el.style.transform="translate("+(relx*16)+"px,"+(rely*10)+"px)";
-      });
+      el.addEventListener("mousemove",function(e){var r=el.getBoundingClientRect();el.style.transform="translate("+((e.clientX-(r.left+r.width/2))/r.width*16)+"px,"+((e.clientY-(r.top+r.height/2))/r.height*10)+"px)";});
       el.addEventListener("mouseleave",function(){el.style.transform="";});
     });
-    // subtle title parallax
     var title=document.getElementById("title");
-    if(title){
-      addEventListener("mousemove",function(e){
-        var rx=(e.clientY/innerHeight-0.5), ry=(e.clientX/innerWidth-0.5);
-        title.style.transform="perspective(900px) rotateX("+(-rx*4)+"deg) rotateY("+(ry*5)+"deg)";
-      });
-    }
+    if(title) addEventListener("mousemove",function(e){title.style.transform="perspective(900px) rotateX("+(-(e.clientY/innerHeight-.5)*4)+"deg) rotateY("+((e.clientX/innerWidth-.5)*5)+"deg)";});
   }
 
-  /* ---- Marquees (auto + scroll velocity) ---- */
+  /* ---- Marquees ---- */
   var marquees=[].slice.call(document.querySelectorAll("[data-marquee]")).map(function(m){
-    var track=m.querySelector(".track");
-    return {track:track, pos:0, base:parseFloat(m.getAttribute("data-speed"))||50, dir:parseFloat(m.getAttribute("data-dir"))||-1, w:0};
+    var t=m.querySelector(".track");
+    return {t:t,pos:0,base:parseFloat(m.getAttribute("data-speed"))||50,dir:parseFloat(m.getAttribute("data-dir"))||-1,w:0};
   });
-  function measure(){ marquees.forEach(function(o){ o.w=o.track.scrollWidth/2 || 0; }); }
-  measure(); addEventListener("resize", measure);
-
+  function measure(){ marquees.forEach(function(o){o.w=o.t.scrollWidth/2||0;}); }
+  measure(); addEventListener("resize",measure);
   var lastScroll=scrollY, vel=0, last=performance.now();
-  addEventListener("scroll", function(){ vel += Math.abs(scrollY-lastScroll); lastScroll=scrollY; }, {passive:true});
-
+  addEventListener("scroll",function(){vel+=Math.abs(scrollY-lastScroll);lastScroll=scrollY;},{passive:true});
   if(!reduce){
     (function tick(now){
-      var dt=Math.min((now-last)/1000, 0.05); last=now;
-      var boost=Math.min(vel*6, 600); vel*=0.9;
-      marquees.forEach(function(o){
-        if(!o.w){ o.w=o.track.scrollWidth/2; }
-        o.pos += o.dir*(o.base+boost)*dt;
-        if(o.w){ if(o.pos<=-o.w) o.pos+=o.w; if(o.pos>=0) o.pos-=o.w; }
-        o.track.style.transform="translateX("+o.pos+"px)";
-      });
+      var dt=Math.min((now-last)/1000,.05); last=now;
+      var boost=Math.min(vel*6,600); vel*=.9;
+      marquees.forEach(function(o){ if(!o.w) o.w=o.t.scrollWidth/2; o.pos+=o.dir*(o.base+boost)*dt; if(o.w){ if(o.pos<=-o.w)o.pos+=o.w; if(o.pos>=0)o.pos-=o.w;} o.t.style.transform="translateX("+o.pos+"px)"; });
       requestAnimationFrame(tick);
     })(last);
   }
@@ -420,34 +534,54 @@
   if(rot && !reduce){
     var words=["le web.","du trafic.","de la visibilité.","des histoires.","des ponts."];
     rot.textContent="";
-    var spans=words.map(function(w,i){
-      var s=document.createElement("span"); s.className="w"+(i===0?" on":""); s.textContent=w; rot.appendChild(s); return s;
-    });
+    var spans=words.map(function(w,i){var s=document.createElement("span");s.className="w"+(i===0?" on":"");s.textContent=w;rot.appendChild(s);return s;});
     var cur=0;
-    setInterval(function(){
-      var prev=spans[cur]; cur=(cur+1)%spans.length; var next=spans[cur];
-      prev.className="w out"; next.className="w on";
-      setTimeout(function(){ prev.className="w"; }, 550);
-    }, 2200);
+    setInterval(function(){var prev=spans[cur];cur=(cur+1)%spans.length;var next=spans[cur];prev.className="w out";next.className="w on";setTimeout(function(){prev.className="w";},550);},2200);
   }
 
-  /* ---- Number counters ---- */
+  /* ---- Counters ---- */
   function animateCount(el){
-    var target=parseFloat(el.getAttribute("data-count"));
-    var suffix=el.getAttribute("data-suffix")||"";
-    var dur=1100, t0=performance.now();
-    function frame(now){
-      var p=Math.min((now-t0)/dur,1);
-      var e=1-Math.pow(1-p,3); // easeOutCubic
-      el.textContent=Math.round(target*e)+suffix;
-      if(p<1) requestAnimationFrame(frame); else el.textContent=target+suffix;
-    }
+    var target=parseFloat(el.getAttribute("data-count")), suffix=el.getAttribute("data-suffix")||"", dur=1100, t0=performance.now();
+    function frame(now){var p=Math.min((now-t0)/dur,1), e=1-Math.pow(1-p,3); el.textContent=Math.round(target*e)+suffix; if(p<1)requestAnimationFrame(frame); else el.textContent=target+suffix;}
     requestAnimationFrame(frame);
   }
   var counts=[].slice.call(document.querySelectorAll("[data-count]"));
   if("IntersectionObserver" in window && !reduce){
-    var cio=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){animateCount(e.target); cio.unobserve(e.target);}});},{threshold:0.6});
-    counts.forEach(function(el){ cio.observe(el); });
+    var cio=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){animateCount(e.target);cio.unobserve(e.target);}});},{threshold:0.6});
+    counts.forEach(function(el){cio.observe(el);});
+  }
+
+  /* ---- Canvas particle field (all devices) ---- */
+  var cv=document.getElementById("field");
+  if(cv && !reduce){
+    var ctx=cv.getContext("2d"), W,H,DPR,parts=[],N;
+    function hexToRgb(h){h=h.replace("#","");if(h.length===3)h=h.replace(/./g,"$&$&");var n=parseInt(h,16);return[(n>>16)&255,(n>>8)&255,n&255];}
+    function resize(){
+      DPR=Math.min(devicePixelRatio||1,2); W=cv.width=innerWidth*DPR; H=cv.height=innerHeight*DPR;
+      cv.style.width=innerWidth+"px"; cv.style.height=innerHeight+"px";
+      N=Math.max(24, Math.min(Math.round(innerWidth*innerHeight/22000), innerWidth<700?42:90));
+      parts=[]; for(var i=0;i<N;i++){parts.push({x:Math.random()*W,y:Math.random()*H,vx:(Math.random()-.5)*.25*DPR,vy:(Math.random()-.5)*.25*DPR});}
+    }
+    resize(); addEventListener("resize",resize);
+    var running=true;
+    document.addEventListener("visibilitychange",function(){running=!document.hidden; if(running) requestAnimationFrame(draw);});
+    function draw(){
+      if(!running) return;
+      ctx.clearRect(0,0,W,H);
+      var rgb=hexToRgb(currentAccent||"#2b2bff"); var col=rgb[0]+","+rgb[1]+","+rgb[2];
+      var maxd=(innerWidth<700?90:120)*DPR;
+      for(var i=0;i<N;i++){var p=parts[i];p.x+=p.vx;p.y+=p.vy;if(p.x<0||p.x>W)p.vx*=-1;if(p.y<0||p.y>H)p.vy*=-1;}
+      for(var i=0;i<N;i++){
+        var p=parts[i];
+        for(var j=i+1;j<N;j++){
+          var q=parts[j], dxx=p.x-q.x, dyy=p.y-q.y, d=Math.sqrt(dxx*dxx+dyy*dyy);
+          if(d<maxd){ ctx.strokeStyle="rgba("+col+","+(0.14*(1-d/maxd))+")"; ctx.lineWidth=DPR; ctx.beginPath(); ctx.moveTo(p.x,p.y); ctx.lineTo(q.x,q.y); ctx.stroke(); }
+        }
+        ctx.fillStyle="rgba("+col+",0.55)"; ctx.beginPath(); ctx.arc(p.x,p.y,1.5*DPR,0,6.28); ctx.fill();
+      }
+      requestAnimationFrame(draw);
+    }
+    requestAnimationFrame(draw);
   }
 })();
 </script>
