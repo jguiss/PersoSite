@@ -3,417 +3,568 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Julien Guiss — Marketeur web depuis 2003</title>
-<meta name="description" content="Le parcours de Julien Guiss : d'Avignon à Québec, vingt ans à construire le web et à comprendre comment Google range le monde. Expertise SEO, méthode, histoire.">
+<title>Julien Guiss — Stratège web, SEO &amp; monétisation depuis 2003</title>
+<meta name="description" content="Stratège web et entrepreneur, Julien Guiss relie SEO, contenu, données, UX et monétisation. De sa première page HTML en 2003 à la vice-présidence des stratégies web : parcours, méthode et histoire.">
 <meta name="author" content="Julien Guiss">
-<meta name="theme-color" content="#f4f3ef">
+<meta name="theme-color" content="#0b1410">
 <link rel="canonical" href="https://www.julienguiss.com/">
-<meta property="og:type" content="website">
+<meta name="robots" content="index, follow, max-image-preview:large">
+
+<meta property="og:type" content="profile">
 <meta property="og:url" content="https://www.julienguiss.com/">
-<meta property="og:title" content="Julien Guiss — Marketeur web depuis 2003">
-<meta property="og:description" content="D'Avignon à Québec, vingt ans à construire le web. Le récit d'un marketeur SEO.">
+<meta property="og:site_name" content="Julien Guiss">
+<meta property="og:title" content="Julien Guiss — Stratège web, SEO &amp; monétisation">
+<meta property="og:description" content="Vingt ans à créer, référencer et monétiser des sites. D'Avignon à Québec, et retour.">
 <meta property="og:locale" content="fr_FR">
+<meta property="profile:first_name" content="Julien">
+<meta property="profile:last_name" content="Guiss">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:creator" content="@jguisswebmaster">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23f4f3ef'/%3E%3Ctext x='16' y='25' font-family='Arial,sans-serif' font-size='26' font-weight='900' text-anchor='middle' fill='%23101013'%3EG%3C/text%3E%3C/svg%3E">
+
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230b1410'/%3E%3Ctext x='16' y='24' font-family='Georgia,serif' font-size='21' font-weight='bold' text-anchor='middle' fill='%236fe0a0'%3EG%3C/text%3E%3C/svg%3E">
+
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"Person","name":"Julien Guiss","url":"https://www.julienguiss.com/","jobTitle":"Vice-Président, Web Strategy Services","description":"Marketeur web et expert SEO depuis 2003.","birthPlace":"Avignon, France","homeLocation":"Avignon, France","sameAs":["https://www.linkedin.com/in/jguiss/","https://x.com/jguisswebmaster","https://www.youtube.com/c/JulienGuiss"]}
+{
+  "@context":"https://schema.org",
+  "@type":"ProfilePage",
+  "mainEntity":{
+    "@type":"Person",
+    "name":"Julien Guiss",
+    "url":"https://www.julienguiss.com/",
+    "jobTitle":"Vice-président, Web Strategy Services",
+    "description":"Stratège web et entrepreneur : SEO, contenu, données, UX et monétisation. Plus de vingt ans à créer et faire croître des projets web.",
+    "birthPlace":{"@type":"Place","name":"Vaucluse, France"},
+    "homeLocation":{"@type":"Place","name":"Gard, Provence, France"},
+    "nationality":["Française","Canadienne"],
+    "knowsAbout":["SEO","Référencement naturel","Marketing d'affiliation","Acquisition de trafic","Monétisation de sites","Analytics","E-commerce","Stratégie web","Intelligence artificielle"],
+    "knowsLanguage":["Français","Anglais","Espagnol"],
+    "sameAs":[
+      "https://www.linkedin.com/in/jguiss/",
+      "https://x.com/jguisswebmaster",
+      "https://www.youtube.com/c/JulienGuiss"
+    ]
+  }
+}
 </script>
-<script>document.documentElement.className += " js";</script>
+<script>document.documentElement.className+=" js";</script>
 </head>
 <body>
 <style>
+  /* ============ TOKENS — 3 ambiances terreuses ============ */
   :root{
-    color-scheme:light;
-    /* ZONE PRO (défaut) */
-    --bg:#f4f3ef; --bg-2:#eae7df; --card:#fbfaf7;
-    --ink:#101013; --ink-soft:#55555d; --ink-faint:#8a8a90;
-    --accent:#2b2bff; --accent-2:#ff3b1f; --line:#d9d7ce; --line-strong:#101013;
-    --grotesk:"Helvetica Neue",Helvetica,Arial,"Liberation Sans",ui-sans-serif,system-ui,sans-serif;
+    color-scheme:dark;
+    /* ZONE 1 · MÉTIER — vert profond */
+    --bg:#0b1410; --bg2:#101c16; --card:#13221b; --line:#1f3529;
+    --ink:#e9efe8; --soft:#9db3a6; --faint:#6b8177;
+    --accent:#6fe0a0; --accent2:#d98a5b;
+    --glow:111,224,160;
+
+    --display:"Helvetica Neue",Helvetica,Arial,"Liberation Sans",ui-sans-serif,system-ui,sans-serif;
+    --serif:Georgia,"Iowan Old Style","Palatino Linotype",Palatino,serif;
     --mono:ui-monospace,"JetBrains Mono","Cascadia Code",Menlo,Consolas,monospace;
-    --maxw:1240px;
+    --maxw:1200px; --prose:63ch;
   }
-  body.zone-perso{
-    color-scheme:dark;
-    --bg:#190e15; --bg-2:#23111b; --card:#28141e;
-    --ink:#f5e8df; --ink-soft:#caa99b; --ink-faint:#8f7168;
-    --accent:#ff9e5e; --accent-2:#ff5d73; --line:#3b2230; --line-strong:#f5e8df;
+  body.z-recit{ /* ZONE 2 · RÉCIT WEB — brun chaud */
+    --bg:#170e08; --bg2:#1f140b; --card:#241810; --line:#3a2617;
+    --ink:#f4e8dd; --soft:#c3a892; --faint:#8d7360;
+    --accent:#e8a06a; --accent2:#8fd6a8; --glow:232,160,106;
   }
-  body.zone-histoire{
-    color-scheme:dark;
-    --bg:#0a1020; --bg-2:#0e1730; --card:#111d3a;
-    --ink:#e6ecff; --ink-soft:#9fb0d6; --ink-faint:#6c7ba0;
-    --accent:#63e0c6; --accent-2:#9b8bff; --line:#1e2b4d; --line-strong:#e6ecff;
+  body.z-perso{ /* ZONE 3 · PERSO — nuit sauge */
+    --bg:#07161a; --bg2:#0a1f25; --card:#0d262d; --line:#153840;
+    --ink:#e4f1ef; --soft:#96b6b5; --faint:#658384;
+    --accent:#79dccb; --accent2:#e0a06a; --glow:121,220,203;
   }
 
   *{box-sizing:border-box}
   html{scroll-behavior:smooth}
-  @media (prefers-reduced-motion:reduce){ html{scroll-behavior:auto} }
-  body{margin:0; background:var(--bg); color:var(--ink); font-family:var(--grotesk); line-height:1.55; overflow-x:hidden; -webkit-font-smoothing:antialiased;
-    transition:background-color .7s ease, color .7s ease}
-  ::selection{background:var(--accent); color:#fff}
+  @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+  body{margin:0; background:var(--bg); color:var(--ink); font-family:var(--display); line-height:1.6;
+    -webkit-font-smoothing:antialiased; overflow-x:hidden;
+    transition:background-color .9s ease, color .9s ease}
+  ::selection{background:var(--accent); color:#08120e}
+  img{max-width:100%}
 
-  /* progress + cursor */
-  .progress{position:fixed; top:0; left:0; height:3px; width:0; background:var(--accent); z-index:200; transition:background-color .7s ease}
-  .cursor-dot{position:fixed; top:0; left:0; width:12px; height:12px; border-radius:50%; background:var(--accent); pointer-events:none; z-index:9999; transform:translate(-50%,-50%); mix-blend-mode:difference; transition:width .18s,height .18s; will-change:transform; opacity:0}
-  body.cursor-on .cursor-dot{opacity:1} body.cursor-on{cursor:none} body.cursor-on a,body.cursor-on button{cursor:none}
-  .cursor-dot.big{width:54px; height:54px}
+  /* ============ Décor ============ */
+  #field{position:fixed; inset:0; z-index:0; pointer-events:none; opacity:.5}
+  .grain{position:fixed; inset:0; z-index:1; pointer-events:none; opacity:.055; mix-blend-mode:overlay;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)'/%3E%3C/svg%3E")}
+  .halo{position:fixed; left:50%; top:-30vh; width:120vw; height:80vh; transform:translateX(-50%); z-index:0; pointer-events:none;
+    background:radial-gradient(50% 60% at 50% 50%, rgba(var(--glow),.14), transparent 70%); transition:background .9s ease}
 
-  /* canvas field */
-  #field{position:fixed; inset:0; z-index:0; pointer-events:none; opacity:.55}
+  .progress{position:fixed; top:0; left:0; height:3px; width:0; z-index:200;
+    background:linear-gradient(90deg,var(--accent),var(--accent2)); box-shadow:0 0 14px rgba(var(--glow),.7); transition:background .9s ease}
+  .cursor{position:fixed; top:0; left:0; width:12px; height:12px; border-radius:50%; background:var(--accent);
+    pointer-events:none; z-index:9999; transform:translate(-50%,-50%); mix-blend-mode:difference; opacity:0;
+    transition:width .2s,height .2s,opacity .3s; will-change:transform}
+  body.cur .cursor{opacity:1} body.cur, body.cur a, body.cur button{cursor:none}
+  .cursor.big{width:56px; height:56px}
 
-  /* nav */
-  .nav{position:fixed; top:0; left:0; right:0; z-index:150; display:flex; align-items:center; justify-content:space-between; padding:14px clamp(16px,4vw,40px); font-family:var(--mono); font-size:12px; letter-spacing:.06em; text-transform:uppercase}
-  .nav .brand{font-weight:700; color:var(--ink); text-decoration:none; display:flex; gap:9px; align-items:center}
-  .nav .brand .sq{width:11px; height:11px; background:var(--accent); display:inline-block; transition:background-color .7s ease}
-  .nav .links{display:flex; gap:2px}
-  .nav .links a{color:var(--ink-soft); text-decoration:none; padding:5px 9px; border-radius:4px; transition:color .15s}
-  .nav .links a:hover{color:var(--accent)}
-  @media (max-width:640px){ .nav .links a.opt{display:none} }
+  /* ============ Nav ============ */
+  .nav{position:fixed; top:0; left:0; right:0; z-index:150; display:flex; align-items:center; justify-content:space-between;
+    gap:14px; padding:13px clamp(15px,4vw,38px); font-family:var(--mono); font-size:12px; letter-spacing:.06em; text-transform:uppercase;
+    background:linear-gradient(to bottom, rgba(0,0,0,.5), transparent); backdrop-filter:blur(7px)}
+  .nav .brand{color:var(--ink); text-decoration:none; font-weight:700; display:flex; align-items:center; gap:9px; white-space:nowrap}
+  .nav .brand .b{width:10px; height:10px; border-radius:50%; background:var(--accent); box-shadow:0 0 12px var(--accent); transition:background .9s ease}
+  .nav .lk{display:flex; gap:2px; flex-wrap:wrap; justify-content:flex-end}
+  .nav .lk a{color:var(--soft); text-decoration:none; padding:6px 10px; border-radius:5px; transition:color .2s, background .2s}
+  .nav .lk a:hover,.nav .lk a:focus-visible{color:var(--accent); background:rgba(255,255,255,.05); outline:none}
+  .nav .lk a.on{color:var(--accent)}
+  @media (max-width:700px){.nav .lk a.opt{display:none}}
 
-  .wrap{max-width:var(--maxw); margin:0 auto; padding:0 clamp(16px,4vw,40px); position:relative; z-index:2}
-  section{position:relative; z-index:2}
+  .wrap{max-width:var(--maxw); margin:0 auto; padding:0 clamp(15px,4vw,38px); position:relative; z-index:3}
+  section{position:relative; z-index:3}
+  .sec{padding:clamp(66px,10vw,132px) 0}
 
-  /* ---------- HERO ---------- */
-  .hero{min-height:100svh; display:flex; flex-direction:column; justify-content:center; padding:96px 0 40px; position:relative; overflow:hidden}
-  .hero .ring{position:absolute; right:-16vw; top:46%; width:56vw; height:56vw; border:1.5px solid var(--line); border-radius:50%; transform:translateY(-50%); z-index:1; pointer-events:none}
-  .hero .ring::after{content:""; position:absolute; inset:15%; border:1.5px solid var(--line); border-radius:50%}
-  .hero .ring::before{content:""; position:absolute; inset:34%; border:1.5px dashed var(--line); border-radius:50%}
-  @media (prefers-reduced-motion:no-preference){ .hero .ring{animation:spin 70s linear infinite} .hero .ring::before{animation:spin 30s linear infinite reverse} }
+  /* ============ Type ============ */
+  .eyebrow{font-family:var(--mono); font-size:12px; letter-spacing:.24em; text-transform:uppercase; color:var(--accent); margin:0 0 16px; display:flex; align-items:center; gap:12px}
+  .eyebrow::before{content:""; width:34px; height:1px; background:var(--accent); opacity:.6}
+  h2{font-weight:800; letter-spacing:-.025em; line-height:1.02; font-size:clamp(2rem,6vw,4.1rem); margin:0; max-width:17ch; text-wrap:balance}
+  h3{font-weight:700; letter-spacing:-.01em}
+  .lede{color:var(--soft); font-size:clamp(1.03rem,1.9vw,1.2rem); max-width:var(--prose); margin:20px 0 0}
+  .prose{font-family:var(--serif); font-size:clamp(1.05rem,2vw,1.2rem); line-height:1.85; color:var(--ink); max-width:var(--prose)}
+  .prose p{margin:0 0 1.15em}
+  .prose em{color:var(--accent); font-style:italic}
+  .prose strong{color:var(--ink); font-weight:700; box-shadow:inset 0 -.42em 0 rgba(var(--glow),.18)}
+  .tag{font-family:var(--mono); font-size:.74em; text-transform:uppercase; letter-spacing:.07em; border:1px solid var(--line); color:var(--accent); padding:2px 7px; border-radius:4px; white-space:nowrap}
+
+  /* ============ Hero ============ */
+  .hero{min-height:100svh; display:flex; flex-direction:column; justify-content:center; padding:104px 0 46px; overflow:hidden}
+  .ring{position:absolute; right:-18vw; top:44%; width:60vw; height:60vw; border:1px solid var(--line); border-radius:50%; transform:translateY(-50%); pointer-events:none; z-index:1}
+  .ring::after{content:""; position:absolute; inset:14%; border:1px solid var(--line); border-radius:50%}
+  .ring::before{content:""; position:absolute; inset:32%; border:1px dashed var(--line); border-radius:50%}
+  @media (prefers-reduced-motion:no-preference){.ring{animation:spin 80s linear infinite}.ring::before{animation:spin 34s linear infinite reverse}}
   @keyframes spin{to{transform:translateY(-50%) rotate(360deg)}}
-  .hero .inner{position:relative; z-index:3}
-  .chip{display:inline-flex; align-items:center; gap:8px; font-family:var(--mono); font-size:12px; letter-spacing:.08em; text-transform:uppercase; color:var(--ink-soft); border:1px solid var(--line); border-radius:20px; padding:5px 12px; margin-bottom:20px}
-  .chip .live{width:8px; height:8px; border-radius:50%; background:var(--accent-2)}
-  @media (prefers-reduced-motion:no-preference){ .chip .live{animation:pulse 1.8s ease-in-out infinite} }
-  @keyframes pulse{0%,100%{opacity:1; box-shadow:0 0 0 0 rgba(255,59,31,.5)}50%{opacity:.7; box-shadow:0 0 0 6px rgba(255,59,31,0)}}
-  .idxrow{display:flex; justify-content:space-between; gap:10px; flex-wrap:wrap; font-family:var(--mono); font-size:12px; letter-spacing:.1em; text-transform:uppercase; color:var(--ink-soft); border-bottom:1px solid var(--line); padding-bottom:12px}
-  .idxrow b{color:var(--accent)}
-  .title{font-weight:800; text-transform:uppercase; letter-spacing:-.035em; line-height:.82; margin:clamp(14px,2.5vw,26px) 0 0; font-size:clamp(3.6rem,18vw,15rem)}
-  .title .line{display:block; overflow:hidden}
-  .title .l{display:inline-block}
-  html.js .title .l{transform:translateY(110%)}
-  @media (prefers-reduced-motion:no-preference){ html.js .title .l{animation:rise .9s cubic-bezier(.16,1,.3,1) forwards; animation-delay:calc(var(--i,0)*.045s + .15s)} }
-  @media (prefers-reduced-motion:reduce){ html.js .title .l{transform:none} }
+  .chip{display:inline-flex; align-items:center; gap:9px; font-family:var(--mono); font-size:11.5px; letter-spacing:.1em; text-transform:uppercase;
+    color:var(--soft); border:1px solid var(--line); border-radius:30px; padding:6px 14px; margin-bottom:22px; background:rgba(255,255,255,.02)}
+  .chip .d{width:7px; height:7px; border-radius:50%; background:var(--accent)}
+  @media (prefers-reduced-motion:no-preference){.chip .d{animation:pl 2s ease-in-out infinite}}
+  @keyframes pl{0%,100%{box-shadow:0 0 0 0 rgba(var(--glow),.6)}50%{box-shadow:0 0 0 7px rgba(var(--glow),0)}}
+  .h1{font-weight:800; letter-spacing:-.045em; line-height:.83; margin:0; font-size:clamp(3.4rem,17vw,13.5rem); text-transform:uppercase}
+  .h1 .rowl{display:block; overflow:hidden; padding-bottom:.02em}
+  .h1 .l{display:inline-block}
+  html.js .h1 .l{transform:translateY(112%)}
+  @media (prefers-reduced-motion:no-preference){html.js .h1 .l{animation:rise 1s cubic-bezier(.16,1,.3,1) forwards; animation-delay:calc(var(--i)*.04s + .12s)}}
+  @media (prefers-reduced-motion:reduce){html.js .h1 .l{transform:none}}
   @keyframes rise{to{transform:translateY(0)}}
-  .title .dot{color:var(--accent)}
-  .metarow{display:flex; flex-wrap:wrap; justify-content:space-between; gap:14px 24px; margin-top:clamp(20px,3vw,40px); padding-top:16px; border-top:2px solid var(--line-strong)}
-  .metarow div{font-family:var(--mono); font-size:13px; text-transform:uppercase; letter-spacing:.03em; color:var(--ink-soft)}
-  .metarow b{color:var(--ink)}
-  .scrollcue{margin-top:30px; font-family:var(--mono); font-size:12px; letter-spacing:.16em; text-transform:uppercase; color:var(--ink-faint); display:inline-flex; gap:9px; align-items:center; text-decoration:none}
-  .scrollcue:hover{color:var(--accent)}
-  @media (prefers-reduced-motion:no-preference){ .scrollcue .a{display:inline-block; animation:bob 1.7s ease-in-out infinite} }
-  @keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(4px)}}
+  .h1 .g{color:var(--accent); text-shadow:0 0 46px rgba(var(--glow),.45)}
+  .htag{font-family:var(--serif); font-style:italic; font-size:clamp(1.15rem,2.9vw,1.85rem); color:var(--ink); margin:26px 0 0; max-width:30ch; opacity:.95}
+  .meta{display:flex; flex-wrap:wrap; gap:12px 26px; margin-top:clamp(24px,3.4vw,44px); padding-top:18px; border-top:1px solid var(--line);
+    font-family:var(--mono); font-size:12.5px; letter-spacing:.04em; text-transform:uppercase; color:var(--soft)}
+  .meta b{color:var(--accent); font-weight:700}
+  .cue{margin-top:34px; font-family:var(--mono); font-size:12px; letter-spacing:.16em; text-transform:uppercase; color:var(--faint); display:inline-flex; gap:10px; align-items:center; text-decoration:none}
+  .cue:hover{color:var(--accent)}
+  @media (prefers-reduced-motion:no-preference){.cue .a{display:inline-block; animation:bob 1.9s ease-in-out infinite}}
+  @keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(5px)}}
 
-  /* ---------- Marquee ---------- */
-  .marquee{overflow:hidden; white-space:nowrap; border-top:2px solid var(--line-strong); border-bottom:2px solid var(--line-strong); background:var(--ink); color:var(--bg); transition:background-color .7s ease,color .7s ease}
-  .marquee.alt{background:transparent; color:var(--ink); border-top:none}
-  .marquee .track{display:inline-flex; will-change:transform}
-  .marquee .track > span{display:inline-flex; align-items:center; padding:13px 0; font-weight:800; text-transform:uppercase; letter-spacing:-.01em; font-size:clamp(1.3rem,4.2vw,2.7rem)}
-  .marquee .track > span > i{font-style:normal; padding:0 .55em; color:var(--accent)}
+  /* ============ Marquee ============ */
+  .marq{overflow:hidden; white-space:nowrap; border-top:1px solid var(--line); border-bottom:1px solid var(--line); background:rgba(255,255,255,.02); position:relative; z-index:3}
+  .marq .tr{display:inline-flex; will-change:transform}
+  .marq .tr>span{display:inline-flex; align-items:center; padding:15px 0; font-weight:800; letter-spacing:-.02em; text-transform:uppercase; font-size:clamp(1.15rem,3.6vw,2.3rem); color:var(--ink)}
+  .marq .tr i{font-style:normal; padding:0 .55em; color:var(--accent)}
 
-  /* ---------- reveal + eyebrow + h2 ---------- */
-  html.js .reveal{opacity:0; transform:translateY(30px); transition:opacity .8s cubic-bezier(.16,1,.3,1), transform .8s cubic-bezier(.16,1,.3,1)}
-  html.js .reveal.in{opacity:1; transform:none}
-  html.js .reveal.from-left{transform:translateX(-40px)} html.js .reveal.from-left.in{transform:none}
-  @media (prefers-reduced-motion:reduce){ html.js .reveal{opacity:1 !important; transform:none !important} }
-  .eyebrow{font-family:var(--mono); font-size:12px; letter-spacing:.22em; text-transform:uppercase; color:var(--accent); margin:0 0 18px}
-  .eyebrow::before{content:"("; color:var(--ink-faint)} .eyebrow::after{content:")"; color:var(--ink-faint)}
-  h2{font-weight:800; text-transform:uppercase; letter-spacing:-.02em; line-height:.95; font-size:clamp(2rem,6.5vw,4.4rem); margin:0; max-width:16ch}
+  /* ============ Reveals ============ */
+  html.js .rv{opacity:0; transform:translateY(30px); transition:opacity .85s cubic-bezier(.16,1,.3,1), transform .85s cubic-bezier(.16,1,.3,1)}
+  html.js .rv.in{opacity:1; transform:none}
+  @media (prefers-reduced-motion:reduce){html.js .rv{opacity:1!important; transform:none!important}}
+  html.js .w{display:inline-block; opacity:0; transform:translateY(.5em)}
+  html.js .w.in{opacity:1; transform:none; transition:opacity .5s ease, transform .5s cubic-bezier(.16,1,.3,1)}
+  @media (prefers-reduced-motion:reduce){html.js .w{opacity:1!important; transform:none!important}}
 
-  .sec{padding:clamp(70px,10vw,130px) 0}
-
-  /* Expertise grid */
-  .xgrid{display:grid; grid-template-columns:repeat(auto-fit,minmax(255px,1fr)); margin-top:clamp(40px,6vw,70px); border-top:1px solid var(--line); border-left:1px solid var(--line)}
-  .x{border-right:1px solid var(--line); border-bottom:1px solid var(--line); padding:clamp(24px,3vw,36px); transition:background .3s ease}
+  /* ============ Expertise ============ */
+  .xg{display:grid; grid-template-columns:repeat(auto-fit,minmax(268px,1fr)); gap:1px; margin-top:clamp(38px,5vw,64px); background:var(--line); border:1px solid var(--line); border-radius:14px; overflow:hidden}
+  .x{background:var(--bg2); padding:clamp(24px,3vw,34px); transition:background .35s ease, transform .35s ease; position:relative}
   .x:hover{background:var(--card)}
-  .x .n{font-family:var(--mono); color:var(--accent); font-size:.85rem; letter-spacing:.1em}
-  .x h3{margin:16px 0 10px; font-size:1.3rem; font-weight:700; text-transform:uppercase; letter-spacing:-.01em}
-  .x p{margin:0; color:var(--ink-soft); font-size:.97rem; line-height:1.6}
+  .x .n{font-family:var(--mono); font-size:.78rem; letter-spacing:.14em; color:var(--accent)}
+  .x h3{margin:15px 0 10px; font-size:1.22rem; max-width:18ch}
+  .x p{margin:0; color:var(--soft); font-size:.97rem; line-height:1.62}
 
-  /* Parcours */
-  .lead{display:grid; grid-template-columns:auto 1fr; gap:clamp(16px,4vw,50px); align-items:start; margin-top:44px}
-  @media (max-width:760px){ .lead{grid-template-columns:1fr} }
-  .lead .big{font-weight:800; font-size:clamp(4rem,11vw,9rem); line-height:.85; color:var(--accent); letter-spacing:-.04em}
-  .story{max-width:58ch; font-size:clamp(1.05rem,2.1vw,1.35rem); line-height:1.7; color:var(--ink)}
-  .story p{margin:0 0 1.1em}
-  .story strong{background:linear-gradient(transparent 62%, color-mix(in srgb, var(--accent) 28%, transparent) 0)}
-  .flag{font-family:var(--mono); font-size:.72em; text-transform:uppercase; letter-spacing:.06em; border:1px solid var(--line-strong); padding:1px 6px; border-radius:3px; white-space:nowrap}
-  .todo{font-family:var(--mono); font-size:.62em; color:var(--accent-2); letter-spacing:.02em; text-transform:uppercase; vertical-align:2px}
+  /* ============ Pull quote ============ */
+  .pull{padding:clamp(58px,8vw,116px) 0}
+  .pull q{quotes:none; display:block; font-weight:800; letter-spacing:-.025em; line-height:1.04; font-size:clamp(1.6rem,5.2vw,3.5rem); max-width:20ch}
+  .pull q b{color:var(--accent); font-weight:800}
+  .pull .by{font-family:var(--mono); font-size:12px; letter-spacing:.16em; text-transform:uppercase; color:var(--faint); margin-top:22px}
 
-  .tlist{margin-top:clamp(40px,6vw,80px); border-top:1px solid var(--line)}
-  .tl{display:grid; grid-template-columns:120px 1fr auto; gap:16px; align-items:baseline; padding:22px 0; border-bottom:1px solid var(--line); transition:padding-left .25s ease, background .25s ease}
-  .tl:hover{padding-left:14px; background:linear-gradient(90deg, color-mix(in srgb, var(--accent) 8%, transparent), transparent)}
-  .tl .yr{font-family:var(--mono); color:var(--accent); font-size:.95rem}
-  .tl h3{margin:0; font-size:clamp(1.1rem,2.6vw,1.6rem); font-weight:700; text-transform:uppercase; letter-spacing:-.01em}
-  .tl p{margin:6px 0 0; grid-column:2; color:var(--ink-soft); font-size:.96rem; max-width:60ch}
-  .tl .plus{font-family:var(--mono); color:var(--ink-faint); font-size:1.2rem}
-  @media (max-width:620px){ .tl{grid-template-columns:70px 1fr} .tl .plus{display:none} }
+  /* ============ Timeline ============ */
+  .tl{margin-top:clamp(40px,5vw,70px); position:relative; padding-left:clamp(26px,4vw,44px)}
+  .tl .rail{position:absolute; left:6px; top:8px; bottom:8px; width:2px; background:var(--line); border-radius:2px; overflow:hidden}
+  .tl .rail i{position:absolute; inset:0 0 auto 0; height:0%; background:linear-gradient(var(--accent),var(--accent2)); display:block; box-shadow:0 0 12px rgba(var(--glow),.6)}
+  .job{position:relative; padding:0 0 clamp(26px,3.4vw,42px)}
+  .job:last-child{padding-bottom:0}
+  .job::before{content:""; position:absolute; left:calc(-1*clamp(26px,4vw,44px) + 1px); top:7px; width:13px; height:13px; border-radius:50%;
+    background:var(--bg); border:2px solid var(--accent); box-shadow:0 0 0 4px var(--bg), 0 0 16px rgba(var(--glow),.6)}
+  .job .yr{font-family:var(--mono); font-size:.84rem; letter-spacing:.1em; text-transform:uppercase; color:var(--accent)}
+  .job h3{margin:5px 0 3px; font-size:clamp(1.12rem,2.5vw,1.5rem)}
+  .job .co{font-family:var(--mono); font-size:.83rem; color:var(--faint); letter-spacing:.04em}
+  .job p{margin:9px 0 0; color:var(--soft); font-size:.98rem; max-width:62ch; line-height:1.62}
 
-  /* pull quote */
-  .pull{padding:clamp(60px,9vw,120px) 0; text-align:left}
-  .pull q{font-weight:800; text-transform:uppercase; letter-spacing:-.02em; line-height:.98; font-size:clamp(1.8rem,6vw,4rem); quotes:none}
-  .pull q b{color:var(--accent)}
-  .pull .by{font-family:var(--mono); font-size:12px; letter-spacing:.14em; text-transform:uppercase; color:var(--ink-faint); margin-top:20px}
+  /* ============ Chiffres ============ */
+  .stats{display:grid; grid-template-columns:repeat(auto-fit,minmax(158px,1fr)); gap:1px; background:var(--line); border:1px solid var(--line); border-radius:14px; overflow:hidden; margin-top:clamp(38px,5vw,60px)}
+  .st{background:var(--bg2); padding:clamp(20px,2.6vw,30px)}
+  .st .k{font-weight:800; font-size:clamp(2.1rem,5.4vw,3.5rem); line-height:1; letter-spacing:-.04em; font-variant-numeric:tabular-nums; color:var(--accent)}
+  .st:nth-child(even) .k{color:var(--accent2)}
+  .st .l{font-family:var(--mono); font-size:11.5px; letter-spacing:.1em; text-transform:uppercase; color:var(--soft); margin-top:12px; line-height:1.45}
 
-  /* kinetic statement */
-  .kinetic{padding:clamp(80px,14vw,180px) 0; border-top:2px solid var(--line-strong); border-bottom:2px solid var(--line-strong); overflow:hidden}
-  .kstmt{font-weight:800; text-transform:uppercase; letter-spacing:-.03em; line-height:.9; font-size:clamp(2.2rem,9vw,7rem)}
-  .rot{display:inline-block; position:relative; color:var(--accent); min-height:1em}
-  html.js .rot .w{position:absolute; left:0; top:0; opacity:0; transform:translateY(45%)}
-  html.js .rot .w.on{position:relative; opacity:1; transform:none; transition:opacity .5s, transform .5s}
-  html.js .rot .w.out{opacity:0; transform:translateY(-45%); transition:opacity .5s, transform .5s}
+  /* ============ Chapitres (récit) ============ */
+  .chap{display:grid; grid-template-columns:170px 1fr; gap:clamp(16px,3vw,46px); padding:clamp(30px,4vw,56px) 0; border-top:1px solid var(--line)}
+  @media (max-width:780px){.chap{grid-template-columns:1fr; gap:14px}}
+  .chap .yr{font-family:var(--mono); font-size:.9rem; letter-spacing:.12em; color:var(--accent); position:sticky; top:76px; align-self:start}
+  .chap h3{font-size:clamp(1.35rem,3.3vw,2rem); margin:0 0 16px; letter-spacing:-.02em; max-width:22ch}
 
-  /* stats */
-  .statgrid{display:grid; grid-template-columns:repeat(auto-fit,minmax(180px,1fr)); gap:clamp(20px,4vw,50px); margin-top:44px}
-  .stat .k{font-weight:800; font-size:clamp(3rem,9vw,6.5rem); line-height:.9; letter-spacing:-.04em; font-variant-numeric:tabular-nums}
-  .stat:nth-child(2) .k{color:var(--accent)} .stat:nth-child(4) .k{color:var(--accent-2)}
-  .stat .l{font-family:var(--mono); font-size:12px; text-transform:uppercase; letter-spacing:.12em; color:var(--ink-soft); margin-top:10px; padding-top:10px; border-top:1px solid var(--line)}
+  /* ============ Cartes anecdotes ============ */
+  .cards{display:grid; grid-template-columns:repeat(auto-fit,minmax(232px,1fr)); gap:14px; margin-top:clamp(38px,5vw,62px)}
+  .cd{background:linear-gradient(160deg,var(--card),var(--bg2)); border:1px solid var(--line); border-radius:16px; padding:26px 22px; position:relative; overflow:hidden;
+    transition:transform .4s cubic-bezier(.16,1,.3,1), border-color .4s ease, box-shadow .4s ease}
+  .cd:hover{transform:translateY(-6px); border-color:var(--accent); box-shadow:0 26px 60px -30px rgba(var(--glow),.5)}
+  .cd::after{content:""; position:absolute; inset:auto -30% -60% -30%; height:110px; background:radial-gradient(50% 100% at 50% 100%, rgba(var(--glow),.22), transparent 70%); opacity:0; transition:opacity .4s}
+  .cd:hover::after{opacity:1}
+  .cd .em{font-size:1.6rem}
+  .cd h3{margin:13px 0 8px; font-size:1.1rem; color:var(--accent)}
+  .cd p{margin:0; color:var(--soft); font-size:.94rem; line-height:1.6}
 
-  /* perso grid (warm) */
-  .lifegrid{display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:14px; margin-top:clamp(40px,6vw,70px)}
-  .life{background:var(--card); border:1px solid var(--line); border-radius:16px; padding:26px 22px; transition:transform .3s ease}
-  @media (prefers-reduced-motion:no-preference){ .life{animation:float 6s ease-in-out infinite} .life:nth-child(2n){animation-delay:-2s} .life:nth-child(3n){animation-delay:-4s} }
-  @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
-  .life .emoji{font-size:1.8rem}
-  .life h3{margin:14px 0 6px; font-size:1.2rem; font-weight:700}
-  .life p{margin:0; color:var(--ink-soft); font-size:.94rem}
+  /* ============ Grille perso ============ */
+  .life{display:grid; grid-template-columns:repeat(auto-fit,minmax(255px,1fr)); gap:15px; margin-top:clamp(38px,5vw,62px)}
+  .lf{background:var(--bg2); border:1px solid var(--line); border-radius:18px; padding:28px 24px; transition:transform .4s cubic-bezier(.16,1,.3,1), border-color .3s}
+  .lf:hover{border-color:var(--accent); transform:translateY(-5px)}
+  .lf .em{font-size:1.75rem}
+  .lf h3{margin:14px 0 8px; font-size:1.16rem}
+  .lf p{margin:0; color:var(--soft); font-size:.95rem; line-height:1.62}
 
-  /* histoire journey */
-  .journey{margin-top:clamp(44px,6vw,80px); display:flex; align-items:center; gap:0; flex-wrap:wrap}
-  .stop{flex:1 1 120px; text-align:center; position:relative; padding:10px 6px}
-  .stop .d{width:16px; height:16px; border-radius:50%; background:var(--accent); margin:0 auto 12px; box-shadow:0 0 0 5px var(--bg), 0 0 20px var(--accent)}
-  .stop .city{font-weight:800; text-transform:uppercase; letter-spacing:-.01em; font-size:1.05rem}
-  .stop .yr{font-family:var(--mono); font-size:11px; color:var(--ink-faint); letter-spacing:.1em; margin-top:4px}
-  .seg{flex:0 0 40px; height:2px; background:linear-gradient(90deg,var(--accent),var(--accent-2)); align-self:center; opacity:.5}
-  @media (max-width:640px){ .journey{flex-direction:column; align-items:stretch} .seg{width:2px; height:26px; flex-basis:26px; margin:0 auto; background:linear-gradient(180deg,var(--accent),var(--accent-2))} }
+  /* ============ Voyage ============ */
+  .trip{display:flex; flex-wrap:wrap; align-items:center; margin-top:clamp(36px,5vw,60px); gap:0}
+  .stop{flex:1 1 130px; text-align:center; padding:12px 8px}
+  .stop .d{width:15px; height:15px; border-radius:50%; background:var(--accent); margin:0 auto 13px; box-shadow:0 0 0 5px var(--bg),0 0 22px rgba(var(--glow),.8)}
+  .stop .c{font-weight:800; font-size:1.05rem; letter-spacing:-.01em}
+  .stop .y{font-family:var(--mono); font-size:11px; letter-spacing:.1em; color:var(--faint); margin-top:5px}
+  .seg{flex:0 0 44px; height:2px; background:linear-gradient(90deg,var(--accent),var(--accent2)); opacity:.45; align-self:center}
+  @media (max-width:660px){.trip{flex-direction:column; align-items:stretch}.seg{width:2px; height:28px; flex-basis:28px; margin:0 auto; background:linear-gradient(180deg,var(--accent),var(--accent2))}}
 
-  .teaser{margin-top:40px; border:1.5px dashed var(--ink-faint); border-radius:6px; padding:clamp(28px,5vw,54px)}
-  .teaser .badge{display:inline-block; font-family:var(--mono); font-size:11px; letter-spacing:.16em; text-transform:uppercase; color:var(--bg); background:var(--accent); padding:4px 11px; margin-bottom:18px}
-  .teaser p{max-width:60ch; font-size:1.08rem; color:var(--ink); margin:.4em 0}
-  .teaser .route{font-family:var(--mono); color:var(--accent-2); margin-top:16px; font-size:.95rem; letter-spacing:.04em}
+  /* ============ Contact ============ */
+  .links{margin-top:clamp(30px,4vw,54px); border-top:1px solid var(--line)}
+  .lnk{display:flex; align-items:center; justify-content:space-between; gap:18px; padding:clamp(19px,2.8vw,32px) 0; border-bottom:1px solid var(--line);
+    text-decoration:none; color:var(--ink); transition:padding-left .4s cubic-bezier(.16,1,.3,1), color .3s}
+  .lnk:hover,.lnk:focus-visible{padding-left:16px; color:var(--accent); outline:none}
+  .lnk .n{font-weight:800; font-size:clamp(1.4rem,4.4vw,2.6rem); letter-spacing:-.03em; text-transform:uppercase}
+  .lnk .h{font-family:var(--mono); font-size:.86rem; color:var(--faint); letter-spacing:.07em; white-space:nowrap}
+  .lnk:hover .h{color:var(--accent2)}
 
-  /* contact */
-  .biglinks{margin-top:clamp(30px,5vw,60px); border-top:1px solid var(--line)}
-  .biglink{display:flex; align-items:center; justify-content:space-between; gap:20px; padding:clamp(20px,3vw,34px) 0; border-bottom:1px solid var(--line); text-decoration:none; color:var(--ink); transition:padding-left .3s ease, color .2s ease}
-  .biglink:hover{padding-left:16px; color:var(--accent)}
-  .biglink .n{font-weight:800; font-size:clamp(1.6rem,5vw,3rem); text-transform:uppercase; letter-spacing:-.02em}
-  .biglink .h{font-family:var(--mono); font-size:.9rem; color:var(--ink-faint); text-transform:uppercase; letter-spacing:.08em; white-space:nowrap}
-  .biglink:hover .h{color:var(--accent-2)}
+  .final{padding:clamp(60px,9vw,120px) 0; text-align:center}
+  .final p{font-family:var(--serif); font-style:italic; font-size:clamp(1.2rem,3.4vw,2.1rem); max-width:26ch; margin:0 auto; line-height:1.4}
 
-  footer{border-top:2px solid var(--line-strong); padding:30px 0 60px; font-family:var(--mono); font-size:12px; letter-spacing:.06em; text-transform:uppercase; color:var(--ink-soft)}
-  footer .wrap{display:flex; flex-wrap:wrap; gap:8px 20px; justify-content:space-between}
-  footer a{color:var(--ink); text-decoration:none} footer a:hover{color:var(--accent)}
-
-  .draftnote{padding:12px clamp(16px,4vw,40px); background:var(--bg-2); border-bottom:1px solid var(--line); position:relative; z-index:2}
-  .draftnote span{font-family:var(--mono); font-size:12px; color:var(--ink-soft)}
-  .draftnote b{color:var(--accent-2)}
-  a:focus-visible,button:focus-visible{outline:2px solid var(--accent); outline-offset:3px}
+  footer{border-top:1px solid var(--line); padding:30px 0 58px; font-family:var(--mono); font-size:11.5px; letter-spacing:.07em; text-transform:uppercase; color:var(--faint); position:relative; z-index:3}
+  footer .wrap{display:flex; flex-wrap:wrap; gap:9px 22px; justify-content:space-between}
+  footer a{color:var(--soft); text-decoration:none} footer a:hover{color:var(--accent)}
+  a:focus-visible,button:focus-visible{outline:2px solid var(--accent); outline-offset:3px; border-radius:4px}
   .mag{will-change:transform}
 </style>
 
 <canvas id="field" aria-hidden="true"></canvas>
-<div class="progress" id="progress" aria-hidden="true"></div>
-<div class="cursor-dot" id="cursorDot" aria-hidden="true"></div>
+<div class="halo" aria-hidden="true"></div>
+<div class="grain" aria-hidden="true"></div>
+<div class="progress" id="prog" aria-hidden="true"></div>
+<div class="cursor" id="cur" aria-hidden="true"></div>
 
 <header class="nav">
-  <a class="brand" href="#top"><span class="sq"></span>JULIEN GUISS</a>
-  <div class="links">
-    <a href="#expertise" class="opt">Expertise</a>
+  <a class="brand" href="#top"><span class="b"></span>Julien Guiss</a>
+  <nav class="lk" id="navlinks">
+    <a href="#expertise">Expertise</a>
     <a href="#parcours">Parcours</a>
+    <a href="#recit" class="opt">Récit</a>
     <a href="#perso">Perso</a>
-    <a href="#histoire" class="opt">Histoire</a>
-    <a href="#contact">Contact</a>
-  </div>
+    <a href="#contact" class="opt">Contact</a>
+  </nav>
 </header>
 
-<!-- ===================== ZONE PRO ===================== -->
-<div data-zone="pro">
+<!-- ============ ZONE 1 · MÉTIER ============ -->
+<div data-zone="metier">
 <main id="top">
   <section class="hero">
     <div class="ring" aria-hidden="true"></div>
-    <div class="wrap inner">
-      <span class="chip"><span class="live"></span> Basé dans le sud de la France</span>
-      <div class="idxrow">
-        <span>Marketeur web — <b>SEO</b></span>
-        <span>France · Québec</span>
-        <span>Depuis <b>2003</b></span>
-      </div>
-      <h1 class="title" id="title" aria-label="Julien Guiss">
-        <span class="line" aria-hidden="true"><span class="l" style="--i:0">J</span><span class="l" style="--i:1">U</span><span class="l" style="--i:2">L</span><span class="l" style="--i:3">I</span><span class="l" style="--i:4">E</span><span class="l" style="--i:5">N</span></span>
-        <span class="line" aria-hidden="true"><span class="l" style="--i:6">G</span><span class="l" style="--i:7">U</span><span class="l" style="--i:8">I</span><span class="l" style="--i:9">S</span><span class="l" style="--i:10">S</span><span class="l dot" style="--i:11">.</span></span>
+    <div class="wrap">
+      <span class="chip"><span class="d"></span> Vice-président, stratégies web &amp; actionnaire</span>
+      <h1 class="h1" aria-label="Julien Guiss">
+        <span class="rowl" aria-hidden="true"><span class="l" style="--i:0">J</span><span class="l" style="--i:1">U</span><span class="l" style="--i:2">L</span><span class="l" style="--i:3">I</span><span class="l" style="--i:4">E</span><span class="l" style="--i:5">N</span></span>
+        <span class="rowl" aria-hidden="true"><span class="l g" style="--i:6">G</span><span class="l g" style="--i:7">U</span><span class="l g" style="--i:8">I</span><span class="l g" style="--i:9">S</span><span class="l g" style="--i:10">S</span></span>
       </h1>
-      <div class="metarow">
-        <div><b>+20</b> ans de web</div>
-        <div><b>600+</b> sites livrés</div>
-        <div><b>SEO</b> · affiliation · stratégie</div>
-        <div>Homme <b>orchestre</b></div>
+      <p class="htag">Stratège web polyvalent&nbsp;: SEO, contenu, données et monétisation — depuis plus de vingt ans.</p>
+      <div class="meta">
+        <span><b>1999</b> premier pas en ligne</span>
+        <span><b>2003</b> première page HTML</span>
+        <span><b>20+</b> ans de web</span>
+        <span><b>FR</b> ⇄ <b>QC</b></span>
       </div>
-      <a class="scrollcue" href="#expertise"><span class="a">↓</span> Dérouler</a>
+      <a class="cue" href="#expertise"><span class="a">↓</span> Dérouler l'histoire</a>
     </div>
   </section>
 
-  <div class="marquee" data-marquee data-speed="60" data-dir="-1" aria-hidden="true">
-    <div class="track">
-      <span>SEO<i>✳</i>Analytics<i>✳</i>Affiliation<i>✳</i>Stratégie web<i>✳</i>Créativité<i>✳</i>Performance<i>✳</i></span>
-      <span>SEO<i>✳</i>Analytics<i>✳</i>Affiliation<i>✳</i>Stratégie web<i>✳</i>Créativité<i>✳</i>Performance<i>✳</i></span>
+  <div class="marq" data-marq data-sp="52" data-dir="-1" aria-hidden="true">
+    <div class="tr">
+      <span>SEO<i>✳</i>Contenu<i>✳</i>Affiliation<i>✳</i>Données<i>✳</i>Monétisation<i>✳</i>UX<i>✳</i>Management<i>✳</i></span>
+      <span>SEO<i>✳</i>Contenu<i>✳</i>Affiliation<i>✳</i>Données<i>✳</i>Monétisation<i>✳</i>UX<i>✳</i>Management<i>✳</i></span>
     </div>
   </div>
-
-  <div class="draftnote"><span><b>NOTE — premier jet.</b> Textes, dates et anecdotes écrits par moi à partir de tes infos publiques. À valider ensemble : tout ce qui est marqué <b>[à confirmer]</b>.</span></div>
 
   <!-- EXPERTISE -->
   <section class="sec" id="expertise">
     <div class="wrap">
-      <p class="eyebrow reveal">Expertise</p>
-      <h2 class="reveal" data-scramble>Ce que je fais</h2>
-      <div class="xgrid">
-        <div class="x reveal"><div class="n">01</div><h3>SEO technique</h3><p>Crawl, indexation, vitesse, structure. Rendre un site limpide pour Google avant tout le reste.</p></div>
-        <div class="x reveal"><div class="n">02</div><h3>Contenu &amp; sémantique</h3><p>Répondre vraiment à l'intention derrière la requête. L'empathie avant les mots-clés.</p></div>
-        <div class="x reveal"><div class="n">03</div><h3>Netlinking</h3><p>Construire l'autorité d'un domaine, proprement, pour que ça tienne dans le temps.</p></div>
-        <div class="x reveal"><div class="n">04</div><h3>Analytics &amp; data</h3><p>Analytics, Search Console, tableaux de bord. Décider avec des chiffres, pas des intuitions.</p></div>
-        <div class="x reveal"><div class="n">05</div><h3>Affiliation</h3><p>Transformer le trafic en modèle économique. Entrepreneur en affiliation depuis 2010.</p></div>
-        <div class="x reveal"><div class="n">06</div><h3>Stratégie &amp; équipe</h3><p>Piloter SEO, contenu, UX et monétisation à l'échelle. Aujourd'hui Vice-Président, Web Strategy.</p></div>
+      <p class="eyebrow rv">01 — Expertise</p>
+      <h2 class="rv">Comprendre toute la chaîne de valeur du web</h2>
+      <p class="lede rv wsplit">Mon expertise se situe à la croisée de la stratégie web, du SEO, du contenu, de l'acquisition et de la monétisation. Cette polyvalence ne vient pas d'une collection de compétences apprises en théorie&nbsp;: elle s'est construite en lançant des sites, en les développant, en observant leurs résultats — puis en recommençant.</p>
+      <div class="xg">
+        <div class="x rv"><div class="n">01</div><h3>Stratégie &amp; croissance organique</h3><p>Marchés, architecture de sites, priorisation, maillage interne, netlinking, performance technique. Fixer une direction et créer les conditions d'une exécution rapide et mesurable.</p></div>
+        <div class="x rv"><div class="n">02</div><h3>Contenu à forte valeur</h3><p>Le contenu n'est pas une production de volume&nbsp;: il répond à une intention réelle et trouve sa place dans un parcours — sans perdre la voix humaine qui donne envie de lire.</p></div>
+        <div class="x rv"><div class="n">03</div><h3>Données, UX &amp; conversion</h3><p>Comportements, indicateurs, tests A/B, points de friction, retour sur investissement. La donnée n'est pas une fin&nbsp;: elle sert à arbitrer et à améliorer.</p></div>
+        <div class="x rv"><div class="n">04</div><h3>Monétisation &amp; acquisition</h3><p>Publicité, affiliation, e-commerce, SEO, SEA, social, email. Un trafic important ne vaut que s'il attire les bonnes personnes et s'inscrit dans une économie saine.</p></div>
+        <div class="x rv"><div class="n">05</div><h3>Management &amp; orchestration</h3><p>SEO, contenu, développement, systèmes, produit, design, média, juridique&nbsp;: rendre les priorités lisibles et donner aux experts le contexte pour exceller ensemble.</p></div>
+        <div class="x rv"><div class="n">06</div><h3>IA &amp; expérimentation</h3><p>Explorer plus vite, prototyper, automatiser. Même règle qu'à chaque évolution du web&nbsp;: comprendre l'outil, vérifier ce qu'il produit, l'intégrer là où il apporte de la valeur.</p></div>
       </div>
+    </div>
+  </section>
+
+  <section class="pull">
+    <div class="wrap">
+      <q class="rv">On m'a souvent surnommé <b>«&nbsp;One Man Army&nbsp;»</b>. Non pas pour tout faire seul — mais pour parler le langage de chaque métier.</q>
+      <div class="by rv">Julien Guiss</div>
     </div>
   </section>
 
   <!-- PARCOURS -->
   <section class="sec" id="parcours">
     <div class="wrap">
-      <p class="eyebrow reveal">Parcours</p>
-      <h2 class="reveal" data-scramble>On devient expert sans l'avoir décidé</h2>
-      <div class="lead">
-        <div class="big reveal" data-parallax="0.06">03</div>
-        <div class="story reveal">
-          <p>Je n'ai pas appris le web à l'école. En 2003, en Provence, je m'occupe du marketing et du site d'un hôtel — et je découvre ce truc immense, branché au monde entier. Je n'en suis jamais vraiment ressorti.</p>
-          <p>Une question m'obsède&nbsp;: <em>pourquoi ce site-là arrive avant le mien&nbsp;?</em> De boutique e-commerce en boutique e-commerce, je tombe dans le SEO puis dans l'affiliation — au point d'en faire mon métier, puis ma propre affaire.</p>
-          <p>En 2014, je fais mes valises pour le <span class="flag">Québec</span>. En huit ans, je passe de SEO Manager à <strong>Vice-Président, Web Strategy Services</strong> — des centaines de sites, des millions de visiteurs par jour. Aujourd'hui, de retour dans le <span class="flag">sud de la France</span>, je pilote toujours cette stratégie à distance. Mais dans ma tête, je suis resté le gamin de 2003.</p>
-        </div>
+      <p class="eyebrow rv">02 — Parcours</p>
+      <h2 class="rv">Du premier site d'hôtel à la stratégie globale</h2>
+      <p class="lede rv">Une progression continue du terrain vers la stratégie. Chaque étape a ajouté une couche — relation client, marketing, création, e-commerce, acquisition, SEO, management — sans effacer les précédentes.</p>
+      <div class="tl" id="timeline">
+        <div class="rail" aria-hidden="true"><i id="railfill"></i></div>
+        <article class="job rv"><div class="yr">Mars 2022 — aujourd'hui</div><h3>Vice-président, Web Strategy Services</h3><div class="co">Entreprise canadienne · Québec / France</div><p>Vision long terme d'un vaste réseau de sites. J'aligne SEO, contenu, UX, technologie et monétisation, j'accompagne les équipes dirigeantes et je représente l'entreprise lors d'événements internationaux.</p></article>
+        <article class="job rv"><div class="yr">Juillet 2017 — mars 2022</div><h3>Strategic Acquisition Director</h3><div class="co">Entreprise canadienne · Québec</div><p>Stratégies d'acquisition multicanales pour un réseau de plus de 300 sites&nbsp;: SEO, SEA, social, email. Campagnes à fort volume, Core Web Vitals, netlinking, encadrement d'une équipe de stratèges — et des outils WordPress sur mesure pour la gestion des affiliés.</p></article>
+        <article class="job rv"><div class="yr">Juillet 2015 — juin 2017</div><h3>SEO Director</h3><div class="co">Entreprise canadienne · Québec</div><p>Structuration de la stratégie SEO d'un large réseau&nbsp;: audits techniques, priorisation, contenu, tests A/B. Les bonnes pratiques SEO et UX inscrites au cœur des projets, avec une réaction rapide aux changements d'algorithmes.</p></article>
+        <article class="job rv"><div class="yr">Octobre 2014 — juin 2015</div><h3>SEO Manager</h3><div class="co">Entreprise canadienne · Québec</div><p>Arrivé au Canada pour ce poste. Performance organique d'un portefeuille de sites, maillage interne, netlinking, formation des équipes. En moins d'un an, passage au rôle de directeur SEO.</p></article>
+        <article class="job rv"><div class="yr">Janvier 2011 — octobre 2014</div><h3>Traffic Manager SEM &amp; Social</h3><div class="co">Haladjian · Sorgues, France</div><p>Lancement d'un réseau de sites, données et tendances au quotidien, campagnes Google Ads et Bing Ads, boutiques e-commerce WebSphere et Magento — création, administration et référencement.</p></article>
+        <article class="job rv"><div class="yr">Mars 2010 — aujourd'hui</div><h3>Entrepreneur SEM &amp; Affiliate Marketing</h3><div class="co">iMasterWeb · Bédarrides, France</div><p>Mon laboratoire permanent&nbsp;: stratégies SEO, campagnes payantes, email, netlinking, veille, expérimentation de concepts. C'est là que j'ai compris l'affiliation de l'intérieur.</p></article>
+        <article class="job rv"><div class="yr">Décembre 2008 — février 2010</div><h3>Senior Manager E-commerce</h3><div class="co">Relaxr System · Roquemaure, France</div><p>SEO, SEA, email, netlinking, analyse du trafic et optimisation des revenus. Développement de sites Magento, création des supports numériques, optimisation des pages d'atterrissage.</p></article>
+        <article class="job rv"><div class="yr">Septembre 2005 — octobre 2008</div><h3>Webmaster / Product Manager</h3><div class="co">Charles &amp; Alice · Monteux, France</div><p>Lancement de gammes en grande distribution, supports commerciaux, sites corporate et boutique osCommerce. Le SEO et le marketing en ligne deviennent progressivement centraux.</p></article>
+        <article class="job rv"><div class="yr">Septembre 2003 — août 2005</div><h3>Marketing, relation client et web</h3><div class="co">Domaine de Valmouriane · Saint-Rémy-de-Provence</div><p>En alternance dans un hôtel-restaurant de luxe. La demande de mise à jour du site a tout changé&nbsp;: c'est ici que j'ai entendu parler du HTML pour la première fois.</p></article>
       </div>
-      <div class="tlist">
-        <div class="tl reveal"><span class="yr">2003</span><h3>Les débuts, en Provence</h3><span class="plus">+</span><p>Marketing et web pour un hôtel **** à Saint-Rémy. Le web entre dans ma vie.</p></div>
-        <div class="tl reveal"><span class="yr">2005</span><h3>Webmaster e-commerce</h3><span class="plus">+</span><p>Charles &amp; Alice : je code des boutiques (osCommerce) et j'utilise le SEO pour doper le ROI.</p></div>
-        <div class="tl reveal"><span class="yr">2008</span><h3>E-commerce à plein temps</h3><span class="plus">+</span><p>Relaxr : Magento, PPC, SEO, email. Senior Manager e-commerce.</p></div>
-        <div class="tl reveal"><span class="yr">2010</span><h3>iMasterWeb — à mon compte</h3><span class="plus">+</span><p>Je deviens entrepreneur : SEM &amp; affiliation. (toujours actif)</p></div>
-        <div class="tl reveal"><span class="yr">2011</span><h3>Traffic Manager</h3><span class="plus">+</span><p>Haladjian : lancer un réseau de sites, AdWords &amp; Bing, social.</p></div>
-        <div class="tl reveal"><span class="yr">2014</span><h3>Le grand saut au Québec</h3><span class="plus">+</span><p>Cap sur Québec : SEO Manager, puis SEO Director en 2015.</p></div>
-        <div class="tl reveal"><span class="yr">2017</span><h3>Strategic Acquisition Director</h3><span class="plus">+</span><p>Un réseau de 300+ sites, campagnes à fort volume, plugins WordPress d'affiliation.</p></div>
-        <div class="tl reveal"><span class="yr">2022</span><h3>Vice-Président, Web Strategy</h3><span class="plus">+</span><p>SEO, contenu, UX, monétisation à l'échelle. Aujourd'hui, de retour dans le Sud.</p></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- PULL QUOTE -->
-  <section class="pull">
-    <div class="wrap">
-      <q class="reveal">« Le SEO n'est pas une recette. <b>C'est une manière de penser.</b> »</q>
-      <div class="by reveal">— Julien Guiss</div>
-    </div>
-  </section>
-
-  <!-- OUTILS marquee -->
-  <div class="marquee alt" data-marquee data-speed="40" data-dir="1" aria-hidden="true">
-    <div class="track">
-      <span>Analytics<i>·</i>Search Console<i>·</i>Ahrefs<i>·</i>Semrush<i>·</i>Screaming Frog<i>·</i>WordPress<i>·</i>Looker<i>·</i></span>
-      <span>Analytics<i>·</i>Search Console<i>·</i>Ahrefs<i>·</i>Semrush<i>·</i>Screaming Frog<i>·</i>WordPress<i>·</i>Looker<i>·</i></span>
-    </div>
-  </div>
-
-  <!-- KINETIC -->
-  <section class="kinetic">
-    <div class="wrap">
-      <p class="kstmt">Depuis 2003,<br>je construis
-        <span class="rot" id="rot" aria-label="le web, du trafic, de la visibilité, des histoires">le web.</span>
-      </p>
     </div>
   </section>
 
   <!-- CHIFFRES -->
-  <section class="sec" style="border-top:2px solid var(--line-strong)">
+  <section class="sec" style="padding-top:0">
     <div class="wrap">
-      <p class="eyebrow reveal">En chiffres</p>
-      <div class="statgrid">
-        <div class="stat reveal"><div class="k" data-count="2003">2003</div><div class="l">depuis</div></div>
-        <div class="stat reveal"><div class="k" data-count="600" data-suffix="+">600+</div><div class="l">sites livrés</div></div>
-        <div class="stat reveal"><div class="k" data-count="20" data-suffix=" ans">20 ans</div><div class="l">de web</div></div>
-        <div class="stat reveal"><div class="k">M+</div><div class="l">visiteurs / jour</div></div>
+      <p class="eyebrow rv">Repères</p>
+      <div class="stats">
+        <div class="st rv"><div class="k" data-c="1999">1999</div><div class="l">première adresse email</div></div>
+        <div class="st rv"><div class="k" data-c="2003">2003</div><div class="l">premières pages HTML</div></div>
+        <div class="st rv"><div class="k" data-c="120" data-s="+">120+</div><div class="l">sites dans mon réseau perso</div></div>
+        <div class="st rv"><div class="k" data-c="300" data-s="+">300+</div><div class="l">sites supervisés</div></div>
+        <div class="st rv"><div class="k" data-c="2014">2014</div><div class="l">installation à Québec</div></div>
+        <div class="st rv"><div class="k" data-c="20" data-s="+ ans">20+ ans</div><div class="l">à créer et faire croître</div></div>
       </div>
     </div>
   </section>
 </main>
 </div>
 
-<!-- ===================== ZONE PERSO ===================== -->
-<div data-zone="perso">
-  <section class="sec" id="perso">
+<!-- ============ ZONE 2 · RÉCIT WEB ============ -->
+<div data-zone="recit">
+  <section class="sec" id="recit">
     <div class="wrap">
-      <p class="eyebrow reveal">Perso</p>
-      <h2 class="reveal" data-scramble>Loin des écrans</h2>
-      <p class="story reveal" style="margin-top:22px">On ne se résume pas à son métier. Voici l'autre moitié — celle qui n'a rien à voir avec Google. <span class="todo">[à compléter avec toi]</span></p>
-      <div class="lifegrid">
-        <div class="life reveal"><div class="emoji">🥊</div><h3>Champion de Provence de full-contact</h3><p>La discipline, l'énergie, le goût de l'effort. <span class="todo">[à confirmer]</span></p></div>
-        <div class="life reveal"><div class="emoji">🌞</div><h3>Le Sud dans le sang</h3><p>Avignon, la lumière, l'accent, les étés interminables.</p></div>
-        <div class="life reveal"><div class="emoji">🏆</div><h3>Une autre vie : l'agroalimentaire</h3><p>Vainqueur du Trophélia, l'innovation fruits &amp; légumes. <span class="todo">[à confirmer]</span></p></div>
-        <div class="life reveal"><div class="emoji">🏕️</div><h3>Transmettre</h3><p>BAFA, encadrer, animer — depuis longtemps. <span class="todo">[à confirmer]</span></p></div>
-      </div>
-    </div>
-  </section>
+      <p class="eyebrow rv">03 — Mon histoire avec le web</p>
+      <h2 class="rv">Du modem familial aux stratégies à grande échelle</h2>
+      <p class="lede rv wsplit">Je ne me suis pas réveillé un matin en décidant de devenir expert SEO. J'ai commencé par m'amuser, bricoler et vouloir comprendre. La compétence est venue ensuite, projet après projet.</p>
 
-  <section class="pull">
-    <div class="wrap">
-      <q class="reveal">« On peut quitter le Sud, <b>le Sud ne vous quitte pas.</b> »</q>
-      <div class="by reveal">— note perso · à retravailler</div>
+      <article class="chap rv">
+        <div class="yr">1999</div>
+        <div>
+          <h3>Une première adresse email et un monde à explorer</h3>
+          <div class="prose">
+            <p>J'ai créé ma première adresse email à <strong>16 ans</strong>. Mon père avait installé l'ordinateur familial dans ma chambre&nbsp;: sans le savoir, il venait d'ouvrir une porte qui ne se refermerait plus. J'utilisais le moteur de recherche d'AOL, jusqu'au jour où un ami m'a parlé de <em>Google</em> — presque révolutionnaire, par sa simplicité.</p>
+            <p>Je découvrais en même temps <strong>Caramail</strong> et ses salons de discussion. De nombreuses soirées à parler avec des inconnus du monde entier — «&nbsp;<span class="tag">ASV&nbsp;?</span>&nbsp;», pour ceux qui connaissent. Cette fascination pour les échanges en ligne a semé, très tôt, la graine de mon intérêt pour les sites de rencontre et l'affiliation.</p>
+          </div>
+        </div>
+      </article>
+
+      <article class="chap rv">
+        <div class="yr">2003</div>
+        <div>
+          <h3>Mes premières lignes de HTML</h3>
+          <div class="prose">
+            <p>BTS Action commerciale en alternance, dans un hôtel-restaurant de luxe à Saint-Rémy-de-Provence. Les propriétaires me demandent de mettre à jour leur site. On me parle de <strong>HTML</strong> pour la première fois. Je me documente et je comprends qu'avec quelques lignes de code, je peux construire des pages et les rendre visibles partout dans le monde.</p>
+            <p>Dreamweaver, le principe du WYSIWYG, Photoshop pour le design. Mes premières pages existent enfin — d'abord en local sur mon ordinateur. Je n'étais pas encore développeur&nbsp;: j'étais un <em>bidouilleur passionné</em> qui venait de trouver un terrain de jeu sans limites.</p>
+          </div>
+        </div>
+      </article>
+
+      <article class="chap rv">
+        <div class="yr">2004 — 2007</div>
+        <div>
+          <h3>Photos de soirées, CMS et e-commerce</h3>
+          <div class="prose">
+            <p>Je faisais partie des rares à posséder un appareil photo numérique de <strong>deux mégapixels</strong>. L'iPhone n'existait pas et presque personne ne photographiait les soirées. Comme je sortais beaucoup, j'ai eu envie d'un espace pour partager ces moments.</p>
+            <p>J'ai découvert les CMS open source, PHP et SQL. Mon premier site tournait sous <em>PHP-Nuke</em>&nbsp;; j'ai testé presque tout ce qui existait, ajouté un forum, une boutique de print-on-demand, puis adopté WordPress. En parallèle, en alternance dans une entreprise agroalimentaire, j'ai refait le site sous TYPO3 et développé une boutique osCommerce — pas aussi fluide qu'un Shopify actuel, mais une compréhension très concrète du site marchand.</p>
+          </div>
+        </div>
+      </article>
+
+      <article class="chap rv">
+        <div class="yr">2007</div>
+        <div>
+          <h3>Le premier revenu généré en ligne</h3>
+          <div class="prose">
+            <p>Le déclic économique. J'avais installé <strong>Google AdSense</strong> sur l'un de mes blogs, simplement pour tester. Un article — à l'époque, une vidéo YouTube intégrée et quelques lignes pouvaient suffire — est devenu très populaire. J'ai reçu mon <em>premier chèque de Google</em> et vu mon nom apparaître dans des classements de blogueurs français.</p>
+            <p>Un seul contenu venait de générer l'équivalent d'un salaire mensuel. J'ai compris que création, visibilité et monétisation pouvaient former un <strong>système</strong>. Je venais de toucher quelque chose d'important, et je n'avais aucune intention de lâcher.</p>
+          </div>
+        </div>
+      </article>
+
+      <article class="chap rv">
+        <div class="yr">2009 — 2011</div>
+        <div>
+          <h3>L'entrepreneuriat et la découverte de l'affiliation</h3>
+          <div class="prose">
+            <p>Après un master en marketing agroalimentaire et un poste très polyvalent chez un importateur — e-commerce, packaging, fiches produits, campagnes payantes, SEO, jusqu'aux expéditions — l'envie de construire mes propres projets devient trop forte. Je me lance.</p>
+            <p>La création de sites pour des clients ne me convient qu'à moitié&nbsp;: toujours une modification de plus, puis il faut repartir chercher le projet suivant. Je voulais bâtir des <em>actifs</em>. En cherchant à créer un site de rencontre de A à Z, je découvre l'<strong>affiliation</strong>. Des dizaines de sites thématiques, des tutoriels pour partager mes méthodes — et un jour, l'émission <strong>Capital sur M6</strong> me contacte pour un reportage.</p>
+          </div>
+        </div>
+      </article>
+
+      <article class="chap rv">
+        <div class="yr">2011 — 2014</div>
+        <div>
+          <h3>Un réseau personnel de plus de 120 sites</h3>
+          <div class="prose">
+            <p>Quand un poste de Traffic Manager se présente près de chez moi, je l'accepte pour retrouver une vie d'équipe. À ce moment-là, mon propre réseau compte déjà <strong>plus de 120 sites</strong>.</p>
+            <p>Près de quatre ans sur des écosystèmes WebSphere et Magento, en combinant création, acquisition et référencement. Le SEO change vite&nbsp;: <em>not provided</em>, Panda, Penguin rendent les recettes faciles beaucoup moins fiables. Cette période m'oblige à professionnaliser mes méthodes et à raisonner en qualité, architecture et durabilité.</p>
+          </div>
+        </div>
+      </article>
+
+      <article class="chap rv">
+        <div class="yr">2014</div>
+        <div>
+          <h3>Le pari canadien</h3>
+          <div class="prose">
+            <p>Je recommence à postuler à l'étranger. Le hasard fait très bien les choses&nbsp;: passionné d'affiliation, je réponds sans le savoir à l'offre d'une entreprise canadienne qui avait bâti une réussite spectaculaire dans ce domaine exact. J'accepte le risque. En octobre, je déménage à <strong>Québec</strong> avec ma femme et notre fille d'un an et demi.</p>
+            <p>J'avais trouvé un environnement presque idéal&nbsp;: une entreprise entrepreneuriale, une équipe soudée, des ambitions à la hauteur de ma passion. En moins d'un an, je deviens <em>directeur SEO</em>.</p>
+          </div>
+        </div>
+      </article>
+
+      <article class="chap rv">
+        <div class="yr">Aujourd'hui</div>
+        <div>
+          <h3>Diriger sans cesser de créer</h3>
+          <div class="prose">
+            <p>SEO Manager, SEO Director, Strategic Acquisition Director, puis <strong>Vice-président des stratégies web et actionnaire</strong>. Je travaille sur des sites à très forte audience — dont certains parmi les plus consultés aux États-Unis — et sur des centaines de milliers de requêtes hors marque. Le référencement naturel auquel je contribue génère <strong>plusieurs millions de dollars</strong> de revenus annuels.</p>
+            <p>À cette échelle, la réussite n'est plus celle d'une personne&nbsp;: elle vient de la synergie entre SEO, contenu, affiliation, media buying, développeurs, systèmes, juridique, produit et marketing. Mon rôle est de garder la vision globale et de créer les conditions dans lesquelles chacun produit son meilleur travail.</p>
+            <p>Et pourtant, hors du travail, je continue à lancer de petits concepts — souvent autour de l'<em>intelligence artificielle</em>. Pour garder la main, comprendre ce qui devient possible et, surtout, parce que j'aime toujours autant créer.</p>
+          </div>
+        </div>
+      </article>
+
+      <div class="cards">
+        <div class="cd rv"><div class="em">💬</div><h3>ASV&nbsp;?</h3><p>Caramail, les premières conversations avec le monde — et le début d'une fascination pour les communautés en ligne.</p></div>
+        <div class="cd rv"><div class="em">📷</div><h3>2 mégapixels</h3><p>Un appareil photo numérique rare à l'époque, des photos de soirées, et la naissance du premier site personnel.</p></div>
+        <div class="cd rv"><div class="em">💸</div><h3>Premier chèque Google</h3><p>Un article viral, AdSense, et la découverte qu'un contenu peut générer un véritable revenu.</p></div>
+        <div class="cd rv"><div class="em">📺</div><h3>Capital sur M6</h3><p>Un reportage sur mon activité d'affilié — la première forme de notoriété dans le milieu.</p></div>
+        <div class="cd rv"><div class="em">⚔️</div><h3>One Man Army</h3><p>Comprendre l'ensemble de la chaîne&nbsp;: du code et du contenu jusqu'à la donnée et à la monétisation.</p></div>
+        <div class="cd rv"><div class="em">🎯</div><h3>60&nbsp;000&nbsp;$</h3><p>«&nbsp;Essaie de nous positionner sur ce terme.&nbsp;» — «&nbsp;Nous sommes déjà premiers, et ça a généré ~60&nbsp;000&nbsp;$.&nbsp;»</p></div>
+      </div>
     </div>
   </section>
 </div>
 
-<!-- ===================== ZONE HISTOIRE ===================== -->
-<div data-zone="histoire">
-  <section class="sec" id="histoire">
+<!-- ============ ZONE 3 · PERSO ============ -->
+<div data-zone="perso">
+  <section class="sec" id="perso">
     <div class="wrap">
-      <p class="eyebrow reveal">Mon histoire</p>
-      <h2 class="reveal" data-scramble>D'Avignon à Québec, et retour</h2>
-      <p class="story reveal" style="margin-top:22px">Une trajectoire qui traverse un océan — puis le retraverse. Le récit complet viendra ici&nbsp;; pour l'instant, la carte du voyage. <span class="todo">[à écrire ensemble]</span></p>
-      <div class="journey reveal">
-        <div class="stop"><div class="d"></div><div class="city">Avignon</div><div class="yr">Provence · origine</div></div>
-        <div class="seg"></div>
-        <div class="stop"><div class="d"></div><div class="city">Le web</div><div class="yr">2003 →</div></div>
-        <div class="seg"></div>
-        <div class="stop"><div class="d"></div><div class="city">Québec</div><div class="yr">2014 – 2022</div></div>
-        <div class="seg"></div>
-        <div class="stop"><div class="d"></div><div class="city">Le Sud</div><div class="yr">retour · aujourd'hui</div></div>
+      <p class="eyebrow rv">04 — Histoire personnelle</p>
+      <h2 class="rv">Des racines, du mouvement et quelques détours</h2>
+      <p class="lede rv wsplit">Mon parcours professionnel raconte une partie de mon histoire. Le reste se trouve dans le Vaucluse, les camps scouts, les rues parcourues en skateboard, les salles de boxe, le départ au Canada et la famille que j'ai construite.</p>
+
+      <article class="chap rv">
+        <div class="yr">Racines</div>
+        <div>
+          <h3>Des racines méditerranéennes</h3>
+          <div class="prose">
+            <p>Né et grandi principalement dans le <strong>Vaucluse</strong>. Toute ma famille est issue des Pieds-Noirs et, à ma connaissance, je suis le premier de ma lignée directe né en France métropolitaine depuis l'installation des différentes branches familiales en Algérie au XIX<sup>e</sup> siècle. Français, Italiens, Espagnols, Allemands&nbsp;: une histoire faite de croisements, de déplacements et de vies reconstruites.</p>
+            <p>Je préfère aborder cette histoire complexe par les parcours humains plutôt que par les raccourcis. Mon grand-père maternel a travaillé à l'installation du réseau électrique en Algérie. Ma grand-mère paternelle, institutrice, s'est engagée pour la <em>scolarisation des filles</em> dans la région d'Alger. Mon grand-père paternel était agriculteur et a exercé des responsabilités municipales. Ces récits ont nourri chez moi l'attachement au travail, à la transmission et à la capacité de recommencer ailleurs.</p>
+          </div>
+        </div>
+      </article>
+
+      <div class="life">
+        <div class="lf rv"><div class="em">🪓</div><h3>Les scouts — apprendre à se débrouiller</h3><p>Scout d'Europe de 11 à 13 ans. Une école de vie, pas une colonie&nbsp;: des règles, des responsabilités, de l'autonomie. À 12 ans, on m'a donné une hache et demandé de revenir avec des troncs de plus de quatre mètres.</p></div>
+        <div class="lf rv"><div class="em">🏕️</div><h3>Le BAFA — encadrer avant de manager</h3><p>Plusieurs étés d'animation dans les Pyrénées, le Massif central, la Côte d'Azur. Gérer des groupes, inventer des activités, monter des spectacles. J'apprenais déjà à créer de l'énergie collective.</p></div>
+        <div class="lf rv"><div class="em">🛹</div><h3>Le skate — la ville comme terrain de jeu</h3><p>De 12 à 19 ans, une trentaine à rider dans Carpentras et à pousser les mairies pour des skateparks. On m'appelait «&nbsp;FlatMan&nbsp;»&nbsp;: beaucoup de tricks, rarement très vite. Une double fracture a freiné la suite.</p></div>
+        <div class="lf rv"><div class="em">🥊</div><h3>La boxe — changer de posture</h3><p>Débuts à 20 ans presque par hasard, premiers combats à 21, <strong>champion de Provence de full-contact en 2004</strong>. Près de vingt ans de pratique, aux côtés de champions de France, du Canada et du monde.</p></div>
+        <div class="lf rv"><div class="em">🎧</div><h3>Les festivals électro</h3><p>J'aime toujours faire la fête, même si je sors moins qu'avant. Et souvenez-vous&nbsp;: c'est exactement à cause de ça que j'ai créé mon tout premier site.</p></div>
+        <div class="lf rv"><div class="em">🤖</div><h3>Créer, encore</h3><p>Hors du travail, des petits concepts autour de l'intelligence artificielle. Pour garder la main, et parce que j'aime créer — tout simplement.</p></div>
       </div>
-      <div class="teaser reveal">
-        <span class="badge">Chapitre à venir</span>
-        <p>Ici viendra le reste de l'histoire&nbsp;: pourquoi le départ, comment le Québec, ce qui a changé, ce qui est resté. La vraie histoire, avec tes mots.</p>
-        <p class="route">itinéraire : Avignon ──▶ Québec ──▶ Provence</p>
+
+      <article class="chap rv" style="margin-top:clamp(30px,4vw,50px)">
+        <div class="yr">2014 — 2024</div>
+        <div>
+          <h3>Le Canada — partir trois ans, rester dix</h3>
+          <div class="prose">
+            <p>Je suis parti au Canada en 2014 pour trois ans. J'y suis finalement resté <strong>dix ans</strong> et j'en suis même devenu <em>citoyen</em>. À Québec, j'ai découvert une autre manière de vivre&nbsp;: une société chaleureuse, détendue, moins portée sur le jugement, et une qualité de vie à laquelle je me suis profondément attaché.</p>
+            <p>Après dix ans, je suis revenu en France, à la suite de la disparition de l'un de mes frères et pour me rapprocher de ma mère ainsi que de mon père, atteint de la maladie de Parkinson. J'ai pu conserver mon rôle et travailler à distance&nbsp;; je retourne au Canada plusieurs fois par an pour maintenir le lien avec mes équipes.</p>
+          </div>
+        </div>
+      </article>
+
+      <article class="chap rv">
+        <div class="yr">Aujourd'hui</div>
+        <div>
+          <h3>Revenir en Provence, construire une vie</h3>
+          <div class="prose">
+            <p>J'aime la <strong>Provence</strong>, ce coin de France que ma famille a trouvé en arrivant d'Algérie. J'ai la chance d'être revenu dans un village qui me plaît, dans le <em>Gard</em>. Mon deuxième enfant est né au Canada&nbsp;: nous sommes désormais quatre, et pouvoir subvenir aux besoins des miens est ce qui me rend le plus fier.</p>
+          </div>
+        </div>
+      </article>
+
+      <div class="trip rv">
+        <div class="stop"><div class="d"></div><div class="c">Vaucluse</div><div class="y">origine</div></div>
+        <div class="seg"></div>
+        <div class="stop"><div class="d"></div><div class="c">Le web</div><div class="y">1999 →</div></div>
+        <div class="seg"></div>
+        <div class="stop"><div class="d"></div><div class="c">Québec</div><div class="y">2014 – 2024</div></div>
+        <div class="seg"></div>
+        <div class="stop"><div class="d"></div><div class="c">Le Gard</div><div class="y">aujourd'hui</div></div>
       </div>
     </div>
   </section>
 
-  <section class="sec" id="contact" style="border-top:1px solid var(--line)">
+  <section class="final">
     <div class="wrap">
-      <p class="eyebrow reveal">Contact</p>
-      <h2 class="reveal" data-scramble>On se dit bonjour ?</h2>
-      <div class="biglinks reveal">
-        <a class="biglink mag" href="https://www.linkedin.com/in/jguiss/" target="_blank" rel="noopener"><span class="n">LinkedIn</span><span class="h">/in/jguiss ↗</span></a>
-        <a class="biglink mag" href="https://x.com/jguisswebmaster" target="_blank" rel="noopener"><span class="n">X / Twitter</span><span class="h">@jguisswebmaster ↗</span></a>
-        <a class="biglink mag" href="https://www.youtube.com/c/JulienGuiss" target="_blank" rel="noopener"><span class="n">YouTube</span><span class="h">/c/JulienGuiss ↗</span></a>
+      <p class="rv">«&nbsp;Les outils changent, les algorithmes aussi. Ce qui reste, c'est la curiosité, le goût du travail bien fait et l'envie de construire quelque chose qui compte.&nbsp;»</p>
+    </div>
+  </section>
+
+  <section class="sec" id="contact" style="padding-top:0">
+    <div class="wrap">
+      <p class="eyebrow rv">05 — Contact</p>
+      <h2 class="rv">On se dit bonjour&nbsp;?</h2>
+      <p class="lede rv">Ce site ne vend rien. Il raconte — et il ouvre la porte si vous voulez échanger.</p>
+      <div class="links rv">
+        <a class="lnk mag" href="https://www.linkedin.com/in/jguiss/" target="_blank" rel="noopener"><span class="n">LinkedIn</span><span class="h">/in/jguiss ↗</span></a>
+        <a class="lnk mag" href="https://x.com/jguisswebmaster" target="_blank" rel="noopener"><span class="n">X / Twitter</span><span class="h">@jguisswebmaster ↗</span></a>
+        <a class="lnk mag" href="https://www.youtube.com/c/JulienGuiss" target="_blank" rel="noopener"><span class="n">YouTube</span><span class="h">/c/JulienGuiss ↗</span></a>
       </div>
     </div>
   </section>
 
-  <div class="marquee" data-marquee data-speed="45" data-dir="-1" aria-hidden="true">
-    <div class="track">
-      <span>Avignon<i>→</i>Québec<i>✳</i>Marketeur web depuis 2003<i>✳</i></span>
-      <span>Avignon<i>→</i>Québec<i>✳</i>Marketeur web depuis 2003<i>✳</i></span>
+  <div class="marq" data-marq data-sp="40" data-dir="1" aria-hidden="true">
+    <div class="tr">
+      <span>Curiosité<i>✳</i>Expérimentation<i>✳</i>Création<i>✳</i>Visibilité<i>✳</i>Monétisation<i>✳</i>Transmission<i>✳</i></span>
+      <span>Curiosité<i>✳</i>Expérimentation<i>✳</i>Création<i>✳</i>Visibilité<i>✳</i>Monétisation<i>✳</i>Transmission<i>✳</i></span>
     </div>
   </div>
 
   <footer>
     <div class="wrap">
-      <span>© <span id="year">2026</span> Julien Guiss</span>
-      <span>Avignon ↔ Québec</span>
+      <span>© <span id="yr">2026</span> Julien Guiss</span>
+      <span>Provence ⇄ Québec</span>
       <span><a href="#top">Retour en haut ↑</a></span>
     </div>
   </footer>
@@ -422,175 +573,173 @@
 <script>
 (function(){
   "use strict";
-  var reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-  var fine = window.matchMedia && window.matchMedia("(pointer: fine)").matches;
-  var y=document.getElementById("year"); if(y) y.textContent=new Date().getFullYear();
+  var reduce=window.matchMedia&&window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  var fine=window.matchMedia&&window.matchMedia("(pointer: fine)").matches;
+  var y=document.getElementById("yr"); if(y) y.textContent=new Date().getFullYear();
+  function sTop(){return window.pageYOffset||document.documentElement.scrollTop||0;}
 
-  /* ---- shared scroll position (polled — no scroll events needed) ---- */
-  var prog=document.getElementById("progress");
-  function scrollTopNow(){ return window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0; }
+  /* ---------- word split (preserves inline tags) ---------- */
+  function splitWords(el){
+    var nodes=[].slice.call(el.childNodes);
+    nodes.forEach(function(n){
+      if(n.nodeType===3){
+        var frag=document.createDocumentFragment();
+        n.nodeValue.split(/(\s+)/).forEach(function(tok){
+          if(!tok) return;
+          if(/^\s+$/.test(tok)){ frag.appendChild(document.createTextNode(tok)); }
+          else{ var s=document.createElement("span"); s.className="w"; s.textContent=tok; frag.appendChild(s); }
+        });
+        el.replaceChild(frag,n);
+      } else if(n.nodeType===1){ splitWords(n); }
+    });
+  }
+  var wsplits=[].slice.call(document.querySelectorAll(".wsplit"));
+  if(!reduce) wsplits.forEach(splitWords);
 
-  /* ---- Zone theming ---- */
+  /* ---------- zones ---------- */
   var zones=[].slice.call(document.querySelectorAll("[data-zone]"));
-  var currentAccent="#2b2bff";
+  var curZone="", accent="#6fe0a0";
+  var themeColors={metier:"#0b1410",recit:"#170e08",perso:"#07161a"};
   function setZone(z){
-    document.body.classList.remove("zone-pro","zone-perso","zone-histoire");
-    document.body.classList.add("zone-"+z);
-    var tc={pro:"#f4f3ef",perso:"#190e15",histoire:"#0a1020"}[z];
-    var mt=document.querySelector('meta[name=theme-color]'); if(mt) mt.setAttribute("content",tc);
-    // refresh accent for canvas after transition
-    setTimeout(function(){ currentAccent=getComputedStyle(document.body).getPropertyValue("--accent").trim()||currentAccent; },80);
+    document.body.classList.remove("z-metier","z-recit","z-perso");
+    document.body.classList.add("z-"+z);
+    var mt=document.querySelector('meta[name=theme-color]'); if(mt) mt.setAttribute("content",themeColors[z]||"#0b1410");
+    setTimeout(function(){ accent=getComputedStyle(document.body).getPropertyValue("--accent").trim()||accent; },120);
   }
-  var currentZone="";
-  function updateZone(){
-    var vc=innerHeight/2, z;
-    for(var i=0;i<zones.length;i++){ var r=zones[i].getBoundingClientRect(); if(r.top<=vc && r.bottom>=vc){ z=zones[i].getAttribute("data-zone"); break; } }
-    if(z && z!==currentZone){ currentZone=z; setZone(z); }
+  function updZone(){
+    var vc=innerHeight*0.5, z;
+    for(var i=0;i<zones.length;i++){var r=zones[i].getBoundingClientRect(); if(r.top<=vc&&r.bottom>=vc){z=zones[i].getAttribute("data-zone");break;}}
+    if(z&&z!==curZone){curZone=z; setZone(z);}
   }
 
-  /* ---- Reveal (position-polled, works without scroll events) ---- */
-  var revs=[].slice.call(document.querySelectorAll(".reveal"));
-  if(reduce){ revs.forEach(function(el){el.classList.add("in");}); }
-  function updateReveals(){
+  /* ---------- reveals ---------- */
+  var rvs=[].slice.call(document.querySelectorAll(".rv"));
+  if(reduce) rvs.forEach(function(e){e.classList.add("in");});
+  function updRv(){
     var vh=innerHeight;
-    for(var i=0;i<revs.length;i++){ var el=revs[i]; if(el.__in) continue;
+    for(var i=0;i<rvs.length;i++){var el=rvs[i]; if(el.__i) continue;
       var r=el.getBoundingClientRect();
-      if(r.top < vh*0.9 && r.bottom > -40){ el.__in=true; el.classList.add("in"); if(el.hasAttribute("data-scramble")) scramble(el); }
-    }
-  }
-
-  /* ---- Heading scramble (mobile-friendly) ---- */
-  var GL="ABCDEFGHIJKLMNOPQRSTUVWXYZ#%&/{}[]<>0123456789";
-  document.querySelectorAll("[data-scramble]").forEach(function(el){ el.setAttribute("data-text", el.textContent); });
-  function scramble(el){
-    if(reduce) return;
-    var full=el.getAttribute("data-text")||el.textContent; var len=full.length;
-    var start=performance.now(), dur=780;
-    function frame(now){
-      var p=(now-start)/dur, out="";
-      for(var i=0;i<len;i++){
-        var c=full[i];
-        if(c===" "||c===" "||c==="«"||c==="»"){ out+=c; continue; }
-        var r=i/len;
-        if(p>r+0.18){ out+=c; }
-        else if(p>r-0.12){ out+=GL[(Math.random()*GL.length)|0]; }
-        else { out+= (Math.random()<0.55? GL[(Math.random()*GL.length)|0] : " "); }
+      if(r.top<vh*0.9&&r.bottom>-60){
+        el.__i=true; el.classList.add("in");
+        var ws=el.querySelectorAll(".w");
+        for(var j=0;j<ws.length;j++){ (function(w,d){setTimeout(function(){w.classList.add("in");},d);})(ws[j], 90+j*22); }
       }
-      el.textContent=out;
-      if(p<1.25) requestAnimationFrame(frame); else el.textContent=full;
     }
-    requestAnimationFrame(frame);
   }
 
-  /* ---- Parallax (polled) ---- */
-  var plx=[].slice.call(document.querySelectorAll("[data-parallax]"));
-  function updatePlx(){
+  /* ---------- timeline rail fill ---------- */
+  var tlEl=document.getElementById("timeline"), fill=document.getElementById("railfill");
+  function updRail(){
+    if(!tlEl||!fill) return;
+    var r=tlEl.getBoundingClientRect(), vh=innerHeight;
+    var p=(vh*0.55-r.top)/r.height;
+    fill.style.height=Math.max(0,Math.min(1,p))*100+"%";
+  }
+
+  /* ---------- counters ---------- */
+  function count(el){
+    var t=parseFloat(el.getAttribute("data-c")), sfx=el.getAttribute("data-s")||"", dur=1300, t0=performance.now();
+    var from = t>1900 ? t-40 : 0;
+    function f(now){var p=Math.min((now-t0)/dur,1), e=1-Math.pow(1-p,3);
+      el.textContent=Math.round(from+(t-from)*e)+sfx;
+      if(p<1) requestAnimationFrame(f); else el.textContent=t+sfx;}
+    requestAnimationFrame(f);
+  }
+  var cs=[].slice.call(document.querySelectorAll("[data-c]"));
+  function updCount(){
     var vh=innerHeight;
-    for(var i=0;i<plx.length;i++){ var el=plx[i]; var r=el.getBoundingClientRect();
-      var off=(r.top+r.height/2 - vh/2); var sp=parseFloat(el.getAttribute("data-parallax"))||0.1;
-      el.style.transform="translateY("+(-off*sp)+"px)"; }
+    for(var i=0;i<cs.length;i++){var el=cs[i]; if(el.__d) continue; var r=el.getBoundingClientRect();
+      if(r.top<vh*0.85&&r.bottom>0){el.__d=true; if(!reduce) count(el);}}
   }
 
-  /* ---- Cursor + magnetic + title parallax (desktop) ---- */
-  if(fine && !reduce){
-    document.body.classList.add("cursor-on");
-    var dot=document.getElementById("cursorDot");
-    var mx=innerWidth/2,my=innerHeight/2,dx=mx,dy=my;
-    addEventListener("mousemove",function(e){mx=e.clientX;my=e.clientY;});
-    (function loop(){ dx+=(mx-dx)*.2; dy+=(my-dy)*.2; dot.style.transform="translate("+dx+"px,"+dy+"px) translate(-50%,-50%)"; requestAnimationFrame(loop); })();
-    document.querySelectorAll("a,button,.x,.tl,.life,.biglink").forEach(function(el){
-      el.addEventListener("mouseenter",function(){dot.classList.add("big");});
-      el.addEventListener("mouseleave",function(){dot.classList.remove("big");});
-    });
-    document.querySelectorAll(".mag").forEach(function(el){
-      el.addEventListener("mousemove",function(e){var r=el.getBoundingClientRect();el.style.transform="translate("+((e.clientX-(r.left+r.width/2))/r.width*16)+"px,"+((e.clientY-(r.top+r.height/2))/r.height*10)+"px)";});
-      el.addEventListener("mouseleave",function(){el.style.transform="";});
-    });
-    var title=document.getElementById("title");
-    if(title) addEventListener("mousemove",function(e){title.style.transform="perspective(900px) rotateX("+(-(e.clientY/innerHeight-.5)*4)+"deg) rotateY("+((e.clientX/innerWidth-.5)*5)+"deg)";});
+  /* ---------- nav active ---------- */
+  var navA=[].slice.call(document.querySelectorAll("#navlinks a"));
+  var targets=navA.map(function(a){return document.querySelector(a.getAttribute("href"));});
+  function updNav(){
+    var best=-1, bd=1e9;
+    for(var i=0;i<targets.length;i++){ if(!targets[i]) continue;
+      var d=Math.abs(targets[i].getBoundingClientRect().top-innerHeight*0.3);
+      if(d<bd){bd=d;best=i;} }
+    navA.forEach(function(a,i){a.classList.toggle("on",i===best);});
   }
 
-  /* ---- Marquees ---- */
-  var marquees=[].slice.call(document.querySelectorAll("[data-marquee]")).map(function(m){
-    var t=m.querySelector(".track");
-    return {t:t,pos:0,base:parseFloat(m.getAttribute("data-speed"))||50,dir:parseFloat(m.getAttribute("data-dir"))||-1,w:0};
+  /* ---------- master loop ---------- */
+  var prog=document.getElementById("prog");
+  (function master(){
+    var st=sTop(), m=document.documentElement.scrollHeight-innerHeight;
+    if(prog) prog.style.width=(m>0?Math.max(0,Math.min(1,st/m))*100:0)+"%";
+    updZone(); updRv(); updCount(); updRail(); updNav();
+    requestAnimationFrame(master);
+  })();
+
+  /* ---------- marquees ---------- */
+  var mq=[].slice.call(document.querySelectorAll("[data-marq]")).map(function(m){
+    var t=m.querySelector(".tr");
+    return {t:t,pos:0,base:parseFloat(m.getAttribute("data-sp"))||50,dir:parseFloat(m.getAttribute("data-dir"))||-1,w:0};
   });
-  function measure(){ marquees.forEach(function(o){o.w=o.t.scrollWidth/2||0;}); }
-  measure(); addEventListener("resize",measure);
-  var lastScroll=scrollTopNow(), vel=0, last=performance.now();
+  function meas(){mq.forEach(function(o){o.w=o.t.scrollWidth/2||0;});}
+  meas(); addEventListener("resize",meas);
+  var lastS=sTop(), vel=0, last=performance.now();
   if(!reduce){
     (function tick(now){
       var dt=Math.min((now-last)/1000,.05); last=now;
-      var st=scrollTopNow(); vel=vel*.82 + Math.abs(st-lastScroll); lastScroll=st;
-      var boost=Math.min(vel*5,600);
-      marquees.forEach(function(o){ if(!o.w) o.w=o.t.scrollWidth/2; o.pos+=o.dir*(o.base+boost)*dt; if(o.w){ if(o.pos<=-o.w)o.pos+=o.w; if(o.pos>=0)o.pos-=o.w;} o.t.style.transform="translateX("+o.pos+"px)"; });
+      var st=sTop(); vel=vel*.84+Math.abs(st-lastS); lastS=st;
+      var boost=Math.min(vel*5,560);
+      mq.forEach(function(o){ if(!o.w)o.w=o.t.scrollWidth/2;
+        o.pos+=o.dir*(o.base+boost)*dt;
+        if(o.w){ if(o.pos<=-o.w)o.pos+=o.w; if(o.pos>=0)o.pos-=o.w; }
+        o.t.style.transform="translateX("+o.pos+"px)"; });
       requestAnimationFrame(tick);
     })(last);
   }
 
-  /* ---- Word rotator ---- */
-  var rot=document.getElementById("rot");
-  if(rot && !reduce){
-    var words=["le web.","du trafic.","de la visibilité.","des histoires.","des ponts."];
-    rot.textContent="";
-    var spans=words.map(function(w,i){var s=document.createElement("span");s.className="w"+(i===0?" on":"");s.textContent=w;rot.appendChild(s);return s;});
-    var cur=0;
-    setInterval(function(){var prev=spans[cur];cur=(cur+1)%spans.length;var next=spans[cur];prev.className="w out";next.className="w on";setTimeout(function(){prev.className="w";},550);},2200);
+  /* ---------- desktop: cursor, magnetic, tilt ---------- */
+  if(fine&&!reduce){
+    document.body.classList.add("cur");
+    var dot=document.getElementById("cur"), mx=innerWidth/2,my=innerHeight/2,dx=mx,dy=my;
+    addEventListener("mousemove",function(e){mx=e.clientX;my=e.clientY;});
+    (function l(){dx+=(mx-dx)*.2;dy+=(my-dy)*.2;dot.style.transform="translate("+dx+"px,"+dy+"px) translate(-50%,-50%)";requestAnimationFrame(l);})();
+    document.querySelectorAll("a,button,.x,.cd,.lf,.job").forEach(function(el){
+      el.addEventListener("mouseenter",function(){dot.classList.add("big");});
+      el.addEventListener("mouseleave",function(){dot.classList.remove("big");});
+    });
+    document.querySelectorAll(".mag").forEach(function(el){
+      el.addEventListener("mousemove",function(e){var r=el.getBoundingClientRect();
+        el.style.transform="translate("+((e.clientX-(r.left+r.width/2))/r.width*14)+"px,"+((e.clientY-(r.top+r.height/2))/r.height*9)+"px)";});
+      el.addEventListener("mouseleave",function(){el.style.transform="";});
+    });
+    document.querySelectorAll(".cd,.lf").forEach(function(el){
+      el.addEventListener("mousemove",function(e){var r=el.getBoundingClientRect();
+        var px=(e.clientX-r.left)/r.width-.5, py=(e.clientY-r.top)/r.height-.5;
+        el.style.transform="perspective(800px) rotateX("+(-py*5)+"deg) rotateY("+(px*6)+"deg) translateY(-6px)";});
+      el.addEventListener("mouseleave",function(){el.style.transform="";});
+    });
   }
 
-  /* ---- Counters ---- */
-  function animateCount(el){
-    var target=parseFloat(el.getAttribute("data-count")), suffix=el.getAttribute("data-suffix")||"", dur=1100, t0=performance.now();
-    function frame(now){var p=Math.min((now-t0)/dur,1), e=1-Math.pow(1-p,3); el.textContent=Math.round(target*e)+suffix; if(p<1)requestAnimationFrame(frame); else el.textContent=target+suffix;}
-    requestAnimationFrame(frame);
-  }
-  var counts=[].slice.call(document.querySelectorAll("[data-count]"));
-  function updateCounts(){
-    var vh=innerHeight;
-    for(var i=0;i<counts.length;i++){ var el=counts[i]; if(el.__c) continue; var r=el.getBoundingClientRect();
-      if(r.top < vh*0.82 && r.bottom > 0){ el.__c=true; if(!reduce) animateCount(el); } }
-  }
-
-  /* ---- Master loop — drives progress, zones, reveals, parallax, counters from real positions ---- */
-  (function master(){
-    var st=scrollTopNow(), m=document.documentElement.scrollHeight-innerHeight;
-    if(prog) prog.style.width=(m>0? Math.max(0,Math.min(1,st/m))*100:0)+"%";
-    updateZone(); updateReveals(); updateCounts();
-    if(!reduce) updatePlx();
-    requestAnimationFrame(master);
-  })();
-
-  /* ---- Canvas particle field (all devices) ---- */
+  /* ---------- canvas constellation ---------- */
   var cv=document.getElementById("field");
-  if(cv && !reduce){
-    var ctx=cv.getContext("2d"), W,H,DPR,parts=[],N;
-    function hexToRgb(h){h=h.replace("#","");if(h.length===3)h=h.replace(/./g,"$&$&");var n=parseInt(h,16);return[(n>>16)&255,(n>>8)&255,n&255];}
-    function resize(){
-      DPR=Math.min(devicePixelRatio||1,2); W=cv.width=innerWidth*DPR; H=cv.height=innerHeight*DPR;
-      cv.style.width=innerWidth+"px"; cv.style.height=innerHeight+"px";
-      N=Math.max(24, Math.min(Math.round(innerWidth*innerHeight/22000), innerWidth<700?42:90));
-      parts=[]; for(var i=0;i<N;i++){parts.push({x:Math.random()*W,y:Math.random()*H,vx:(Math.random()-.5)*.25*DPR,vy:(Math.random()-.5)*.25*DPR});}
-    }
-    resize(); addEventListener("resize",resize);
-    var running=true;
-    document.addEventListener("visibilitychange",function(){running=!document.hidden; if(running) requestAnimationFrame(draw);});
-    function draw(){
-      if(!running) return;
+  if(cv&&!reduce){
+    var ctx=cv.getContext("2d"),W,H,DPR,ps=[],N;
+    function rgb(h){h=h.replace("#","");if(h.length===3)h=h.replace(/./g,"$&$&");var n=parseInt(h,16);return[(n>>16)&255,(n>>8)&255,n&255];}
+    function rs(){DPR=Math.min(devicePixelRatio||1,2);W=cv.width=innerWidth*DPR;H=cv.height=innerHeight*DPR;
+      cv.style.width=innerWidth+"px";cv.style.height=innerHeight+"px";
+      N=Math.max(26,Math.min(Math.round(innerWidth*innerHeight/20000),innerWidth<700?46:95));
+      ps=[];for(var i=0;i<N;i++)ps.push({x:Math.random()*W,y:Math.random()*H,vx:(Math.random()-.5)*.26*DPR,vy:(Math.random()-.5)*.26*DPR});}
+    rs(); addEventListener("resize",rs);
+    var run=true;
+    document.addEventListener("visibilitychange",function(){run=!document.hidden; if(run)requestAnimationFrame(dr);});
+    function dr(){
+      if(!run)return;
       ctx.clearRect(0,0,W,H);
-      var rgb=hexToRgb(currentAccent||"#2b2bff"); var col=rgb[0]+","+rgb[1]+","+rgb[2];
-      var maxd=(innerWidth<700?90:120)*DPR;
-      for(var i=0;i<N;i++){var p=parts[i];p.x+=p.vx;p.y+=p.vy;if(p.x<0||p.x>W)p.vx*=-1;if(p.y<0||p.y>H)p.vy*=-1;}
-      for(var i=0;i<N;i++){
-        var p=parts[i];
-        for(var j=i+1;j<N;j++){
-          var q=parts[j], dxx=p.x-q.x, dyy=p.y-q.y, d=Math.sqrt(dxx*dxx+dyy*dyy);
-          if(d<maxd){ ctx.strokeStyle="rgba("+col+","+(0.14*(1-d/maxd))+")"; ctx.lineWidth=DPR; ctx.beginPath(); ctx.moveTo(p.x,p.y); ctx.lineTo(q.x,q.y); ctx.stroke(); }
-        }
-        ctx.fillStyle="rgba("+col+",0.55)"; ctx.beginPath(); ctx.arc(p.x,p.y,1.5*DPR,0,6.28); ctx.fill();
-      }
-      requestAnimationFrame(draw);
+      var c=rgb(accent||"#6fe0a0"), col=c[0]+","+c[1]+","+c[2], md=(innerWidth<700?95:130)*DPR;
+      for(var i=0;i<N;i++){var p=ps[i];p.x+=p.vx;p.y+=p.vy;if(p.x<0||p.x>W)p.vx*=-1;if(p.y<0||p.y>H)p.vy*=-1;}
+      for(var i=0;i<N;i++){var p=ps[i];
+        for(var j=i+1;j<N;j++){var q=ps[j],a=p.x-q.x,b=p.y-q.y,d=Math.sqrt(a*a+b*b);
+          if(d<md){ctx.strokeStyle="rgba("+col+","+(.16*(1-d/md))+")";ctx.lineWidth=DPR;ctx.beginPath();ctx.moveTo(p.x,p.y);ctx.lineTo(q.x,q.y);ctx.stroke();}}
+        ctx.fillStyle="rgba("+col+",.6)";ctx.beginPath();ctx.arc(p.x,p.y,1.5*DPR,0,6.2832);ctx.fill();}
+      requestAnimationFrame(dr);
     }
-    requestAnimationFrame(draw);
+    requestAnimationFrame(dr);
   }
 })();
 </script>
