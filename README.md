@@ -53,3 +53,9 @@ python3 -m http.server 8000   # puis http://localhost:8000
 ```
 
 Déployable tel quel sur GitHub Pages, Netlify, Vercel ou tout hébergement statique.
+
+## Autre projet dans ce dépôt : location Gaujac (Gard)
+
+Le dossier [`gojac/`](gojac/) contient un site indépendant : une vitrine de
+location de vacances pour une maison à Gaujac (Gard), avec calendrier de
+disponibilités synchronisé Airbnb + Booking.com. Voir [`gojac/README.md`](gojac/README.md).
