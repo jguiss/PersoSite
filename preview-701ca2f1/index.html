@@ -226,6 +226,7 @@ html.js .photo.in .veil{transform:scaleX(0)}
   letter-spacing:.06em; color:rgba(255,255,255,.85); background:rgba(0,0,0,.4); border-radius:20px; backdrop-filter:blur(3px)}
 .photo:has(img) figcaption{display:none}
 .photo img{width:100%; height:100%; object-fit:cover; display:block}
+@media (min-width:701px){.img-oma{object-position:50% 85%}}
 /* compositions abstraites en attendant les vraies photos */
 .ph-a{position:absolute; inset:0; background:
   radial-gradient(40% 60% at 22% 35%, rgba(var(--glow),.55), transparent 68%),
@@ -439,8 +440,7 @@ body.dark .photo::before{mix-blend-mode:soft-light;
       </div>
 
       <figure class="photo rv" data-photo data-cursor="voir">
-        <div class="inner" data-depth="14"><div class="ph-a"></div></div>
-        <!-- Remplacer par : <img src="photo-bureau.jpg" alt="Julien Guiss au travail"> -->
+        <div class="inner" data-depth="14"><img class="img-oma" src="assets/photo-one-man-army.jpg" alt="Julien Guiss, en mode « One Man Army » : SEO, WordPress, IA, data, au travail devant son ordinateur"></div>
         <div class="veil" aria-hidden="true"></div>
         <figcaption>emplacement photo</figcaption>
       </figure>
