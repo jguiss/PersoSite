@@ -255,8 +255,14 @@ html.js .photo.in .veil{transform:scaleX(0)}
 
 /* ================= Parcours ================= */
 .tl{margin-top:clamp(40px,5vw,70px); position:relative; padding-left:clamp(26px,4vw,44px)}
-.tl .rail{position:absolute; left:6px; top:8px; bottom:8px; width:2px; background:var(--line); border-radius:2px; overflow:hidden}
-.tl .rail i{position:absolute; inset:0 0 auto 0; height:0%; background:linear-gradient(var(--accent),var(--accent2)); display:block}
+.tl .rail{position:absolute; left:6px; top:8px; bottom:8px; width:14px}
+.tl .rail .rtrack,.tl .rail .rfill{position:absolute; inset:0;
+  clip-path:polygon(0% 0%, 0% 100%, 100% 100%, 20% 55%, 10% 0%)}
+.tl .rail .rtrack{background:var(--line); opacity:.55}
+.tl .rail .rfill{background:linear-gradient(var(--accent),var(--accent2));
+  -webkit-mask-image:linear-gradient(to bottom, #000 var(--p,0%), transparent var(--p,0%));
+  mask-image:linear-gradient(to bottom, #000 var(--p,0%), transparent var(--p,0%));
+  -webkit-mask-repeat:no-repeat; mask-repeat:no-repeat}
 .job{position:relative; padding:0 0 clamp(24px,3.2vw,40px)}
 .job:last-child{padding-bottom:0}
 .job::before{content:""; position:absolute; left:calc(-1*clamp(26px,4vw,44px) + 1px); top:7px; width:13px; height:13px; border-radius:50%;
@@ -496,7 +502,7 @@ body.dark .photo::before{mix-blend-mode:soft-light;
       <p class="lede rv">Une progression continue du terrain vers la stratégie. Chaque étape a ajouté une couche — relation client, marketing, création, e-commerce, acquisition, SEO, management — sans effacer les précédentes.</p>
 
       <div class="tl" id="timeline">
-        <div class="rail" aria-hidden="true"><i id="railfill"></i></div>
+        <div class="rail" aria-hidden="true"><i class="rtrack"></i><i class="rfill" id="railfill"></i></div>
 
         <article class="job rv">
           <div class="jhead">
@@ -845,10 +851,11 @@ body.dark .photo::before{mix-blend-mode:soft-light;
     }
   }
 
-  /* rail fill */
+  /* rail fill : forme qui s'élargit du haut (2003, fine) vers le bas (aujourd'hui, large) */
   var tl=document.getElementById("timeline"), fill=document.getElementById("railfill");
   function updRail(){ if(!tl||!fill)return; var r=tl.getBoundingClientRect();
-    fill.style.height=Math.max(0,Math.min(1,(innerHeight*.55-r.top)/r.height))*100+"%"; }
+    var p=Math.max(0,Math.min(1,(innerHeight*.55-r.top)/r.height))*100;
+    fill.style.setProperty("--p",p+"%"); }
 
   /* jobs : dot + icon "lit" once the rail has passed them */
   var jobEls=[].slice.call(document.querySelectorAll(".job"));
