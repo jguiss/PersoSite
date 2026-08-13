@@ -100,15 +100,6 @@ body.dark .grain{mix-blend-mode:overlay; opacity:.06}
   background:radial-gradient(50% 60% at 50% 50%, rgba(var(--glow),.13), transparent 70%); transition:background 1s ease}
 .progress{position:fixed; top:0; left:0; height:3px; width:0; z-index:200;
   background:linear-gradient(90deg,var(--accent),var(--accent2)); transition:background 1s ease}
-.wipe{position:fixed; inset:0; z-index:250; pointer-events:none; opacity:0; transform:scaleY(0); transform-origin:top; will-change:transform,opacity}
-html.js .wipe.go{animation:wipeSweep .9s cubic-bezier(.76,0,.24,1) forwards}
-@keyframes wipeSweep{
-  0%{transform:scaleY(0); transform-origin:top; opacity:1}
-  46%{transform:scaleY(1); transform-origin:top; opacity:1}
-  54%{transform:scaleY(1); transform-origin:bottom; opacity:1}
-  100%{transform:scaleY(0); transform-origin:bottom; opacity:1}
-}
-@media (prefers-reduced-motion:reduce){.wipe{display:none}}
 .cursor{position:fixed; top:0; left:0; width:12px; height:12px; border-radius:50%; background:var(--accent);
   pointer-events:none; z-index:9999; transform:translate(-50%,-50%); mix-blend-mode:difference; opacity:0;
   transition:width .2s,height .2s,opacity .3s; will-change:transform}
@@ -352,11 +343,13 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--accent); outline-of
 
 /* ================= Rideau d'ouverture ================= */
 #curtain{position:fixed; inset:0; z-index:500; background:#0e0f10; pointer-events:none; display:flex; align-items:center; justify-content:center}
-html.js #curtain{animation:curtainUp .85s cubic-bezier(.76,0,.24,1) forwards; animation-delay:.55s}
+html.js #curtain{animation:curtainUp .85s cubic-bezier(.76,0,.24,1) forwards; animation-delay:.62s}
 @keyframes curtainUp{to{transform:translateY(-100%)}}
-#sig{font-family:var(--serif); font-style:italic; font-weight:700; font-size:clamp(1.5rem,5vw,3rem); color:#f5f4f0; letter-spacing:.01em;
+#sig{font-family:var(--serif); font-style:italic; font-weight:500; font-size:clamp(2rem,7vw,4.2rem); color:#f7f5f1; letter-spacing:-.01em;
+  text-shadow:0 2px 30px rgba(111,224,160,.28); position:relative; padding-bottom:.28em;
   clip-path:inset(0 100% 0 0)}
-html.js #sig{animation:sigWrite .6s cubic-bezier(.65,0,.35,1) forwards; animation-delay:.1s}
+#sig::after{content:""; position:absolute; left:1px; right:1px; bottom:.08em; height:1px; background:linear-gradient(90deg,#6fe0a0,rgba(111,224,160,0) 88%)}
+html.js #sig{animation:sigWrite .7s cubic-bezier(.65,0,.35,1) forwards; animation-delay:.1s}
 @keyframes sigWrite{to{clip-path:inset(0 0% 0 0)}}
 @media (prefers-reduced-motion:reduce){#curtain{display:none}}
 
@@ -412,7 +405,6 @@ body.dark .photo::before{mix-blend-mode:soft-light;
 <div class="halo" aria-hidden="true"></div>
 <div class="grain" aria-hidden="true"></div>
 <div class="progress" id="prog" aria-hidden="true"></div>
-<div class="wipe" id="wipe" aria-hidden="true"></div>
 <div class="cursor" id="cur" aria-hidden="true"><span class="lbl" id="curLbl"></span></div>
 
 <header class="nav">
@@ -805,24 +797,15 @@ body.dark .photo::before{mix-blend-mode:soft-light;
 
   /* zones */
   var zones=[].slice.call(document.querySelectorAll("[data-zone]"));
-  var wipeEl=document.getElementById("wipe");
   var curZ="", accent="#0f6b45";
   var TC={hero:"#ffffff",expertise:"#f3f0e7",parcours:"#0b1712",web:"#180f08",perso:"#07171b"};
   var DARK={parcours:1,web:1,perso:1};
   function setZone(z){
-    function apply(){
-      document.body.classList.remove("z-hero","z-expertise","z-parcours","z-web","z-perso");
-      document.body.classList.add("z-"+z);
-      document.body.classList.toggle("dark",!!DARK[z]);
-      var m=document.querySelector('meta[name=theme-color]'); if(m) m.setAttribute("content",TC[z]||"#ffffff");
-      setTimeout(function(){accent=getComputedStyle(document.body).getPropertyValue("--accent").trim()||accent;},140);
-    }
-    var hadZone=/\bz-(hero|expertise|parcours|web|perso)\b/.test(document.body.className);
-    if(wipeEl&&!reduce&&hadZone){
-      wipeEl.style.background=TC[z]||"#ffffff";
-      wipeEl.classList.remove("go"); void wipeEl.offsetWidth; wipeEl.classList.add("go");
-      setTimeout(apply,410);
-    } else apply();
+    document.body.classList.remove("z-hero","z-expertise","z-parcours","z-web","z-perso");
+    document.body.classList.add("z-"+z);
+    document.body.classList.toggle("dark",!!DARK[z]);
+    var m=document.querySelector('meta[name=theme-color]'); if(m) m.setAttribute("content",TC[z]||"#ffffff");
+    setTimeout(function(){accent=getComputedStyle(document.body).getPropertyValue("--accent").trim()||accent;},140);
   }
   function updZone(){
     var vc=innerHeight*.5,z;
