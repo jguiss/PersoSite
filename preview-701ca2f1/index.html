@@ -156,11 +156,6 @@ h3{font-weight:700; letter-spacing:-.012em}
 .ring::before{content:""; position:absolute; inset:32%; border:1px dashed var(--line); border-radius:50%}
 @media (prefers-reduced-motion:no-preference){.ring{animation:spin 85s linear infinite}.ring::before{animation:spin 36s linear infinite reverse}}
 @keyframes spin{to{transform:translateY(-50%) rotate(360deg)}}
-.chip{display:inline-flex; align-items:center; gap:9px; font-family:var(--mono); font-size:11.5px; letter-spacing:.1em; text-transform:uppercase;
-  color:var(--soft); border:1px solid var(--line); border-radius:30px; padding:6px 14px; margin-bottom:22px}
-.chip .d{width:7px;height:7px;border-radius:50%;background:var(--accent)}
-@media (prefers-reduced-motion:no-preference){.chip .d{animation:pl 2s ease-in-out infinite}}
-@keyframes pl{0%,100%{box-shadow:0 0 0 0 rgba(var(--glow),.55)}50%{box-shadow:0 0 0 7px rgba(var(--glow),0)}}
 .idx{display:flex; justify-content:space-between; flex-wrap:wrap; gap:8px 16px; font-family:var(--mono); font-size:12px; letter-spacing:.1em;
   text-transform:uppercase; color:var(--soft); border-bottom:1px solid var(--line); padding-bottom:12px}
 .idx b{color:var(--accent)}
@@ -419,7 +414,6 @@ body.dark .photo::before{mix-blend-mode:soft-light;
   <section class="hero">
     <div class="ring" aria-hidden="true"></div>
     <div class="wrap">
-      <span class="chip"><span class="d"></span> Vice-président, Web Strategy &amp; actionnaire</span>
       <div class="idx">
         <span>Stratège web — <b>SEO</b></span>
         <span>Contenu · Data · Monétisation</span>
@@ -663,16 +657,6 @@ body.dark .photo::before{mix-blend-mode:soft-light;
       <p class="eyebrow rv">04 — Histoire personnelle</p>
       <h2 class="rv">Des racines, du mouvement et quelques détours</h2>
       <p class="lede rv wsplit">Mon parcours professionnel raconte une partie de mon histoire. Le reste se trouve dans les camps scouts, les rues parcourues en skateboard, les salles de boxe, le départ au Canada et la famille que j'ai construite.</p>
-
-      <article class="chap rv"><div class="yr">—</div><div><h3>Racines méditerranéennes</h3><div class="prose">
-        <p>À compléter.</p></div></div></article>
-
-      <article class="chap rv"><div class="yr">—</div><div><h3>L'Europe</h3><div class="prose">
-        <p>À compléter.</p></div></div></article>
-
-      <article class="chap rv"><div class="yr">2014 — 2024</div><div><h3>Dix ans au Canada</h3><div class="prose">
-        <p>Je suis parti pour trois ans. J'y suis resté <strong>dix</strong>, et j'en suis même devenu citoyen. À Québec, j'ai découvert une autre manière de vivre : chaleureuse, détendue, beaucoup moins portée sur le jugement. Mon deuxième enfant y est né.</p>
-        <p>Je suis revenu en France après la disparition de l'un de mes frères, et pour me rapprocher de ma mère et de mon père, atteint de la maladie de Parkinson. J'ai gardé mon poste et je travaille à distance, avec plusieurs retours par an là-bas. J'aime la <em>Provence</em>, ce coin de France que ma famille a trouvé en arrivant d'Algérie — et j'ai la chance d'être revenu dans un village qui me plaît.</p></div></div></article>
 
       <div class="grid4">
         <div class="cell rv"><div class="n">01</div><svg class="ico" aria-hidden="true"><use href="#i-sun"/></svg><h3>Racines méditerranéennes</h3><p>Toute ma famille est issue des Pieds-Noirs ; je suis le premier de ma lignée né en métropole. Français, Italiens, Espagnols, Allemands : une histoire de croisements et de vies reconstruites.</p></div>
@@ -945,7 +929,7 @@ body.dark .photo::before{mix-blend-mode:soft-light;
       el.addEventListener("mouseleave",function(){el.style.transform="";});});
     var ttl=document.getElementById("title");
     if(ttl) addEventListener("mousemove",function(e){
-      ttl.style.transform="perspective(1000px) rotateX("+(-(e.clientY/innerHeight-.5)*4.5)+"deg) rotateY("+((e.clientX/innerWidth-.5)*6)+"deg) translateX("+((e.clientX/innerWidth-.5)*10)+"px)";
+      ttl.style.transform="perspective(800px) rotateX("+(-(e.clientY/innerHeight-.5)*8)+"deg) rotateY("+((e.clientX/innerWidth-.5)*11)+"deg) translateX("+((e.clientX/innerWidth-.5)*18)+"px)";
     });
     document.querySelectorAll("[data-photo]").forEach(function(f){
       var inner=f.querySelector(".inner"), dep=parseFloat(inner&&inner.getAttribute("data-depth"))||12;
