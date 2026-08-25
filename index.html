@@ -168,9 +168,10 @@ html.js .h1 .l{transform:translateY(112%)}
 @media (prefers-reduced-motion:reduce){html.js .h1 .l{transform:none}}
 @keyframes rise{to{transform:translateY(0)}}
 .h1 .dt{color:var(--accent)}
-.meta{display:flex; flex-wrap:wrap; gap:12px 26px; margin-top:clamp(22px,3.2vw,42px); padding-top:18px; border-top:2px solid var(--ink);
+.meta{display:flex; justify-content:space-between; flex-wrap:wrap; gap:12px 26px; margin-top:clamp(22px,3.2vw,42px); padding-top:18px; border-top:2px solid var(--ink);
   font-family:var(--mono); font-size:12.5px; letter-spacing:.04em; text-transform:uppercase; color:var(--soft)}
 .meta b{color:var(--ink); font-weight:700}
+@media (max-width:560px){.meta{flex-direction:column; align-items:flex-start; gap:8px}}
 .cue{margin-top:32px; font-family:var(--mono); font-size:12px; letter-spacing:.16em; text-transform:uppercase; color:var(--faint); display:inline-flex; gap:10px; align-items:center; text-decoration:none}
 .cue:hover{color:var(--accent)}
 @media (prefers-reduced-motion:no-preference){.cue .a{display:inline-block; animation:bob 1.9s ease-in-out infinite}}
@@ -652,7 +653,7 @@ body.dark .photo::before{mix-blend-mode:soft-light;
 
 <!-- ========== 5 · PERSO (nuit bleu-vert) ========== -->
 <div data-zone="perso">
-  <section class="sec" id="perso">
+  <section class="sec" id="perso" style="padding-bottom:0">
     <div class="wrap">
       <p class="eyebrow rv">04 — Histoire personnelle</p>
       <h2 class="rv">Des racines, du mouvement et quelques détours</h2>
@@ -697,7 +698,6 @@ body.dark .photo::before{mix-blend-mode:soft-light;
       <div class="links rv">
         <a class="lnk mag" data-cursor="ouvrir" href="https://www.linkedin.com/in/jguiss/" target="_blank" rel="noopener"><span class="n">LinkedIn</span><span class="h">/in/jguiss ↗</span></a>
         <a class="lnk mag" data-cursor="ouvrir" href="https://x.com/jguisswebmaster" target="_blank" rel="noopener"><span class="n">X / Twitter</span><span class="h">@jguisswebmaster ↗</span></a>
-        <a class="lnk mag" data-cursor="ouvrir" href="https://www.youtube.com/c/JulienGuiss" target="_blank" rel="noopener"><span class="n">YouTube</span><span class="h">/c/JulienGuiss ↗</span></a>
       </div>
     </div>
   </section>
@@ -929,7 +929,7 @@ body.dark .photo::before{mix-blend-mode:soft-light;
       el.addEventListener("mouseleave",function(){el.style.transform="";});});
     var ttl=document.getElementById("title");
     if(ttl) addEventListener("mousemove",function(e){
-      ttl.style.transform="perspective(800px) rotateX("+(-(e.clientY/innerHeight-.5)*8)+"deg) rotateY("+((e.clientX/innerWidth-.5)*11)+"deg) translateX("+((e.clientX/innerWidth-.5)*18)+"px)";
+      ttl.style.transform="perspective(1600px) rotateX("+(-(e.clientY/innerHeight-.5)*2)+"deg) rotateY("+((e.clientX/innerWidth-.5)*2.6)+"deg) translateX("+((e.clientX/innerWidth-.5)*4)+"px)";
     });
     document.querySelectorAll("[data-photo]").forEach(function(f){
       var inner=f.querySelector(".inner"), dep=parseFloat(inner&&inner.getAttribute("data-depth"))||12;
