@@ -240,18 +240,6 @@ html.js .photo.in .veil{transform:scaleX(0)}
 .sec:has(> .wrap > .photo:last-child) + .sec,
 .sec:has(> .wrap > .photo:last-child) + .pull,
 .sec:has(> .wrap > .photo:last-child) + .final{padding-top:clamp(28px,4vw,52px)}
-/* compositions abstraites en attendant les vraies photos */
-.ph-a{position:absolute; inset:0; background:
-  radial-gradient(40% 60% at 22% 35%, rgba(var(--glow),.55), transparent 68%),
-  radial-gradient(45% 55% at 76% 62%, rgba(180,85,42,.42), transparent 70%),
-  linear-gradient(120deg,var(--bg2),var(--card));}
-.ph-a::after{content:""; position:absolute; inset:0; opacity:.5;
-  background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);
-  background-size:44px 44px; mask-image:radial-gradient(80% 80% at 50% 50%,#000,transparent 75%)}
-.ph-b{position:absolute; inset:0; background:linear-gradient(160deg,var(--card),var(--bg2))}
-.ph-b::before{content:""; position:absolute; inset:12% 8%; border:1px solid rgba(var(--glow),.5); border-radius:50%;
-  box-shadow:0 0 70px rgba(var(--glow),.28) inset}
-.ph-b::after{content:""; position:absolute; inset:28% 24%; border:1px dashed rgba(var(--glow),.4); border-radius:50%}
 
 /* ================= Parcours ================= */
 .tl{margin-top:clamp(40px,5vw,70px); position:relative; padding-left:clamp(26px,4vw,44px)}
@@ -484,13 +472,6 @@ body.dark .photo::before{mix-blend-mode:soft-light;
       </figure>
     </div>
   </section>
-
-  <section class="pull">
-    <div class="wrap">
-      <q class="rv">On m'a souvent surnommé <b>«&nbsp;One Man Army&nbsp;»</b> — je maîtrise assez d'outils pour mener un projet de bout en bout et avancer sans attendre.</q>
-      <div class="by rv">Julien Guiss</div>
-    </div>
-  </section>
 </div>
 
 <!-- ========== 3 · PARCOURS (vert forêt) ========== -->
@@ -586,12 +567,6 @@ body.dark .photo::before{mix-blend-mode:soft-light;
         <div class="st rv"><div class="k" data-c="4">4</div><div class="l">fonctions successives dans la même société</div></div>
         <div class="st rv"><div class="k" data-c="23" data-s="+">23+</div><div class="l">années à expérimenter sur le web</div></div>
       </div>
-
-      <figure class="photo rv" data-photo data-cursor="voir">
-        <div class="inner" data-depth="14"><img src="assets/photo-parcours.jpg" alt="Julien Guiss et la carte de son parcours : de la réception d'hôtel au SEO international, en passant par le e-commerce et l'affiliation"></div>
-        <div class="veil" aria-hidden="true"></div>
-        <figcaption>emplacement photo</figcaption>
-      </figure>
     </div>
   </section>
 </div>
@@ -677,13 +652,6 @@ body.dark .photo::before{mix-blend-mode:soft-light;
         <p>Et hors du travail, je continue à lancer de petits concepts — souvent autour de l'<em>intelligence artificielle</em>. Pour garder la main, et parce que j'aime toujours autant créer.</p></div>
         <div class="tags"><span class="tg">Stratégie</span><span class="tg">Management</span></div></div></article>
       </div>
-
-      <figure class="photo rv" data-photo data-cursor="voir">
-        <div class="inner" data-depth="14"><div class="ph-a"></div></div>
-        <!-- Remplacer par : <img src="photo-archives.jpg" alt="Archives : premiers sites et premiers écrans"> -->
-        <div class="veil" aria-hidden="true"></div>
-        <figcaption>emplacement photo</figcaption>
-      </figure>
     </div>
   </section>
 </div>
@@ -695,6 +663,12 @@ body.dark .photo::before{mix-blend-mode:soft-light;
       <p class="eyebrow rv">04 — Histoire personnelle</p>
       <h2 class="rv">Des racines, du mouvement et quelques détours</h2>
       <p class="lede rv wsplit">Mon parcours professionnel raconte une partie de mon histoire. Le reste se trouve dans les camps scouts, les rues parcourues en skateboard, les salles de boxe, le départ au Canada et la famille que j'ai construite.</p>
+
+      <article class="chap rv"><div class="yr">—</div><div><h3>Racines méditerranéennes</h3><div class="prose">
+        <p>À compléter.</p></div></div></article>
+
+      <article class="chap rv"><div class="yr">—</div><div><h3>L'Europe</h3><div class="prose">
+        <p>À compléter.</p></div></div></article>
 
       <article class="chap rv"><div class="yr">2014 — 2024</div><div><h3>Dix ans au Canada</h3><div class="prose">
         <p>Je suis parti pour trois ans. J'y suis resté <strong>dix</strong>, et j'en suis même devenu citoyen. À Québec, j'ai découvert une autre manière de vivre : chaleureuse, détendue, beaucoup moins portée sur le jugement. Mon deuxième enfant y est né.</p>
@@ -722,13 +696,6 @@ body.dark .photo::before{mix-blend-mode:soft-light;
         <div class="seg"></div>
         <div class="stop"><div class="d"></div><div class="c">La suite</div><div class="y">→</div></div>
       </div>
-
-      <figure class="photo rv" data-photo data-cursor="voir">
-        <div class="inner" data-depth="14"><div class="ph-b"></div></div>
-        <!-- Remplacer par : <img src="photo-perso.jpg" alt="Julien Guiss, portrait personnel"> -->
-        <div class="veil" aria-hidden="true"></div>
-        <figcaption>emplacement photo</figcaption>
-      </figure>
     </div>
   </section>
 
