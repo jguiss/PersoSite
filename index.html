@@ -33,7 +33,7 @@
     "description":"Stratège web et entrepreneur : SEO, contenu, données, UX et monétisation. Plus de vingt ans à créer et faire croître des projets web.",
     "knowsAbout":["SEO","Référencement naturel","Marketing d'affiliation","Acquisition de trafic","Monétisation","Analytics","E-commerce","Stratégie web","UX","Intelligence artificielle"],
     "knowsLanguage":["Français","Anglais","Espagnol"],
-    "sameAs":["https://www.linkedin.com/in/jguiss/","https://x.com/jguisswebmaster","https://www.youtube.com/c/JulienGuiss"]
+    "sameAs":["https://www.linkedin.com/in/jguiss/","https://x.com/jguisswebmaster"]
   }
 }
 </script>
@@ -122,7 +122,7 @@ body.cur .cursor{opacity:1} body.cur,body.cur a,body.cur button{cursor:none}
   backdrop-filter:blur(9px); background:linear-gradient(to bottom,rgba(127,127,127,.09),transparent)}
 .nav .brand{color:var(--ink); text-decoration:none; font-weight:700; display:flex; align-items:center; gap:9px; white-space:nowrap}
 .nav .brand .b{width:10px;height:10px;border-radius:50%;background:var(--accent);transition:background 1s ease}
-.nav .lk{position:relative; display:flex; gap:2px; flex-wrap:nowrap; justify-content:flex-end; overflow-x:auto; scrollbar-width:none; -ms-overflow-style:none; max-width:64vw}
+.nav .lk{position:relative; display:flex; gap:2px; flex-wrap:nowrap; justify-content:flex-start; overflow-x:auto; scrollbar-width:none; -ms-overflow-style:none; max-width:64vw}
 .nav .lk::-webkit-scrollbar{display:none}
 .nav .lk .pill{position:absolute; top:2px; bottom:2px; left:0; width:0; border-radius:20px; background:rgba(var(--glow),.14); z-index:0; opacity:0;
   transition:transform .4s cubic-bezier(.16,1,.3,1), width .4s cubic-bezier(.16,1,.3,1), opacity .3s ease, background 1s ease}
@@ -488,7 +488,6 @@ body.dark .photo::before{mix-blend-mode:soft-light;
           <div class="co">Entreprise canadienne · 11 ans dans la même société</div>
           <p>Je supervise la stratégie web globale et la vision à long terme d'un vaste réseau de sites. J'aligne SEO, contenu, UX, technologie et monétisation, j'accompagne les équipes dirigeantes et je représente l'entreprise lors d'événements internationaux.</p>
           <div class="tags"><span class="tg">Stratégie</span><span class="tg">SEO</span><span class="tg">Management</span><span class="tg">Monétisation</span><span class="tg">Affiliation</span></div>
-          <!-- Lien externe (à ajouter) : <a class="ext" href="" target="_blank" rel="noopener">site ↗</a> -->
             </div>
             <div class="jico"><svg class="ico" aria-hidden="true"><use href="#i-globe"/></svg></div>
           </div>
@@ -866,7 +865,7 @@ body.dark .photo::before{mix-blend-mode:soft-light;
       var lr=navLk.getBoundingClientRect(), r=na[b].getBoundingClientRect();
       navPill.style.opacity="1";
       navPill.style.width=r.width+"px";
-      navPill.style.transform="translateX("+(r.left-lr.left)+"px)";
+      navPill.style.transform="translateX("+(r.left-lr.left+navLk.scrollLeft)+"px)";
     }
   }
 
