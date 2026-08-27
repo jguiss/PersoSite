@@ -903,7 +903,14 @@ body.dark .photo::before{mix-blend-mode:soft-light;
   /* marquees state */
   var mq=[].slice.call(document.querySelectorAll("[data-marq]")).map(function(m){
     return {t:m.querySelector(".tr"),pos:0,base:parseFloat(m.getAttribute("data-sp"))||50,dir:parseFloat(m.getAttribute("data-dir"))||-1,w:0};});
-  function meas(){mq.forEach(function(o){o.w=o.t.scrollWidth/2||0;});}
+  function meas(){mq.forEach(function(o){
+    var cw=o.t.parentElement.getBoundingClientRect().width,guard=0;
+    while(o.t.scrollWidth/2<cw&&guard<6){
+      [].slice.call(o.t.children).forEach(function(k){o.t.appendChild(k.cloneNode(true));});
+      guard++;
+    }
+    o.w=o.t.scrollWidth/2||0;
+  });}
   meas(); addEventListener("resize",meas);
   var lastS=sTop(), vel=0;
   function updMarq(dt){
