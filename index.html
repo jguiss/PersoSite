@@ -97,7 +97,7 @@ html{scroll-behavior:smooth}
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
 body{margin:0; background:var(--bg); color:var(--ink); font-family:var(--sans); line-height:1.6;
   -webkit-font-smoothing:antialiased; overflow-x:hidden;
-  transition:background-color 1s ease, color 1s ease}
+  transition:background-color 1.4s ease, color 1.4s ease}
 ::selection{background:var(--accent); color:#fff}
 
 /* ================= Décor ================= */
@@ -106,9 +106,9 @@ body{margin:0; background:var(--bg); color:var(--ink); font-family:var(--sans); 
   background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='150' height='150'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3'/%3E%3C/filter%3E%3Crect width='150' height='150' filter='url(%23n)'/%3E%3C/svg%3E")}
 body.dark .grain{mix-blend-mode:overlay; opacity:.06}
 .halo{position:fixed; left:50%; top:-26vh; width:120vw; height:76vh; transform:translateX(-50%); z-index:0; pointer-events:none;
-  background:radial-gradient(50% 60% at 50% 50%, rgba(var(--glow),.13), transparent 70%); transition:background 1s ease}
+  background:radial-gradient(50% 60% at 50% 50%, rgba(var(--glow),.13), transparent 70%); transition:background 1.4s ease}
 .progress{position:fixed; top:0; left:0; height:3px; width:0; z-index:200;
-  background:linear-gradient(90deg,var(--accent),var(--accent2)); transition:background 1s ease}
+  background:linear-gradient(90deg,var(--accent),var(--accent2)); transition:background 1.4s ease}
 .cursor{position:fixed; top:0; left:0; width:12px; height:12px; border-radius:50%; background:var(--accent);
   pointer-events:none; z-index:9999; transform:translate(-50%,-50%); mix-blend-mode:difference; opacity:0;
   transition:width .2s,height .2s,opacity .3s; will-change:transform}
@@ -130,11 +130,11 @@ body.cur .cursor{opacity:1} body.cur,body.cur a,body.cur button{cursor:none}
   gap:14px; padding:13px clamp(15px,4vw,38px); font-family:var(--mono); font-size:12px; letter-spacing:.06em; text-transform:uppercase;
   backdrop-filter:blur(9px); background:linear-gradient(to bottom,rgba(127,127,127,.09),transparent)}
 .nav .brand{color:var(--ink); text-decoration:none; font-weight:700; display:flex; align-items:center; gap:9px; white-space:nowrap}
-.nav .brand .b{width:10px;height:10px;border-radius:50%;background:var(--accent);transition:background 1s ease}
+.nav .brand .b{width:10px;height:10px;border-radius:50%;background:var(--accent);transition:background 1.4s ease}
 .nav .lk{position:relative; display:flex; gap:2px; flex-wrap:nowrap; justify-content:flex-start; overflow-x:auto; scrollbar-width:none; -ms-overflow-style:none; max-width:64vw}
 .nav .lk::-webkit-scrollbar{display:none}
 .nav .lk .pill{position:absolute; top:2px; bottom:2px; left:0; width:0; border-radius:20px; background:rgba(var(--glow),.14); z-index:0; opacity:0;
-  transition:transform .4s cubic-bezier(.16,1,.3,1), width .4s cubic-bezier(.16,1,.3,1), opacity .3s ease, background 1s ease}
+  transition:transform .4s cubic-bezier(.16,1,.3,1), width .4s cubic-bezier(.16,1,.3,1), opacity .3s ease, background 1.4s ease}
 .nav .lk a{position:relative; z-index:1; color:var(--soft); text-decoration:none; padding:6px 9px; border-radius:5px; transition:color .2s,background .2s; white-space:nowrap; flex:0 0 auto}
 .nav .lk a:hover,.nav .lk a:focus-visible,.nav .lk a.on{color:var(--accent); outline:none}
 @media (max-width:520px){.nav .lk{font-size:11px} .nav .lk a{padding:6px 6px}}
